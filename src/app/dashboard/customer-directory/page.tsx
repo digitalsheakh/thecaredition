@@ -127,7 +127,7 @@ export default function CustomerDirectoryPage() {
           ))}
         </div>
       ),
-      cellClassName: "w-[50%]"
+      className: "w-[50%]"
     }
   ];
 
