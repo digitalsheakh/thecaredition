@@ -37,19 +37,19 @@ export async function GET(req: NextRequest) {
 
 // PATCH — update blog details
 export async function PATCH(req: NextRequest) {
-  const referer = req.headers.get('referer') || '';
-  const refererPath = new URL(referer).pathname;
-  
-  // Pass referer path to authorization check
-  const authResult = await authorizationCheck(refererPath);
-  
-  if (!authResult.success) {
-    return NextResponse.json(
-      { error: authResult.error },
-      { status: authResult.status }
-    );
-  }
   try {
+    const referer = req.headers.get('referer') || '';
+    const refererPath = new URL(referer).pathname;
+    
+    // Pass referer path to authorization check
+    const authResult = await authorizationCheck(refererPath);
+    
+    if (!authResult.success) {
+      return NextResponse.json(
+        { error: authResult.error },
+        { status: authResult.status }
+      );
+    }
     const blogsCollection = await dbConnect(collections.blogs);
     const id = req.nextUrl.pathname.split("/").pop();
 
@@ -87,19 +87,19 @@ export async function PATCH(req: NextRequest) {
 
 // DELETE — delete blog
 export async function DELETE(req: NextRequest) {
-  const referer = req.headers.get('referer') || '';
-  const refererPath = new URL(referer).pathname;
-  
-  // Pass referer path to authorization check
-  const authResult = await authorizationCheck(refererPath);
-  
-  if (!authResult.success) {
-    return NextResponse.json(
-      { error: authResult.error },
-      { status: authResult.status }
-    );
-  }
   try {
+    const referer = req.headers.get('referer') || '';
+    const refererPath = new URL(referer).pathname;
+    
+    // Pass referer path to authorization check
+    const authResult = await authorizationCheck(refererPath);
+    
+    if (!authResult.success) {
+      return NextResponse.json(
+        { error: authResult.error },
+        { status: authResult.status }
+      );
+    }
     const blogsCollection = await dbConnect(collections.blogs);
     const id = req.nextUrl.pathname.split("/").pop();
 
