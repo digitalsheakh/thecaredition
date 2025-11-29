@@ -43,10 +43,15 @@ const ADMIN_ROUTES = [
 
 type AuthorizationResult = 
   | { success: true; user: Omit<User, 'password'>; status: 200 }
-  | { success: false; error: string; status: 401 | 403 | 404 | 500 };
+  | { success: false; error: string; status: 401 | 403 | 404 | 500 | 503 };
 
 async function authorizationCheck(refererPath?: string): Promise<AuthorizationResult> {
   try {
+    // Check if we're in a build environment
+    if (!process.env.NEXT_PUBLIC_MONGODB_URI) {
+      return { success: false, error: "Build environment - no database", status: 503 };
+    }
+    
     const userCollection = await dbConnect(collections.users);
     const session = await getServerSession(authOptions);
     // const  user = {
