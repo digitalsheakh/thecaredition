@@ -68,7 +68,7 @@ export async function PATCH(req: NextRequest) {
     const filter = { _id: new ObjectId(id) };
     const update = await req.json();
     const admission = await videosCollection.findOne(filter);
-    console.log(update,id)
+
     if (!admission) {
       return NextResponse.json({ error: "Insittue not found" }, { status: 404 });
     }
@@ -88,7 +88,6 @@ export async function PATCH(req: NextRequest) {
     };
 
     const result = await videosCollection.updateOne(filter, updateDoc);
-    console.log(result)
     return NextResponse.json({ message: "admission updated successfully", ...result }, { status: 200 });
   } catch (error) {
     console.error("Error updating admission:", error);

@@ -63,8 +63,6 @@ export async function GET(req: NextRequest) {
         }
       ]).toArray()
     ]);
-console.log(page ,(page - 1) * limit, limit, total, services.length, services);
-    // Format response
     const response = {
       data : services,
       pagination: {

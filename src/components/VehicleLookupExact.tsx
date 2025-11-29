@@ -89,7 +89,7 @@ export default function VehicleLookupExact() {
         // Make sure to stringify the vehicle object properly
         const vehicleString = JSON.stringify(vehicle);
         localStorage.setItem('selectedVehicle', vehicleString);
-        console.log('Vehicle data stored:', vehicleString);
+
         
         // Navigate to the service selection page
         window.location.href = '/service-estimator/service-selection';

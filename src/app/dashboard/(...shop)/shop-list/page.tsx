@@ -63,7 +63,7 @@ export default function ShopManagementPage() {
     page,
     limit
   }, { refetchOnMountOrArgChange: true });
-console.log(shops)
+
   const [deleteShop, { isLoading: isDeleting }] = useDeleteShopMutation();
 
   const handleDeleteShop = async () => {

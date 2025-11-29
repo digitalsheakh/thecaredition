@@ -2,12 +2,11 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    console.log('API route: Received request to submit service request');
+
     
     // Parse the request body
     const data = await request.json();
-    console.log('API route: Parsed request data:', data);
-    
+
     // Validate required fields
     if (!data.phone) {
       console.error('API route: Missing phone number');
@@ -41,17 +40,15 @@ export async function POST(request: Request) {
       status: 'New' // Default status for new requests
     };
     
-    console.log('API route: Formatted data for Google Sheets:', formattedData);
-    
+  
     // Send data to Google Apps Script - using URLSearchParams for compatibility
     const params = new URLSearchParams();
     params.append('data', JSON.stringify(formattedData));
     
-    console.log('API route: Sending data to Google Apps Script');
-    
+
     // Use the latest Google Apps Script URL
     const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbw8fi4RazRsJF4CFF7yISdXTm8pafuPygE-ItOHQIVXdL5tvxImxAppQ_SQVlCy6_Q0/exec';
-    console.log('API route: Google Apps Script URL:', googleScriptUrl);
+
     
     const response = await fetch(googleScriptUrl, {
       method: 'POST',
@@ -61,15 +58,15 @@ export async function POST(request: Request) {
       body: params.toString(),
     });
     
-    console.log('API route: Google Apps Script response status:', response.status);
+  
     
     // Try to log the response body if possible
     let responseText = '';
     try {
       responseText = await response.text();
-      console.log('API route: Google Apps Script response:', responseText);
+   
     } catch (err) {
-      console.log('API route: Could not read response body');
+   
     }
     
     // Return success response with the Google Apps Script response

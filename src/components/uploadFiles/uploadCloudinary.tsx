@@ -4,7 +4,6 @@ const useCloudinaryUpload = async (file: File) => {
   interface UploadToCloudinaryResponse {
     secure_url: string;
   }
-console.log(file)
 
     const formData = new FormData();
     formData.append('file', file);
@@ -23,7 +22,6 @@ console.log(file)
         `https://api.cloudinary.com/v1_1/dw3rzftte/${resourceType}/upload`,
         formData
       );
-      console.log(res.data.secure_url)
       return res.data.secure_url;
     } catch (error) {
       console.error('Cloudinary upload error:', error);

@@ -22,7 +22,7 @@ export default function ServiceSelection() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [servicesLoading, setServicesLoading] = useState(true);
   const [servicesError, setServicesError] = useState<string | null>(null);
-  console.log(otherService)
+
   // Retrieve vehicle data from localStorage and fetch services
   useEffect(() => {
     // Get vehicle data

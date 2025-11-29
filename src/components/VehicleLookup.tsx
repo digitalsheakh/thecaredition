@@ -66,7 +66,7 @@ export default function VehicleLookup({ darkMode = false, compact = false }: Veh
           // Make sure to stringify the vehicle object properly
           const vehicleString = JSON.stringify(vehicleData);
           localStorage.setItem('selectedVehicle', vehicleString);
-          console.log('Vehicle data stored:', vehicleString);
+     
           
           // Navigate to the service selection page
           window.location.href = '/service-estimator/service-selection';

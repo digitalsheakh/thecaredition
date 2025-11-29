@@ -42,17 +42,9 @@ export async function GET(req: NextRequest) {
       { $skip: (page - 1) * limit },
       { $limit: limit }
     ]).toArray();
-console.log(bookingsPromise)
+
     const [total, bookings] = await Promise.all([totalPromise, bookingsPromise]);
-console.log({
-      data: bookings,
-      pagination: {
-        page,
-        limit,
-        total : totalPromise,
-        totalPages: Math.ceil(total / limit)
-      }
-    })
+
     return NextResponse.json({
       data: bookings,
       pagination: {

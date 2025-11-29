@@ -87,9 +87,7 @@ export default function NewBookingsPage() {
     page,
     limit
   });
- 
-  console.log('Bookings:', bookings);
-console.log(bookings)
+
   const [updateBookingStatus] = useUpdateBookingStatusMutation();
   const [deleteBooking, { isLoading: isDeleting }] = useDeleteBookingMutation();
  const [confirmedPrice, setConfirmedPrice] = useState(0);

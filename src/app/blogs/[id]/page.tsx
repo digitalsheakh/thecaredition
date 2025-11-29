@@ -45,11 +45,11 @@ const calculateReadTime = (content: string): number => {
 // Data fetching function
 async function getBlogData(id: string): Promise<Blog | null> {
   try {
-    console.log(`Fetching blog data for ID: ${id}`);
+  
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001'}/api/blogs/${id}`);
-    console.log(`Response status: ${response.status}`, response.data);
+    
     if (response.data && response.status === 200) {
-      console.log('Successfully fetched blog data:', response.data);
+   
       return response.data;
     }
     
@@ -67,7 +67,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   try {
     const blog = await getBlogData(params.id);
-    console.log(`Generating metadata for blog ID: ${params.id}`, blog);
+
     if (!blog) {
       return {
         title: 'Blog Post Not Found',

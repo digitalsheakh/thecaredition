@@ -10,7 +10,6 @@ export async function POST(req :NextRequest) {
 
   try {
     const formInfo = await req.json();
-    console.log(formInfo)
     const result = await bookingsCollection.insertOne({ ...formInfo, createdAt : new Date() });
     return NextResponse.json(result, { status: 201 }); 
   } catch (error) {

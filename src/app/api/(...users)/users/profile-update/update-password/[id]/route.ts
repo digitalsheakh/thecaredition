@@ -44,7 +44,7 @@ export async function PATCH(req: NextRequest) {
 
     const filter = { _id: new ObjectId(`${id}`) };
     const update = await req.json();
-    console.log(update)
+
     const user = await usersCollection.findOne(filter);
 
     if (!user) {
@@ -55,7 +55,7 @@ export async function PATCH(req: NextRequest) {
  }
   const oldPasswords = user?.oldPasswords
   oldPasswords.push(update.currentPassword)
-  console.log(oldPasswords)
+
     const updateDoc = {
       $set: {
           password: update.newPassword, // "name"
@@ -64,7 +64,7 @@ export async function PATCH(req: NextRequest) {
     };
 
     const result = await usersCollection.updateOne(filter, updateDoc);
-    console.log(result)
+ 
     return NextResponse.json({ message: "password updated successfully", result }, { status: 200 });
   } catch (error) {
     console.error("Error updating password:", error);

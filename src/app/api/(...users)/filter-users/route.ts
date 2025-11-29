@@ -91,7 +91,6 @@ export async function GET(req: NextRequest) {
       { $skip: skip },
       { $limit: limit }
     ]).toArray();
-console.log(insitutes)
     const totalCount = await usersCollection.countDocuments(query);
 
     const response: ApiResponse = {

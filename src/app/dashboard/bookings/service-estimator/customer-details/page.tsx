@@ -22,7 +22,6 @@ export default function CustomerDetails() {
   const [selectedServiceIds, setSelectedServiceIds] = useState<string[]>([]);
   const [services, setServices] = useState<Service[]>([]);
   const [otherService, setOtherService] = useState('');
-  console.log(otherService)
   const [totalPrice, setTotalPrice] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -42,7 +41,6 @@ export default function CustomerDetails() {
         const storedServices = localStorage.getItem('selectedServices');
         const storedOtherService = localStorage.getItem('otherService');
         const storedPrice = localStorage.getItem('totalPrice');
-        console.log(storedVehicle, storedServices, storedOtherService, storedPrice)
         if (storedVehicle) setVehicle(JSON.parse(storedVehicle));
         if (storedServices) setSelectedServiceIds(JSON.parse(storedServices));
         if (storedOtherService) setOtherService(storedOtherService);
@@ -124,14 +122,7 @@ export default function CustomerDetails() {
       //   // localStorage.removeItem('otherService');
       //   // localStorage.removeItem('totalPrice');
       // }
-      console.log({
-          customer: { name, email, phone },
-          vehicle,
-          serviceIds: selectedServiceIds,
-          otherService,
-          totalPrice,
-          status: 'New Request'
-        })
+
          const res =   await axios.post('/api/bookings', {
           customer: { name, email, phone },
           vehicle : vehicle?.registrationNumber,

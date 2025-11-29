@@ -19,7 +19,6 @@ export default function SignInPage() {
 function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
   const { 
     register, 
     handleSubmit, 
@@ -43,11 +42,11 @@ function LoginPage() {
         password: data.password,
         redirect: false,
       });
-
       if (res?.error) {
         setError("Invalid email or password");
         setLoading(false);
       } else {
+
         // Keep loading state until navigation completes
         router.push("/dashboard");
         // Don't set loading to false here - let it stay until page changes
@@ -63,7 +62,7 @@ function LoginPage() {
       <div className="absolute inset-0 bg-black/80"></div>
       
       {/* Loading Overlay */}
-      {loading && (
+      {/* {loading && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-16 w-16 border-4 border-red-600 border-t-transparent mx-auto mb-6"></div>
@@ -71,7 +70,7 @@ function LoginPage() {
             <p className="text-gray-300 font-rajdhani animate-pulse">Please wait while we prepare your business dashboard...</p>
           </div>
         </div>
-      )}
+      )} */}
       
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}

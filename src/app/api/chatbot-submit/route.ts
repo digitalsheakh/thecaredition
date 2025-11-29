@@ -2,11 +2,11 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    console.log('Chatbot API route: Received request to submit chat inquiry');
+
     
     // Parse the request body
     const data = await request.json();
-    console.log('Chatbot API route: Parsed request data:', data);
+
     
     // Validate required fields
     if (!data.phone) {
@@ -41,17 +41,14 @@ export async function POST(request: Request) {
       status: 'New (Chat)' // Mark as coming from chat
     };
     
-    console.log('Chatbot API route: Formatted data for Google Sheets:', formattedData);
-    
     // Send data to Google Apps Script - using URLSearchParams for compatibility
     const params = new URLSearchParams();
     params.append('data', JSON.stringify(formattedData));
     
-    console.log('Chatbot API route: Sending data to Google Apps Script');
+
     
     // Use the same Google Apps Script URL as the service estimator
     const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbw8fi4RazRsJF4CFF7yISdXTm8pafuPygE-ItOHQIVXdL5tvxImxAppQ_SQVlCy6_Q0/exec';
-    console.log('Chatbot API route: Google Apps Script URL:', googleScriptUrl);
     
     const response = await fetch(googleScriptUrl, {
       method: 'POST',
@@ -61,15 +58,14 @@ export async function POST(request: Request) {
       body: params.toString(),
     });
     
-    console.log('Chatbot API route: Google Apps Script response status:', response.status);
+ 
     
     // Try to log the response body if possible
     let responseText = '';
     try {
       responseText = await response.text();
-      console.log('Chatbot API route: Google Apps Script response:', responseText);
     } catch (err) {
-      console.log('Chatbot API route: Could not read response body');
+
     }
     
     // Return success response with the Google Apps Script response

@@ -77,7 +77,7 @@ const ServiceEditForm = () => {
           basePrice: Number(data.basePrice)
         }
       }).unwrap();
-console.log(response?.result)
+
       if ( response?.result?.modifiedCount > 0) {
         toast.success("Service updated successfully");
         router.push('/dashboard/services-list');

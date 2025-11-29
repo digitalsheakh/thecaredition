@@ -208,7 +208,6 @@ export const fetchAdmissionsExamPending = createAsyncThunk<
   const response = await axios.get(
     `/api/filter-exam-pending-students?name=${data.searchTerm || ""}&page=${data.page}&limit=${data.limit}`
   );
-  console.log(response?.data)
   return response.data;
 });
 export const fetchAdmissionInsitutesExamPending = createAsyncThunk<
@@ -236,7 +235,6 @@ export const fetchCourseCompleted = createAsyncThunk<
   const response = await axios.get(
     `/api/filter-course-completed?name=${data.searchTerm || ""}&page=${data.page}&limit=${data.limit}`
   );
-  console.log(response?.data)
   return response.data;
 });
 export const fetchTotalStudentLength = createAsyncThunk("total-student-length/total-student-length-fetch", async () => {

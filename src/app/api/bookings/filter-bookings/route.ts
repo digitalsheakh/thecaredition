@@ -89,8 +89,7 @@ export async function GET(req: NextRequest) {
           // Get vehicle data
           const cleanReg = booking?.vehicle?.replace(/\s+/g, '').toUpperCase().toString();
           const vehicleData = await getVehicleByRegistration(cleanReg);
-console.log(vehicleData, "vehicleData");
-          // Get services data
+
           let services : services[] = [];
           if (booking.serviceIds && booking.serviceIds.length > 0) {
             const serviceIds = booking.serviceIds.map((id: string) => new ObjectId(id));
@@ -121,7 +120,6 @@ console.log(vehicleData, "vehicleData");
         }
       })
     );
-// console.log(enhancedBookings, "enhancedBookings");
     return NextResponse.json({
       data: enhancedBookings,
       pagination: {

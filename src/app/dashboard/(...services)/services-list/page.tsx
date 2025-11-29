@@ -101,13 +101,13 @@ export default function ServiceManagementPage() {
   };
 
   const handleLimitChange = (value: number) => {
-    console.log('Changing limit to:', value);
+
     setLimit(value);
     setPage(1);
   };
 
   const goToPage = (newPage: number) => {
-    console.log('Navigating to page:', newPage);
+ 
     setPage(newPage);
   };
 

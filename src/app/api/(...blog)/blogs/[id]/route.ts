@@ -21,7 +21,6 @@ export async function GET(req: NextRequest) {
   try {
     const blogsCollection = await dbConnect(collections.blogs);
     const id = req.nextUrl.pathname.split("/").pop();
-    console.log(`Fetching blog with ID: ${id}`);
     const blog = await blogsCollection.findOne({ _id: new ObjectId(id) });
 
     return NextResponse.json(blog, { status: 200 });

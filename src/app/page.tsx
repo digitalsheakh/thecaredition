@@ -3,68 +3,51 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
-
-
-// These components aren't needed or don't exist in the project
 import VideoPlayer from '@/components/VideoPlayer';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import { useSession } from 'next-auth/react';
 
 export default function Home() {
   const session = useSession();
-  console.log(session);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   
   useEffect(() => {
-    // Initialize slider position to start from left side
     if (sliderRef.current && scrollPosition === 0) {
       sliderRef.current.scrollLeft = 0;
       setScrollPosition(0);
     }
   }, []);
 
-  // Reference for the services slider
   const servicesSliderRef = useRef<HTMLDivElement>(null);
   const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
   
   useEffect(() => {
-    // Create continuous scrolling effect from left to right
     const animationInterval = setInterval(() => {
       if (sliderRef.current) {
-        // Get the total width of all items
         const totalWidth = sliderRef.current.scrollWidth;
         const containerWidth = sliderRef.current.clientWidth;
-        
-        // Increment scroll position (for left to right movement)
         let newPosition = scrollPosition + 1;
-        
-        // Reset when we reach the end
         if (newPosition >= totalWidth - containerWidth) {
-          // Jump back to start without animation
           sliderRef.current.scrollLeft = 0;
           newPosition = 0;
         } else {
-          // Smooth scroll to new position
           sliderRef.current.scrollLeft = newPosition;
         }
         
         setScrollPosition(newPosition);
       }
-    }, 20); // Update every 20ms for smooth animation
+    }, 20); 
     
     return () => clearInterval(animationInterval);
   }, [scrollPosition]);
-  
-  // Auto-scrolling effect for services slider
+
   useEffect(() => {
     if (!autoScrollEnabled) return;
     
     const servicesInterval = setInterval(() => {
       if (servicesSliderRef.current) {
         servicesSliderRef.current.scrollLeft += 1;
-        
-        // Reset when we reach the end
         if (servicesSliderRef.current.scrollLeft >= servicesSliderRef.current.scrollWidth - servicesSliderRef.current.clientWidth - 10) {
           servicesSliderRef.current.scrollLeft = 0;
         }
@@ -76,9 +59,7 @@ export default function Home() {
 
   return (
     <main className="  text-white font-heading bg-black">
-      {/* Hero Section with Services at Bottom */}
       <section className="relative min-h-screen flex flex-col">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/logos/backgroundlogo2.jpg"
@@ -92,12 +73,9 @@ export default function Home() {
             priority
           />
         </div>
-        
-        {/* Main Hero Content */}
         <div className="relative z-10 flex-1 flex items-center justify-center px-6">
           <div className="w-full max-w-screen-2xl mx-auto">
             <div className="text-center md:text-left">
-              {/* Clean Hero Headlines */}
               <div className="mb-12">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 uppercase font-orbitron tracking-wider text-white">
                   CAR CARE
@@ -105,8 +83,6 @@ export default function Home() {
                 <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 uppercase font-orbitron tracking-wider" style={{ color: '#fb9929' }}>
                   REDEFINED
                 </h2>
-                
-                {/* Simple Call to Action */}
                 <div className="mt-8">
                   <Link href="/service-estimator" className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-base font-bold uppercase font-orbitron tracking-wider transition-colors duration-300">
                     CALL US FOR AN ESTIMATE
@@ -116,14 +92,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
-        {/* Service Categories at Bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10 pb-8 md:pb-16">
           <div className="w-full px-6">
             <div className="max-w-screen-2xl mx-auto">
-              {/* Desktop view - Clean Grid */}
               <div className="hidden md:grid md:grid-cols-3 gap-8">
-                {/* ENGINE REPAIR & REBUILDS */}
                 <div className="flex items-start">
                   <div className="mr-4">
                     <Image
@@ -143,8 +115,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                
-                {/* MAINTENANCE & SERVICING */}
                 <div className="flex items-start">
                   <div className="mr-4">
                     <Image
@@ -164,8 +134,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                
-                {/* BUY OR SELL YOUR CAR */}
                 <div className="flex items-start">
                   <div className="mr-4">
                     <Image
@@ -186,8 +154,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            
-              {/* Mobile view - Clean Marquee */}
               <div className="md:hidden overflow-hidden">
                 <div className="flex whitespace-nowrap animate-marquee">
                   <style jsx>{`
@@ -200,8 +166,6 @@ export default function Home() {
                       min-width: 100%;
                     }
                   `}</style>
-                  
-                  {/* First set of service items */}
                   <div className="inline-flex items-start mx-4">
                     <div className="mr-4">
                       <Image
@@ -221,8 +185,6 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  
-                  {/* Second set of service items */}
                   <div className="inline-flex items-start mx-4">
                     <div className="mr-4">
                       <Image
@@ -242,8 +204,6 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  
-                  {/* Third set of service items */}
                   <div className="inline-flex items-start mx-4">
                     <div className="mr-4">
                       <Image

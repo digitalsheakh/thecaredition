@@ -105,7 +105,7 @@ const ShopForm = () => {
         content: data.content,
         imageUrls: imageUrls
       };
-      console.log(formData)
+   
       const res = await axios.post("/api/shops", formData);
       if (res?.data?.insertedId) {
         toast.success("Shop created successfully");

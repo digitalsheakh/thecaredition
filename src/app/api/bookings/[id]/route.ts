@@ -122,7 +122,6 @@ export async function DELETE(req: NextRequest) {
  
 
     const result = await admissionCollection.deleteOne(filter);
-console.log(result)
     if (result.deletedCount > 0) {
       return NextResponse.json({ message: "booking marked as deleted" ,  status: 200,...result  });
     } else {

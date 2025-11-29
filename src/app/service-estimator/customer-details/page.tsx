@@ -124,14 +124,7 @@ export default function CustomerDetails() {
       //   // localStorage.removeItem('otherService');
       //   // localStorage.removeItem('totalPrice');
       // }
-      console.log({
-          customer: { name, email, phone },
-          vehicle,
-          serviceIds: selectedServiceIds,
-          otherService,
-          totalPrice,
-          status: 'New Request'
-        })
+
          const res =   await axios.post('/api/bookings', {
           customer: { name, email, phone },
           vehicle : vehicle?.registrationNumber,

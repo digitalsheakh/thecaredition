@@ -43,9 +43,6 @@ export const authOptions: AuthOptions = {
         if (!user) {
           throw new Error("Invalid email or password");
         }
-
-console.log(user)
-
         return {
           id: user._id.toString(),
           name: user.name,
