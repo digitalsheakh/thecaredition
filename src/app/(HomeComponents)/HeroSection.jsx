@@ -120,29 +120,31 @@ const MobileServiceCategories = () => {
   ];
 
   return (
-    <div className="md:hidden overflow-hidden">
-      <div className="flex whitespace-nowrap animate-marquee">
+    <div className="md:hidden overflow-hidden -mt-8">
+      <div className="flex whitespace-nowrap animate-marquee-mobile">
         <style jsx>{`
-          @keyframes marquee {
+          @keyframes marquee-mobile {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-200%); }
           }
-          .animate-marquee {
-            animation: marquee 20s linear infinite;
+          .animate-marquee-mobile {
+            animation: marquee-mobile 12s linear infinite;
             min-width: 100%;
           }
         `}</style>
         
         {services.map((service, index) => (
-          <div key={index} className="inline-flex items-start mx-4">
+          <div key={index} className="inline-flex items-start mx-4 min-w-[280px]">
             <ServiceItem {...service} />
           </div>
         ))}
         
-        {/* Duplicate first item for continuous scrolling */}
-        <div className="inline-flex items-start mx-4">
-          <ServiceItem {...services[0]} />
-        </div>
+        {/* Duplicate items for continuous scrolling */}
+        {services.map((service, index) => (
+          <div key={`duplicate-${index}`} className="inline-flex items-start mx-4 min-w-[280px]">
+            <ServiceItem {...service} />
+          </div>
+        ))}
       </div>
     </div>
   );

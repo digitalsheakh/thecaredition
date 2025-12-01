@@ -253,29 +253,16 @@ export default function Header() {
       <div className='flex justify-center items-center h-12 bg-white shadow-lg'>
         <p className='text-gray-800 text-xs md:text-sm font-semibold font-orbitron tracking-wide uppercase px-4 text-center'>SAVE £10 OFF YOUR FIRST SERVICE WHEN YOU BOOK ONLINE</p>
       </div>
-      {/* Mobile Navigation - Half Page Sidebar */}
+      {/* Mobile Navigation - Full Screen */}
       <div 
-        className={`fixed inset-0 z-[100] transition-all duration-300 ${
-          isMobileMenuOpen ? 'visible' : 'invisible'
+        ref={mobileMenuRef}
+        className={`fixed inset-0 z-[100] bg-black transform transition-transform duration-300 ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         aria-hidden={!isMobileMenuOpen}
       >
-        {/* Backdrop */}
-        <div 
-          className={`absolute inset-0 bg-black/80 transition-opacity duration-300 ${
-            isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
-          }`}
-          onClick={closeMobileMenu}
-        />
-        
-        {/* Sidebar */}
-        <div 
-          className={`absolute top-0 left-0 h-full w-80 bg-black transform transition-transform duration-300 ${
-            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
-        >
-          {/* Mobile Logo */}
-          <div className="flex items-center justify-center p-6 border-b border-gray-800">
+          {/* Mobile Logo - Left Aligned */}
+          <div className="flex items-center justify-start p-6 border-b border-gray-800">
             <Link href="/" className="group" onClick={closeMobileMenu}>
               <Image 
                 src="/images/logos/website_logo.png" 
@@ -289,18 +276,10 @@ export default function Header() {
           </div>
           
           <nav className="flex flex-col flex-1 bg-black">
-            {/* Services with Hover/Click Dropdown */}
-            <div 
-              className="border-b border-gray-800 group"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-            >
+            {/* Services with Click Dropdown */}
+            <div className="border-b border-gray-800">
               <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setIsServicesOpen(!isServicesOpen);
-                }}
+                onClick={toggleServices}
                 className="w-full px-6 py-4 text-white text-base font-orbitron uppercase tracking-wider flex items-center justify-between hover:bg-gray-800 transition-colors"
               >
                 SERVICES
@@ -369,7 +348,6 @@ export default function Header() {
               </Link>
             </div>
           </nav>
-        </div>
       </div>
     </header>
   );

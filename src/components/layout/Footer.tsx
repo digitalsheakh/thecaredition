@@ -15,8 +15,8 @@ export default function Footer() {
           {/* Logo and social media */}
           <div className="flex flex-col lg:flex-row justify-between items-center mb-16">
             <div className="flex items-center mb-8 lg:mb-0">
-              <span className="text-red-600 font-bold text-4xl font-orbitron uppercase tracking-wider">THE CAR</span>
-              <span className="text-white font-bold text-4xl font-orbitron uppercase tracking-wider ml-2">EDITION</span>
+              <span className="text-red-600 font-bold text-2xl sm:text-3xl lg:text-4xl font-orbitron uppercase tracking-wider">THE CAR</span>
+              <span className="text-white font-bold text-2xl sm:text-3xl lg:text-4xl font-orbitron uppercase tracking-wider ml-2">EDITION</span>
             </div>
             <div className="flex space-x-6">
               <a href="#" className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-white hover:bg-red-600 hover:text-white transition-all duration-300 group">

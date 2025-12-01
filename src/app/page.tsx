@@ -708,7 +708,7 @@ export default function Home() {
         <div className="w-full px-6 relative z-10">
           <div className="max-w-screen-2xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-16">
-              <div className="lg:w-1/2">
+              <div className="lg:w-1/2 order-2 lg:order-1">
                 <div className="border-l-4 border-red-600 pl-6 mb-8">
                   <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     EXCLUSIVE MEMBERSHIP PROGRAM
@@ -752,7 +752,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="lg:w-1/2">
+              <div className="lg:w-1/2 order-1 lg:order-2">
                 <div className="relative">
                   <Image
                     src="/images/logos/rentacarimage.jpg"
@@ -1062,7 +1062,7 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row items-center gap-16">
               
               {/* Left Content */}
-              <div className="lg:w-1/2">
+              <div className="lg:w-1/2 order-2 lg:order-1">
                 <div className="border-l-4 border-red-600 pl-6 mb-8">
                   <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     BOOK YOUR SERVICE TODAY
@@ -1108,13 +1108,14 @@ export default function Home() {
               </div>
               
               {/* Right Image */}
-              <div className="lg:w-1/2">
-                <div className="relative h-full min-h-[500px]">
+              <div className="lg:w-1/2 order-1 lg:order-2">
+                <div className="relative">
                   <Image
                     src="/images/logos/youtube_logo.jpg"
                     alt="Professional automotive service booking"
-                    fill
-                    className="rounded-2xl shadow-2xl border border-gray-800 object-cover"
+                    width={600}
+                    height={400}
+                    className="rounded-2xl shadow-2xl border border-gray-800 object-cover w-full h-auto"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                   
