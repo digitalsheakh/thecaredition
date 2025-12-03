@@ -47,6 +47,55 @@ export default function ServicesPage() {
       description: 'Professional tyre fitting and puncture repair services to keep you safe on the road.',
       image: '/images/tyres-and-puncture.jpeg',
       category: 'TYRES & WHEELS'
+    },
+    {
+      id: 'transmission',
+      title: 'TRANSMISSION REPAIR',
+      description: 'Expert transmission repair and maintenance for automatic and manual gearboxes.',
+      image: '/images/services/serviceimage1.jpg',
+      category: 'TRANSMISSION'
+    },
+    {
+      id: 'carbon-clean',
+      title: 'CARBON CLEAN',
+      description: 'Professional engine carbon cleaning to restore performance and efficiency.',
+      image: '/images/services/serviceimage2.jpg',
+      category: 'ENGINE SERVICES'
+    },
+    {
+      id: 'electrical-repair',
+      title: 'ELECTRICAL REPAIR',
+      description: 'Expert automotive electrical diagnostics and repair for all vehicle systems.',
+      image: '/images/services/serviceimage3.jpg',
+      category: 'ELECTRICAL'
+    },
+    {
+      id: 'interior-repair',
+      title: 'INTERIOR REPAIR',
+      description: 'Professional car interior repair and restoration services for leather, upholstery, and trim.',
+      image: '/images/services/serviceimage4.jpg',
+      category: 'INTERIOR'
+    },
+    {
+      id: 'servicing',
+      title: 'CAR SERVICING',
+      description: 'Comprehensive car servicing to keep your vehicle running at its best.',
+      image: '/images/services/serviceimage5.jpg',
+      category: 'MAINTENANCE'
+    },
+    {
+      id: 'customisation',
+      title: 'CUSTOMISATION',
+      description: 'Transform your vehicle with star lights, dash cams, and in-car entertainment systems.',
+      image: '/images/services/serviceimage1.jpg',
+      category: 'CUSTOMISATION'
+    },
+    {
+      id: 'air-conditioning',
+      title: 'AIR CONDITIONING',
+      description: 'Professional air conditioning service and repair to keep you cool and comfortable.',
+      image: '/images/services/serviceimage2.jpg',
+      category: 'CLIMATE CONTROL'
     }
   ];
 
