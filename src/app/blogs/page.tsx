@@ -6,12 +6,6 @@ import Link from 'next/link';
 import { FaCalendarAlt, FaEye, FaArrowRight, FaClock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import axios from 'axios';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { useRouter } from 'next/navigation';
 
 interface BlogPost {
@@ -26,8 +20,6 @@ export default function BlogPage() {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -47,8 +39,7 @@ export default function BlogPage() {
   }, []);
 
   const openBlogDialog = (blog: BlogPost) => {
-    setSelectedBlog(blog);
-    setIsDialogOpen(true);
+    router.push(`/blogs/${blog._id}`);
   };
 
   const formatDate = (dateString: string) => {
@@ -179,45 +170,6 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-      
-
-      {/* Blog Detail Dialog */}
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-4xl bg-gray-900/95 backdrop-blur-sm border border-gray-700 text-white max-h-[90vh] overflow-y-auto rounded-2xl p-6">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-white mb-2 font-orbitron uppercase tracking-wide">
-              {selectedBlog?.title}
-            </DialogTitle>
-            {selectedBlog && (
-              <div className="flex items-center text-sm text-gray-400 font-rajdhani">
-                <FaCalendarAlt className="mr-2 text-red-600" />
-                <span>{formatDate(selectedBlog.createdAt)}</span>
-                <span className="mx-2">•</span>
-                <FaClock className="mr-2 text-red-600" />
-                <span>5 min read</span>
-              </div>
-            )}
-          </DialogHeader>
-          
-          {selectedBlog && (
-            <div className="space-y-6 mt-6">
-              <div className="relative aspect-video w-full rounded-xl overflow-hidden border border-gray-600">
-                <Image
-                  src={selectedBlog.imageUrl}
-                  alt={selectedBlog.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              
-              <div 
-                className="prose prose-invert max-w-none prose-headings:text-red-600 prose-headings:font-orbitron prose-headings:uppercase prose-headings:tracking-wide prose-p:text-gray-300 prose-p:font-rajdhani prose-strong:text-white prose-a:text-red-600 hover:prose-a:text-red-400"
-                dangerouslySetInnerHTML={{ __html: selectedBlog.content }}
-              />
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

@@ -186,108 +186,143 @@ const BlogDetails = async ({ params }: BlogDetailsProps) => {
   const formattedDate = moment(blog.createdAt).format('MMMM D, YYYY');
 
   return (
-    <article className="bg-[#1A1A1A] border border-white/10 text-white min-h-screen">
-      <div className="max-w-6xl mx-auto p-6 pt-40 pb-16">
-        <p className='text-white my-5 font-semibold'>Homepage - Blog - <span className='text-red-500'>{blog.title}</span></p>
-        {/* Header Section */}
-        <header className="mb-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            {blog.title}
-          </h1>
-          
-          {/* Meta Information */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-6">
-            <div className="flex items-center">
-              <FaCalendarAlt className="mr-2 text-red-500" />
-              <time dateTime={blog.createdAt}>
-                {formattedDate}
-              </time>
-            </div>
-            
-            <span className="text-gray-600">•</span>
-            
-            <div className="flex items-center">
-              <FaClock className="mr-2 text-red-500" />
-              <span>{readTime} min read</span>
-            </div>
+    <article className="min-h-screen bg-black text-white">
+      {/* Hero Section with Background */}
+      <section className="relative pt-32 pb-16 bg-black" style={{backgroundImage: 'url(/images/logos/background-1.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/80"></div>
+        
+        <div className="w-full px-6 relative z-10">
+          <div className="max-w-5xl mx-auto">
+            {/* Breadcrumb */}
+            <nav className="mb-8">
+              <p className='text-gray-400 font-rajdhani text-sm'>
+                <a href="/" className="hover:text-red-600 transition-colors">Home</a>
+                <span className="mx-2">/</span>
+                <a href="/blogs" className="hover:text-red-600 transition-colors">Blog</a>
+                <span className="mx-2">/</span>
+                <span className='text-red-600'>{blog.title}</span>
+              </p>
+            </nav>
 
-            {blog.author && (
-              <>
-                <span className="text-gray-600">•</span>
+            {/* Header Section */}
+            <header className="mb-8">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight font-orbitron uppercase tracking-wider">
+                {blog.title}
+              </h1>
+              
+              {/* Meta Information */}
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300 mb-6 font-rajdhani">
                 <div className="flex items-center">
-                  <span>By {blog.author}</span>
+                  <FaCalendarAlt className="mr-2 text-red-600" />
+                  <time dateTime={blog.createdAt}>
+                    {formattedDate}
+                  </time>
                 </div>
-              </>
-            )}
+                
+                <span className="text-gray-600">•</span>
+                
+                <div className="flex items-center">
+                  <FaClock className="mr-2 text-red-600" />
+                  <span>{readTime} min read</span>
+                </div>
+
+                {blog.author && (
+                  <>
+                    <span className="text-gray-600">•</span>
+                    <div className="flex items-center">
+                      <span>By {blog.author}</span>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Tags */}
+              {blog.tags && blog.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {blog.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-red-600/20 text-red-400 text-xs font-rajdhani font-bold uppercase tracking-wider rounded border border-red-600/30 hover:bg-red-600/30 transition-colors"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </header>
           </div>
-
-          {/* Tags */}
-          {blog.tags && blog.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-6">
-              {blog.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded-full border border-red-500/30"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </header>
-
-        {/* Featured Image */}
-        <div className="relative aspect-video w-full rounded-xl overflow-hidden mb-8 shadow-2xl">
-          <Image
-            src={blog.imageUrl}
-            alt={blog.title}
-            fill
-            className="object-cover transition-transform duration-300 hover:scale-105"
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-          />
         </div>
+      </section>
 
-        {/* Blog Description */}
-        {blog.description && (
-          <div className="mb-8 p-6 bg-white/5 border border-white/10 rounded-xl">
-            <p className="text-lg text-gray-300 italic leading-relaxed">
-              {blog.description}
-            </p>
+      {/* Featured Image */}
+      <section className="w-full px-6 -mt-8 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl border-4 border-gray-900">
+            <Image
+              src={blog.imageUrl}
+              alt={blog.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            />
           </div>
-        )}
+        </div>
+      </section>
 
-        {/* Blog Content */}
-        <div 
-          className="prose prose-invert prose-lg max-w-none 
-                     prose-headings:text-white prose-headings:font-bold
-                     prose-p:text-gray-300 prose-p:leading-relaxed
-                     prose-strong:text-white prose-strong:font-semibold
-                     prose-a:text-red-500 prose-a:no-underline hover:prose-a:text-red-400 hover:prose-a:underline
-                     prose-blockquote:border-l-red-500 prose-blockquote:bg-white/5 prose-blockquote:p-4 prose-blockquote:rounded
-                     prose-code:text-red-400 prose-code:bg-white/10 prose-code:px-2 prose-code:py-1 prose-code:rounded
-                     prose-pre:bg-black/50 prose-pre:border prose-pre:border-white/10
-                     prose-ul:text-gray-300 prose-ol:text-gray-300
-                     prose-li:text-gray-300 prose-li:marker:text-red-500
-                     prose-img:rounded-lg prose-img:shadow-lg"
-          dangerouslySetInnerHTML={{ __html: blog.content }}
-        />
+      {/* Blog Content Section */}
+      <section className="relative w-full py-16 bg-black" style={{backgroundImage: 'url(/images/logos/background-1.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/80"></div>
+        
+        <div className="w-full px-6 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            {/* Blog Description */}
+            {blog.description && (
+              <div className="mb-12 p-8 bg-gray-900/50 border border-red-600/30 rounded-xl backdrop-blur-sm">
+                <p className="text-xl text-gray-200 italic leading-relaxed font-rajdhani">
+                  {blog.description}
+                </p>
+              </div>
+            )}
 
-        {/* Footer */}
-        <footer className="mt-12 pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div className="text-sm text-gray-400">
-              Published on {formattedDate}
-              {blog.author && ` by ${blog.author}`}
-            </div>
-            
-            {/* Social Share Buttons - You can add them here */}
-            <div className="flex gap-2">
-              {/* Add your social share buttons here */}
-            </div>
+            {/* Blog Content */}
+            <div 
+              className="prose prose-invert prose-lg max-w-none 
+                         prose-headings:text-white prose-headings:font-orbitron prose-headings:uppercase prose-headings:tracking-wider prose-headings:font-bold
+                         prose-h1:text-4xl prose-h2:text-3xl prose-h2:border-l-4 prose-h2:border-red-600 prose-h2:pl-4 prose-h2:py-2
+                         prose-h3:text-2xl prose-h3:text-red-600
+                         prose-p:text-gray-300 prose-p:leading-relaxed prose-p:font-rajdhani prose-p:text-lg
+                         prose-strong:text-white prose-strong:font-semibold
+                         prose-a:text-red-500 prose-a:underline hover:prose-a:text-red-400 prose-a:font-semibold prose-a:transition-colors
+                         prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:bg-gray-900/50 prose-blockquote:p-6 prose-blockquote:rounded-lg prose-blockquote:italic
+                         prose-code:text-red-400 prose-code:bg-gray-900/50 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:font-mono
+                         prose-pre:bg-gray-900/50 prose-pre:border prose-pre:border-gray-700 prose-pre:rounded-lg
+                         prose-ul:text-gray-300 prose-ul:font-rajdhani prose-ol:text-gray-300 prose-ol:font-rajdhani
+                         prose-li:text-gray-300 prose-li:marker:text-red-600 prose-li:font-rajdhani
+                         prose-img:rounded-xl prose-img:shadow-2xl prose-img:border-4 prose-img:border-gray-800"
+              dangerouslySetInnerHTML={{ __html: blog.content }}
+            />
+
+            {/* Footer */}
+            <footer className="mt-16 pt-8 border-t border-gray-700">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div className="text-sm text-gray-400 font-rajdhani">
+                  Published on <span className="text-red-600 font-semibold">{formattedDate}</span>
+                  {blog.author && <span> by <span className="text-white font-semibold">{blog.author}</span></span>}
+                </div>
+                
+                {/* Back to Blog Button */}
+                <a 
+                  href="/blogs"
+                  className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded font-rajdhani font-bold uppercase tracking-wider transition-all duration-300"
+                >
+                  ← Back to Blog
+                </a>
+              </div>
+            </footer>
           </div>
-        </footer>
-      </div>
+        </div>
+      </section>
     </article>
   );
 };
