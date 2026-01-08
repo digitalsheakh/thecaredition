@@ -41,41 +41,32 @@ export default function VideoPlayer({ videoId, thumbnailSrc }: VideoPlayerProps)
   }, [videoId, isPlaying]);
   
   return (
-    <div className="bg-[#f56e13] rounded-lg overflow-hidden mt-6 max-w-3xl mx-auto">
-      <div className="flex flex-col md:flex-row">
-        <div className="md:w-1/2 relative p-3">
-          {!isPlaying ? (
-            <div 
-              className="relative aspect-video cursor-pointer group" 
-              onClick={() => setIsPlaying(true)}
-            >
-              <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#e11d48" className="w-8 h-8">
-                    <path d="M8 5.14v14l11-7-11-7z" />
-                  </svg>
-                </div>
+    <div className="w-full">
+      <div className="relative aspect-video rounded-xl overflow-hidden bg-black group">
+        {!isPlaying ? (
+          <div 
+            className="relative w-full h-full cursor-pointer" 
+            onClick={() => setIsPlaying(true)}
+          >
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <div className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 group-hover:bg-red-700">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-10 h-10 ml-1">
+                  <path d="M8 5.14v14l11-7-11-7z" />
+                </svg>
               </div>
-              <Image
-                src={thumbnailSrc}
-                alt="Video Thumbnail"
-                width={300}
-                height={200}
-                className="w-full h-full object-cover rounded-md"
-              />
             </div>
-          ) : (
-            <div className="aspect-video" ref={playerContainerRef}></div>
-          )}
-        </div>
-        <div className="md:w-1/2 p-4">
-          <p className="text-white text-base">
-            At The Car Edition, you'll get a personalised video of your service! 🎥
-          </p>
-          <Link href="/service-estimator" className="inline-block mt-4 bg-white hover:bg-gray-100 text-black px-6 py-2 rounded-md uppercase text-sm transition-colors duration-200">
-            BOOK SERVICE
-          </Link>
-        </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <Image
+              src={thumbnailSrc}
+              alt="Video Thumbnail"
+              width={800}
+              height={450}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ) : (
+          <div className="aspect-video w-full h-full" ref={playerContainerRef}></div>
+        )}
       </div>
     </div>
   );

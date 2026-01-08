@@ -258,7 +258,7 @@ export default function Home() {
           <div className="hidden md:block px-4">
             <div className="max-w-screen-2xl mx-auto">
               <p className="text-white text-center text-base font-bold uppercase tracking-wide">
-                GET 10% OFF YOUR FIRST SERVICE + FREE BRAKE FLUID TOP UP WHEN YOU SIGN UP TO OUR REWARDS PROGRAM!
+                FLEET SERVICE DISCOUNT AVAILABLE
               </p>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function Home() {
                 }
               `}</style>
               <p className="text-white text-base font-bold uppercase tracking-wide">
-                GET 10% OFF YOUR FIRST SERVICE + FREE BRAKE FLUID TOP UP WHEN YOU SIGN UP TO OUR REWARDS PROGRAM!&nbsp;&nbsp;&nbsp;&nbsp;GET 10% OFF YOUR FIRST SERVICE + FREE BRAKE FLUID TOP UP WHEN YOU SIGN UP TO OUR REWARDS PROGRAM!
+                FLEET SERVICE DISCOUNT AVAILABLE&nbsp;&nbsp;&nbsp;&nbsp;FLEET SERVICE DISCOUNT AVAILABLE&nbsp;&nbsp;&nbsp;&nbsp;FLEET SERVICE DISCOUNT AVAILABLE
               </p>
             </div>
           </div>
@@ -290,8 +290,8 @@ export default function Home() {
         <div className="w-full px-6 relative z-10">
           <div className="max-w-screen-2xl mx-auto">
             <div className="text-center mb-16">
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+              <div className="border-l-4 border-orange-500 pl-6 mb-8 inline-block">
+                <p className="text-orange-500 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                   PROFESSIONAL CAR SERVICES
                 </p>
               </div>
@@ -303,11 +303,11 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
               {/* Service Card 1 - FULL SERVICE */}
-              <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-red-600 transition-all duration-300 group h-full flex flex-col">
+              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
                 <div className="p-8 flex-1 flex flex-col">
                   <div className="mb-4">
                     <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">FULL SERVICE</h3>
-                    <p className="text-xs text-red-400 font-rajdhani uppercase tracking-wider">PREMIUM PACKAGE</p>
+                    <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">PREMIUM PACKAGE</p>
                   </div>
                   
                   <div className="mb-6">
@@ -317,35 +317,35 @@ export default function Home() {
                   
                   <div className="space-y-3 mb-8">
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Oil & Filter Change</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Brake System Check</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Engine Diagnostics</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Safety Inspection</span>
                     </div>
                   </div>
                   
-                  <button className="w-full bg-red-600 hover:bg-red-700 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
                     BOOK NOW
                   </button>
                 </div>
               </div>
             
               {/* Service Card 2 - INTERIM SERVICE */}
-              <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-red-600 transition-all duration-300 group h-full flex flex-col">
+              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
                 <div className="p-8 flex-1 flex flex-col">
                   <div className="mb-4">
                     <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">INTERIM SERVICE</h3>
-                    <p className="text-xs text-red-400 font-rajdhani uppercase tracking-wider">ESSENTIAL PACKAGE</p>
+                    <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">ESSENTIAL PACKAGE</p>
                   </div>
                   
                   <div className="mb-6">
@@ -355,35 +355,35 @@ export default function Home() {
                   
                   <div className="space-y-3 mb-8">
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Oil Change</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Basic Inspection</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Fluid Top-up</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Tyre Check</span>
                     </div>
                   </div>
                   
-                  <button className="w-full bg-red-600 hover:bg-red-700 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
                     BOOK NOW
                   </button>
                 </div>
               </div>
             
               {/* Service Card 3 - GEARBOX SERVICE */}
-              <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-red-600 transition-all duration-300 group h-full flex flex-col">
+              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
                 <div className="p-8 flex-1 flex flex-col">
                   <div className="mb-4">
                     <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">GEARBOX SERVICE</h3>
-                    <p className="text-xs text-red-400 font-rajdhani uppercase tracking-wider">SPECIALIST SERVICE</p>
+                    <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">SPECIALIST SERVICE</p>
                   </div>
                   
                   <div className="mb-6">
@@ -393,35 +393,35 @@ export default function Home() {
                   
                   <div className="space-y-3 mb-8">
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Gearbox Oil Change</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Filter Replacement</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">System Diagnostics</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Performance Test</span>
                     </div>
                   </div>
                   
-                  <button className="w-full bg-red-600 hover:bg-red-700 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
                     BOOK NOW
                   </button>
                 </div>
               </div>
             
               {/* Service Card 4 - TIMING BELT */}
-              <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-red-600 transition-all duration-300 group h-full flex flex-col">
+              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
                 <div className="p-8 flex-1 flex flex-col">
                   <div className="mb-4">
                     <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">TIMING BELT</h3>
-                    <p className="text-xs text-red-400 font-rajdhani uppercase tracking-wider">CRITICAL SERVICE</p>
+                    <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">CRITICAL SERVICE</p>
                   </div>
                   
                   <div className="mb-6">
@@ -431,35 +431,35 @@ export default function Home() {
                   
                   <div className="space-y-3 mb-8">
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Belt Replacement</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Tensioner Check</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Water Pump Inspection</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Engine Timing</span>
                     </div>
                   </div>
                   
-                  <button className="w-full bg-red-600 hover:bg-red-700 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
                     BOOK NOW
                   </button>
                 </div>
               </div>
             
               {/* Service Card 5 - WINTER PACKAGE */}
-              <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-red-600 transition-all duration-300 group h-full flex flex-col">
+              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
                 <div className="p-8 flex-1 flex flex-col">
                   <div className="mb-4">
                     <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">WINTER PACKAGE</h3>
-                    <p className="text-xs text-red-400 font-rajdhani uppercase tracking-wider">SEASONAL SPECIAL</p>
+                    <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">SEASONAL SPECIAL</p>
                   </div>
                   
                   <div className="mb-6">
@@ -469,24 +469,24 @@ export default function Home() {
                   
                   <div className="space-y-3 mb-8">
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Battery Test</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Antifreeze Check</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Tyre Condition</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       <span className="text-gray-300 font-rajdhani text-sm">Heating System</span>
                     </div>
                   </div>
                   
-                  <button className="w-full bg-red-600 hover:bg-red-700 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto">
                     BOOK NOW
                   </button>
                 </div>
@@ -661,21 +661,25 @@ export default function Home() {
           <div className="max-w-screen-2xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2">
-                <div className="relative">
-                  <Image 
-                    src="/images/logos/about us image.jpg" 
-                    alt="Professional automotive service at The Car Edition" 
-                    width={700} 
-                    height={500} 
-                    className="rounded-2xl shadow-2xl border border-gray-800" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+                  <video 
+                    src="/video/the_car_editon.mp4" 
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    className="w-full h-auto"
+                    poster="/images/logos/about us image.jpg"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               <div className="lg:w-1/2">
                 <div className="border-l-4 border-red-600 pl-6 mb-8">
                   <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                    AUTOMOTIVE EXCELLENCE SINCE 2008
+                    15 YEARS OF AUTOMOTIVE EXCELLENCE
                   </p>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-4">
@@ -685,14 +689,14 @@ export default function Home() {
                   THE CAR EDITION
                 </h3>
                 <p className="text-lg text-gray-300 font-rajdhani leading-relaxed mb-8">
-                  The Car Edition is a trusted provider of high-quality used cars and comprehensive automotive services. Our qualified team of mechanics delivers professional solutions for all your vehicle needs, from routine maintenance to complex engine rebuilds and advanced diagnostics.
+                  With 15 years of experience, The Car Edition is a trusted provider of high-quality used cars and comprehensive automotive services. Our qualified team of mechanics delivers professional solutions for all your vehicle needs, from routine maintenance to complex engine rebuilds and advanced diagnostics.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/services" className="inline-flex items-center bg-white text-black hover:bg-gray-200 px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
                     <span className="mr-3 text-red-600 text-lg">+</span> EXPLORE SERVICES
                   </Link>
-                  <Link href="/videos" className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
-                    <span className="mr-3 text-lg">⏵</span> WELCOME VIDEO
+                  <Link href="/about-us" className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
+                    <span className="mr-3 text-lg">→</span> LEARN MORE
                   </Link>
                 </div>
               </div>
@@ -723,12 +727,12 @@ export default function Home() {
                   Earn points for every service visit and unlock exclusive rewards. Get MOT and service reminders, priority booking, and special member discounts. Start with 5,000 bonus points when you join today!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
-                    CLAIM 5K POINTS NOW
-                  </button>
-                  <button className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg">
+                  <Link href="/join-members-club" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg text-center">
+                    JOIN NOW
+                  </Link>
+                  <Link href="/join-members-club" className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg text-center">
                     LEARN MORE
-                  </button>
+                  </Link>
                 </div>
                 
                 {/* Member Benefits */}
@@ -849,6 +853,142 @@ export default function Home() {
                     videoId="-Jz8jyMPt2U" 
                     thumbnailSrc="/images/logos/youtube_logo.jpg" 
                   />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Service Your Car With Us Section */}
+      <section className="py-20 bg-black">
+        <div className="w-full px-6">
+          <div className="max-w-screen-2xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <div className="border-l-4 border-red-600 pl-4 mb-6 inline-block">
+                <p className="text-red-600 text-xs font-bold uppercase tracking-wider font-rajdhani">
+                  PROFESSIONAL SERVICES
+                </p>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-4">
+                WHY SERVICE WITH US?
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* Left side - Video Section */}
+              <div className="order-2 lg:order-1">
+                <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+                  <div className="p-6 lg:p-8">
+                    <h3 className="text-white font-orbitron font-bold text-xl lg:text-2xl mb-6 uppercase tracking-wide">
+                      Watch Our Story
+                    </h3>
+                    <div className="relative rounded-xl overflow-hidden mb-6 shadow-lg">
+                      <VideoPlayer 
+                        videoId="-Jz8jyMPt2U" 
+                        thumbnailSrc="/images/logos/youtube_logo.jpg" 
+                      />
+                    </div>
+                    <p className="text-gray-300 font-rajdhani text-base leading-relaxed">
+                      Discover how we deliver professional automotive services with certified mechanics and quality parts.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right side - Content */}
+              <div className="order-1 lg:order-2 space-y-8">
+                {/* 6 Points */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
+                      <div>
+                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Main dealer experience</h4>
+                        <p className="text-gray-400 font-rajdhani text-sm">Professional service standards</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
+                      <div>
+                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Competitive pricing</h4>
+                        <p className="text-gray-400 font-rajdhani text-sm">Fair and transparent costs</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
+                      <div>
+                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Industry specialists</h4>
+                        <p className="text-gray-400 font-rajdhani text-sm">Expert certified technicians</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
+                      <div>
+                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Globally recognised</h4>
+                        <p className="text-gray-400 font-rajdhani text-sm">Trusted worldwide standards</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
+                      <div>
+                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Quality OEM parts</h4>
+                        <p className="text-gray-400 font-rajdhani text-sm">Original manufacturer parts</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
+                      <div>
+                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Full transparency</h4>
+                        <p className="text-gray-400 font-rajdhani text-sm">Clear communication always</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Google Reviews Box */}
+                <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 lg:p-8 border border-gray-800 shadow-2xl">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <div className="flex-shrink-0">
+                      <svg className="w-16 h-16 lg:w-20 lg:h-20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFC107"/>
+                        <path d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z" fill="#FF3D00"/>
+                        <path d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" fill="#4CAF50"/>
+                        <path d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z" fill="#1976D2"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-white font-orbitron font-bold text-xl lg:text-2xl mb-3 uppercase tracking-wide">
+                        Excellent Reviews
+                      </h3>
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-yellow-400 text-3xl">★★★★★</span>
+                        <span className="text-white font-rajdhani font-bold text-xl">4.9 / 5</span>
+                      </div>
+                      <p className="text-gray-300 font-rajdhani text-base mb-4">
+                        Based on 500+ customer reviews
+                      </p>
+                      <a 
+                        href="https://share.google/RJjOEiKvxHkePxjhh" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-red-600/50"
+                      >
+                        Read Reviews →
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1109,13 +1249,13 @@ export default function Home() {
               
               {/* Right Image */}
               <div className="lg:w-1/2 order-1 lg:order-2">
-                <div className="relative">
+                <div className="relative w-full max-w-2xl mx-auto">
                   <Image
                     src="/images/logos/youtube_logo.jpg"
                     alt="Professional automotive service booking"
                     width={600}
                     height={400}
-                    className="rounded-2xl shadow-2xl border border-gray-800 object-cover w-full h-auto"
+                    className="rounded-2xl shadow-2xl border border-gray-800 object-cover w-full h-full max-h-[400px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                   
