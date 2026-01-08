@@ -277,8 +277,32 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
               addHiddenField('totalPrice', '0'); // No price calculation in chatbot
               addHiddenField('notes', input || 'Inquiry from chat'); // Additional notes
               
-              // Submit the form to the hidden iframe
+              // Submit the form to the hidden iframe (Google Sheets)
               formRef.current.submit();
+              
+              // Also save to MongoDB via API
+              try {
+                await fetch('/api/chat-leads', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    name: newData.name,
+                    email: newData.email,
+                    phone: newData.phone,
+                    carRegistration: newData.carRegistration,
+                    vehicleMake: newData.vehicleMake || '',
+                    vehicleModel: newData.vehicleModel || '',
+                    vehicleYear: newData.vehicleYear || '',
+                    engineSize: newData.engineSize || '',
+                    query: newData.query,
+                  }),
+                });
+              } catch (mongoError) {
+                console.error("Error saving to MongoDB:", mongoError);
+                // Continue even if MongoDB save fails - Google Sheets is primary
+              }
             }
           
           setIsTyping(false);
@@ -382,34 +406,41 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
       {/* Hidden form for submissions */}
       <form ref={formRef} style={{display: 'none'}}></form>
 
-      {/* Chat window */}
+      {/* Chat window - Redesigned to match website theme */}
       <AnimatePresence>
         {(
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-20 right-6 w-80 sm:w-96 h-[500px] bg-gray-900 rounded-lg shadow-xl overflow-hidden z-50 border border-gray-700"
+            className="fixed bottom-4 right-4 w-[calc(100vw-2rem)] sm:w-96 max-w-md h-[600px] sm:h-[550px] bg-black rounded-xl shadow-2xl overflow-hidden z-50 border-2 border-red-600"
           >
-            {/* Chat header */}
-            <div className="bg-gray-800 p-4 flex justify-between items-center border-b border-gray-700">
-              <div className="flex items-center">
-                <div className="bg-orange-500 rounded-full h-8 w-8 flex items-center justify-center mr-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* Chat header - Matching website design */}
+            <div className="bg-gradient-to-r from-black to-gray-900 p-4 flex justify-between items-center border-b-2 border-red-600">
+              <div className="flex items-center gap-3">
+                <div className="bg-red-600 rounded-full h-10 w-10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                   </svg>
                 </div>
-                <h3 className="text-white font-semibold">The Car Edition Chat</h3>
+                <div>
+                  <h3 className="text-white font-bold font-orbitron text-sm uppercase tracking-wider">Live Chat</h3>
+                  <p className="text-gray-400 text-xs font-rajdhani">We're here to help</p>
+                </div>
               </div>
-              <button onClick={onClose} className="text-gray-400 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <button 
+                onClick={onClose} 
+                className="text-gray-400 hover:text-red-600 transition-colors p-1"
+                aria-label="Close chat"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
 
-            {/* Chat messages */}
-            <div className="p-4 h-[380px] overflow-y-auto bg-gray-900">
+            {/* Chat messages - Better mobile scrolling */}
+            <div className="p-4 h-[calc(100%-140px)] overflow-y-auto bg-black custom-scrollbar">
               <AnimatePresence>
                 {messages.map((message) => (
                   <motion.div
@@ -419,23 +450,23 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
                     className={`mb-4 ${message.sender === 'bot' ? 'text-left' : 'text-right'}`}
                   >
                     <div
-                      className={`inline-block rounded-lg px-4 py-2 max-w-[80%] ${
+                      className={`inline-block rounded-lg px-4 py-3 max-w-[85%] font-rajdhani ${
                         message.sender === 'bot'
-                          ? 'bg-gray-800 text-white'
-                          : 'bg-orange-500 text-white'
+                          ? 'bg-gray-900 text-white border border-gray-800'
+                          : 'bg-red-600 text-white'
                       }`}
                     >
-                      {message.text}
+                      <p className="text-sm leading-relaxed">{message.text}</p>
                     </div>
                     
-                    {/* Options buttons */}
+                    {/* Options buttons - Redesigned */}
                     {message.sender === 'bot' && message.options && (
-                      <div className="mt-2 flex flex-wrap gap-2">
+                      <div className="mt-3 flex flex-wrap gap-2">
                         {message.options.map((option) => (
                           <button
                             key={option}
                             onClick={() => handleOptionClick(option)}
-                            className="bg-gray-800 hover:bg-gray-700 text-white text-sm rounded-full px-3 py-1 transition-colors"
+                            className="bg-gray-900 hover:bg-red-600 text-white text-xs font-rajdhani font-bold rounded-lg px-4 py-2 transition-all duration-300 border border-gray-800 hover:border-red-600 uppercase tracking-wider"
                           >
                             {option}
                           </button>
@@ -446,33 +477,35 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
                 ))}
               </AnimatePresence>
               
-              {/* Typing indicator */}
+              {/* Typing indicator - Redesigned */}
               {isTyping && (
-                <div className="flex items-center space-x-1 mb-4">
-                  <div className="bg-gray-800 rounded-full h-2 w-2 animate-pulse"></div>
-                  <div className="bg-gray-800 rounded-full h-2 w-2 animate-pulse delay-100"></div>
-                  <div className="bg-gray-800 rounded-full h-2 w-2 animate-pulse delay-200"></div>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="bg-red-600 rounded-full h-2 w-2 animate-pulse"></div>
+                  <div className="bg-red-600 rounded-full h-2 w-2 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="bg-red-600 rounded-full h-2 w-2 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                  <span className="text-gray-400 text-xs font-rajdhani ml-2">Typing...</span>
                 </div>
               )}
               
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Chat input */}
-            <form onSubmit={handleSubmit} className="p-4 bg-gray-800 border-t border-gray-700">
-              <div className="flex">
+            {/* Chat input - Redesigned to match website */}
+            <form onSubmit={handleSubmit} className="p-4 bg-gray-900 border-t-2 border-red-600">
+              <div className="flex gap-2">
                 <input
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Type your message..."
-                  className="flex-1 bg-gray-700 text-white rounded-l-lg px-4 py-2 focus:outline-none"
+                  className="flex-1 bg-black text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-600 border border-gray-800 font-rajdhani text-sm placeholder-gray-500"
                   disabled={isTyping}
                 />
                 <button
                   type="submit"
-                  className="bg-orange-500 hover:bg-orange-600 text-white rounded-r-lg px-4 py-2 transition-colors"
+                  className="bg-red-600 hover:bg-red-700 text-white rounded-lg px-4 py-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={isTyping || !inputValue.trim()}
+                  aria-label="Send message"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -483,6 +516,22 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
           </motion.div>
         )}
       </AnimatePresence>
+      
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #000;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #dc2626;
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #b91c1c;
+        }
+      `}</style>
     </>
   );
 };

@@ -1,4 +1,5 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
+import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,11 +26,11 @@ export default function TransmissionPage() {
         <div className="relative z-10 container mx-auto px-8 h-full flex items-center">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 font-orbitron uppercase tracking-wider leading-tight bg-black/50 p-4 rounded">
-              TRANSMISSION REPAIR
+              DUAL MASS FLYWHEEL & FLYWHEEL REPLACEMENT
             </h1>
             <div className="max-w-2xl">
               <p className="text-lg md:text-xl text-gray-200 mb-8 font-rajdhani leading-relaxed">
-                Expert transmission repair and maintenance services for automatic and manual gearboxes. Our skilled technicians use <span className="text-white font-bold">advanced diagnostic equipment</span> to ensure smooth gear changes and optimal performance.
+                Professional dual mass flywheel and flywheel replacement services. Our skilled technicians use <span className="text-white font-bold">specialized tools</span> to eliminate vibration, noise, and clutch problems.
               </p>
             </div>
           </div>
@@ -70,8 +71,8 @@ export default function TransmissionPage() {
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete clutch kit replacement including pressure plate, disc, and release bearing</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Gearbox Repair</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Expert repair of manual and automatic gearboxes with quality parts</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Flywheel Replacement</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Standard flywheel replacement for smooth clutch operation</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Transmission Fluid Service</h4>
@@ -86,8 +87,8 @@ export default function TransmissionPage() {
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Advanced diagnostic testing to identify transmission faults accurately</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Gearbox Replacement</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete gearbox replacement with quality reconditioned or new units</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Diff Services</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Differential repair and servicing for optimal power distribution</p>
               </div>
             </div>
             <p className="text-gray-300 mt-8 font-rajdhani text-sm">
@@ -190,6 +191,12 @@ export default function TransmissionPage() {
               Early diagnosis of transmission problems can prevent costly repairs. Contact us immediately if you notice any of these symptoms.
             </p>
           </div>
+
+          {/* Video Section */}
+          <ServiceVideoPlayer 
+            videoId="p_R_85SaLtI" 
+            title="Watch: Dual Mass Flywheel Replacement"
+          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">

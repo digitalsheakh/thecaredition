@@ -70,16 +70,16 @@ export default function ElectricalRepairPage() {
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete battery health checks and replacement with quality batteries</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Alternator Repair</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Alternator testing, repair, and replacement to ensure proper charging</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">ECU Diagnostic Repair & Coding</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Advanced ECU diagnostics, repair, and coding for all vehicle systems</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Starter Motor Service</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Starter motor diagnostics, repair, and replacement for reliable starting</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Wiring Faults</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Expert diagnosis and repair of complex wiring faults and electrical issues</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Wiring Repairs</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Expert wiring fault diagnosis and repair for all electrical circuits</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Circuit Repairs</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete electrical circuit testing and repair for all vehicle systems</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Lighting Systems</h4>

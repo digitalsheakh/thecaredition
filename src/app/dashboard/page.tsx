@@ -286,6 +286,17 @@ export default function DashboardPage() {
             <div className="absolute inset-0 bg-red-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             <span className="relative z-10">New Booking</span>
           </Link>
+          
+          <Link
+            href="/dashboard/chat-leads"
+            className="group relative inline-flex items-center px-4 py-2 text-sm font-bold font-rajdhani uppercase tracking-wider rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 shadow-lg transition-all duration-300 overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+            <span className="relative z-10">Chat Leads</span>
+          </Link>
         </div>
       </div>
 

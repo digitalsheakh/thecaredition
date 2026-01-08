@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import VideoPlayer from '@/components/VideoPlayer';
+import ExpandableServiceCards from '@/components/ExpandableServiceCards';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import { useSession } from 'next-auth/react';
 
@@ -876,118 +877,40 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* Left side - Video Section */}
-              <div className="order-2 lg:order-1">
-                <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
-                  <div className="p-6 lg:p-8">
-                    <h3 className="text-white font-orbitron font-bold text-xl lg:text-2xl mb-6 uppercase tracking-wide">
-                      Watch Our Story
-                    </h3>
-                    <div className="relative rounded-xl overflow-hidden mb-6 shadow-lg">
-                      <VideoPlayer 
-                        videoId="-Jz8jyMPt2U" 
-                        thumbnailSrc="/images/logos/youtube_logo.jpg" 
-                      />
-                    </div>
-                    <p className="text-gray-300 font-rajdhani text-base leading-relaxed">
-                      Discover how we deliver professional automotive services with certified mechanics and quality parts.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="space-y-8">
+              {/* Interactive Expandable Service Cards */}
+              <ExpandableServiceCards />
               
-              {/* Right side - Content */}
-              <div className="order-1 lg:order-2 space-y-8">
-                {/* 6 Points */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
-                    <div className="flex items-start gap-3">
-                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
-                      <div>
-                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Main dealer experience</h4>
-                        <p className="text-gray-400 font-rajdhani text-sm">Professional service standards</p>
-                      </div>
-                    </div>
+              {/* Google Reviews Box */}
+              <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 lg:p-8 border border-gray-800 shadow-2xl max-w-4xl mx-auto">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <svg className="w-16 h-16 lg:w-20 lg:h-20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFC107"/>
+                      <path d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z" fill="#FF3D00"/>
+                      <path d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" fill="#4CAF50"/>
+                      <path d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z" fill="#1976D2"/>
+                    </svg>
                   </div>
-                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
-                    <div className="flex items-start gap-3">
-                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
-                      <div>
-                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Competitive pricing</h4>
-                        <p className="text-gray-400 font-rajdhani text-sm">Fair and transparent costs</p>
-                      </div>
+                  <div className="flex-1">
+                    <h3 className="text-white font-orbitron font-bold text-xl lg:text-2xl mb-3 uppercase tracking-wide">
+                      Excellent Reviews
+                    </h3>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-yellow-400 text-3xl">★★★★★</span>
+                      <span className="text-white font-rajdhani font-bold text-xl">4.9 / 5</span>
                     </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
-                    <div className="flex items-start gap-3">
-                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
-                      <div>
-                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Industry specialists</h4>
-                        <p className="text-gray-400 font-rajdhani text-sm">Expert certified technicians</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
-                    <div className="flex items-start gap-3">
-                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
-                      <div>
-                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Globally recognised</h4>
-                        <p className="text-gray-400 font-rajdhani text-sm">Trusted worldwide standards</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
-                    <div className="flex items-start gap-3">
-                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
-                      <div>
-                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Quality OEM parts</h4>
-                        <p className="text-gray-400 font-rajdhani text-sm">Original manufacturer parts</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/20">
-                    <div className="flex items-start gap-3">
-                      <div className="w-3 h-3 bg-red-600 rounded-full mt-1 flex-shrink-0 shadow-lg shadow-red-600/50"></div>
-                      <div>
-                        <h4 className="text-white font-rajdhani font-bold text-lg mb-2">Full transparency</h4>
-                        <p className="text-gray-400 font-rajdhani text-sm">Clear communication always</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Google Reviews Box */}
-                <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 lg:p-8 border border-gray-800 shadow-2xl">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <div className="flex-shrink-0">
-                      <svg className="w-16 h-16 lg:w-20 lg:h-20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFC107"/>
-                        <path d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z" fill="#FF3D00"/>
-                        <path d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" fill="#4CAF50"/>
-                        <path d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z" fill="#1976D2"/>
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-white font-orbitron font-bold text-xl lg:text-2xl mb-3 uppercase tracking-wide">
-                        Excellent Reviews
-                      </h3>
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-yellow-400 text-3xl">★★★★★</span>
-                        <span className="text-white font-rajdhani font-bold text-xl">4.9 / 5</span>
-                      </div>
-                      <p className="text-gray-300 font-rajdhani text-base mb-4">
-                        Based on 500+ customer reviews
-                      </p>
-                      <a 
-                        href="https://share.google/RJjOEiKvxHkePxjhh" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-red-600/50"
-                      >
-                        Read Reviews →
-                      </a>
-                    </div>
+                    <p className="text-gray-300 font-rajdhani text-base mb-4">
+                      Based on 500+ customer reviews
+                    </p>
+                    <a 
+                      href="https://share.google/RJjOEiKvxHkePxjhh" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-red-600/50"
+                    >
+                      Read Reviews →
+                    </a>
                   </div>
                 </div>
               </div>

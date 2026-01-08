@@ -1,4 +1,5 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
+import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -190,6 +191,12 @@ export default function DiagnosticsPage() {
               Early diagnosis can identify problems before they cause breakdowns or expensive damage. Don't wait until it's too late.
             </p>
           </div>
+
+          {/* Video Section */}
+          <ServiceVideoPlayer 
+            videoId="q8yZL8IEK5o" 
+            title="Watch: Advanced Diagnostics Process"
+          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">

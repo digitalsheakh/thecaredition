@@ -3,14 +3,14 @@ import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function CustomisationPage() {
+export default function FullServicePage() {
   return (
     <div className="min-h-screen bg-black text-white pt-32">
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden bg-gray-900">
         <Image
-          src="/images/services/serviceimage1.jpg"
-          alt="Car Customisation Service"
+          src="/images/services/serviceimage5.jpg"
+          alt="Full Service"
           fill
           className="object-cover"
         />
@@ -19,18 +19,18 @@ export default function CustomisationPage() {
         {/* Service Badge */}
         <div className="absolute top-8 left-8 md:left-16 z-20">
           <span className="bg-red-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
-            CUSTOMISATION SERVICES
+            TRENDING SERVICE
           </span>
         </div>
         
         <div className="relative z-10 container mx-auto px-8 h-full flex items-center">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 font-orbitron uppercase tracking-wider leading-tight bg-black/50 p-4 rounded">
-              CUSTOMISATION
+              FULL SERVICE
             </h1>
             <div className="max-w-2xl">
               <p className="text-lg md:text-xl text-gray-200 mb-8 font-rajdhani leading-relaxed">
-                Transform your vehicle with our professional customisation services. From <span className="text-white font-bold">star lights and dash cams to in-car entertainment</span>, we'll personalize your car to match your style.
+                Comprehensive full vehicle service for just <span className="text-white font-bold">£150 + VAT</span>. Keep your car running at peak performance with our thorough service package.
               </p>
             </div>
           </div>
@@ -44,18 +44,18 @@ export default function CustomisationPage() {
           <div className="mb-16">
             <div className="border-l-4 border-red-600 pl-6 mb-8">
               <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                PROFESSIONAL CAR CUSTOMISATION
+                COMPREHENSIVE VEHICLE SERVICE
               </p>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-orbitron uppercase leading-tight">
-              Car Customisation in Huntingdon – Make Your Vehicle Unique
+              Full Service in Huntingdon – Complete Vehicle Care
             </h2>
             <div className="max-w-4xl">
               <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
-                Your car should reflect your personality and lifestyle. Whether you want to add luxury features, improve safety, or enhance entertainment, our customisation services can <span className="text-white font-semibold">transform your driving experience</span>.
+                A full service is essential for maintaining your vehicle's performance, safety, and reliability. Our comprehensive service includes <span className="text-white font-semibold">all major checks and replacements</span> to keep your car in optimal condition.
               </p>
               <p className="text-base text-gray-300 font-rajdhani leading-relaxed">
-                At <span className="text-white font-semibold">The Car Edition</span>, we specialize in professional installation of aftermarket accessories and custom features. Our expert technicians ensure every installation is done to the highest standards with clean wiring and factory-quality finish.
+                At <span className="text-white font-semibold">The Car Edition</span>, our full service covers everything from engine oil changes to brake inspections, ensuring your vehicle is road-ready and safe.
               </p>
             </div>
           </div>
@@ -63,36 +63,48 @@ export default function CustomisationPage() {
           {/* Services Section */}
           <div className="mb-20">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-12 font-orbitron uppercase">
-              What We Offer
+              What's Included in Our Full Service
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Star Lights & Lighting</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Ambient star light headliners, LED interior lighting, and custom lighting solutions</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Engine Oil & Filter Change</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Fresh engine oil and new oil filter for optimal lubrication</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Dash Cam Fitting</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Professional dash cam installation with hidden wiring and parking mode setup</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Air Filter Replacement</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">New air filter for improved engine performance</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">In-Car Entertainment</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Touchscreen head units, Apple CarPlay, Android Auto, and audio system upgrades</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Brake System Check</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete brake inspection including pads, discs, and fluid</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Sound System Upgrades</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Premium speakers, amplifiers, and subwoofer installation for superior audio</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Suspension Inspection</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Check suspension components for wear and damage</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Parking Sensors & Cameras</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Front and rear parking sensors, reversing cameras, and 360-degree camera systems</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Fluid Level Checks</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">All fluids checked and topped up as needed</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Cruise Control Installation</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Professional cruise control retrofit and installation for enhanced driving comfort</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Lights & Electrical Check</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">All lights and electrical systems tested</p>
+              </div>
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Tyre Condition & Pressure</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Tyre tread depth, condition, and pressure check</p>
+              </div>
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Battery Health Check</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Battery voltage and charging system test</p>
+              </div>
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Exhaust System Inspection</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Check for leaks and damage to exhaust system</p>
               </div>
             </div>
             <p className="text-gray-300 mt-8 font-rajdhani text-sm">
-              All installations include professional wiring, programming, and testing to ensure perfect operation.
+              Our full service covers all essential checks to keep your vehicle safe, reliable, and performing at its best.
             </p>
           </div>
 
@@ -105,103 +117,103 @@ export default function CustomisationPage() {
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Expert Installation</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Professional fitting with factory-quality finish</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Experienced Technicians</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Qualified mechanics with years of experience</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Clean Wiring</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Hidden, professional wiring that looks OEM</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Quality Parts</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Only premium quality oils, filters, and parts used</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Quality Products</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Premium brands and reliable aftermarket accessories</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Affordable Pricing</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Just £150 + VAT for a comprehensive full service</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Custom Solutions</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Tailored installations to suit your specific needs</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Thorough Inspection</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Detailed checks of all major vehicle systems</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Warranty Protected</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Installations that don't void your vehicle warranty</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Service History Stamp</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Full service book stamping to maintain vehicle value</span>
                 </div>
               </div>
             </div>
             <p className="text-gray-300 mt-6 font-rajdhani text-sm leading-relaxed">
-              We take pride in delivering customisation work that looks professional and enhances your vehicle's value.
+              Regular servicing is the key to a long-lasting, reliable vehicle. Trust us to keep your car in top condition.
             </p>
           </div>
 
-          {/* Popular Upgrades Section */}
+          {/* Service Intervals Section */}
           <div className="mb-20">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 font-orbitron uppercase">
-              Popular Customisation Options
+              When Should You Book a Full Service?
             </h3>
-            <p className="text-gray-300 mb-6 font-rajdhani text-sm">Transform your vehicle with these popular upgrades:</p>
+            <p className="text-gray-300 mb-6 font-rajdhani text-sm">We recommend a full service:</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Starlight headliner for luxury ambiance</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Every 12 months or 12,000 miles</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Front and rear dash cams for security</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Before long journeys or holidays</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Apple CarPlay and Android Auto integration</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">If warning lights appear on dashboard</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">LED ambient interior lighting</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">When performance seems reduced</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Premium audio system upgrades</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">After purchasing a used vehicle</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">360-degree camera systems</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">To maintain manufacturer warranty</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Wireless phone charging pads</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Before MOT test for peace of mind</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Rear seat entertainment systems</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">To preserve vehicle resale value</span>
                 </div>
               </div>
             </div>
             <p className="text-gray-300 mt-6 font-rajdhani text-sm">
-              Contact us to discuss your customisation ideas. We can source and install almost any aftermarket accessory.
+              Regular servicing prevents costly repairs and keeps your vehicle running smoothly. Book your full service today.
             </p>
           </div>
 
           {/* Video Section */}
           <ServiceVideoPlayer 
-            videoId="YJ7a0m1jbMU" 
-            title="Watch: Car Customisation Services"
+            videoId="-Jz8jyMPt2U" 
+            title="Watch: Full Service Process"
           />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 text-center font-orbitron uppercase">
-              Get Your Customisation Quote
+              Get Your Full Service Quote
             </h3>
             <ServiceEstimatorComponent />
           </div>
@@ -209,13 +221,13 @@ export default function CustomisationPage() {
           {/* CTA Section */}
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-orbitron uppercase">
-              Personalize Your Vehicle Today
+              Keep Your Vehicle in Peak Condition
             </h3>
             <p className="text-base text-gray-300 mb-6 font-rajdhani max-w-2xl mx-auto">
-              Book your customisation consultation and let us transform your vehicle with professional upgrades.
+              Book your full service for just £150 + VAT. Comprehensive care for your vehicle at an affordable price.
             </p>
             <p className="text-sm text-white mb-8 font-rajdhani font-semibold">
-              Same-day appointments available - call now!
+              Professional service – book your appointment today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 

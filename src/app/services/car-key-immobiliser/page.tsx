@@ -3,14 +3,14 @@ import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function CustomisationPage() {
+export default function CarKeyImmobiliserPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-32">
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden bg-gray-900">
         <Image
-          src="/images/services/serviceimage1.jpg"
-          alt="Car Customisation Service"
+          src="/images/services/serviceimage4.jpg"
+          alt="Car Key & Immobiliser Service"
           fill
           className="object-cover"
         />
@@ -19,18 +19,18 @@ export default function CustomisationPage() {
         {/* Service Badge */}
         <div className="absolute top-8 left-8 md:left-16 z-20">
           <span className="bg-red-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
-            CUSTOMISATION SERVICES
+            TRENDING SERVICE
           </span>
         </div>
         
         <div className="relative z-10 container mx-auto px-8 h-full flex items-center">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 font-orbitron uppercase tracking-wider leading-tight bg-black/50 p-4 rounded">
-              CUSTOMISATION
+              CAR KEY & IMMOBILISER
             </h1>
             <div className="max-w-2xl">
               <p className="text-lg md:text-xl text-gray-200 mb-8 font-rajdhani leading-relaxed">
-                Transform your vehicle with our professional customisation services. From <span className="text-white font-bold">star lights and dash cams to in-car entertainment</span>, we'll personalize your car to match your style.
+                Professional car key programming and immobiliser services from <span className="text-white font-bold">£99 + VAT</span>. Lost keys, spare keys, or immobiliser issues – we've got you covered.
               </p>
             </div>
           </div>
@@ -44,18 +44,18 @@ export default function CustomisationPage() {
           <div className="mb-16">
             <div className="border-l-4 border-red-600 pl-6 mb-8">
               <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                PROFESSIONAL CAR CUSTOMISATION
+                KEY & IMMOBILISER SPECIALISTS
               </p>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-orbitron uppercase leading-tight">
-              Car Customisation in Huntingdon – Make Your Vehicle Unique
+              Car Key & Immobiliser Services in Huntingdon – Fast & Reliable Solutions
             </h2>
             <div className="max-w-4xl">
               <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
-                Your car should reflect your personality and lifestyle. Whether you want to add luxury features, improve safety, or enhance entertainment, our customisation services can <span className="text-white font-semibold">transform your driving experience</span>.
+                Lost your car keys? Need a spare? Immobiliser not working? We provide <span className="text-white font-semibold">fast, professional solutions</span> for all your car key and immobiliser needs at competitive prices.
               </p>
               <p className="text-base text-gray-300 font-rajdhani leading-relaxed">
-                At <span className="text-white font-semibold">The Car Edition</span>, we specialize in professional installation of aftermarket accessories and custom features. Our expert technicians ensure every installation is done to the highest standards with clean wiring and factory-quality finish.
+                At <span className="text-white font-semibold">The Car Edition</span>, we use advanced diagnostic equipment to program new keys, repair immobiliser faults, and get you back on the road quickly.
               </p>
             </div>
           </div>
@@ -67,32 +67,32 @@ export default function CustomisationPage() {
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Star Lights & Lighting</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Ambient star light headliners, LED interior lighting, and custom lighting solutions</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Key Programming</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Program new keys and remotes for all makes and models</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Dash Cam Fitting</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Professional dash cam installation with hidden wiring and parking mode setup</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Lost Key Replacement</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Replace lost keys without needing the original</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">In-Car Entertainment</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Touchscreen head units, Apple CarPlay, Android Auto, and audio system upgrades</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Spare Key Creation</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Cut and program additional spare keys</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Sound System Upgrades</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Premium speakers, amplifiers, and subwoofer installation for superior audio</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Immobiliser Repair</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Diagnose and repair immobiliser faults</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Parking Sensors & Cameras</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Front and rear parking sensors, reversing cameras, and 360-degree camera systems</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Remote Fob Repair</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Fix or replace damaged key fobs and remotes</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Cruise Control Installation</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Professional cruise control retrofit and installation for enhanced driving comfort</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Emergency Lockout</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Fast response for lockout situations</p>
               </div>
             </div>
             <p className="text-gray-300 mt-8 font-rajdhani text-sm">
-              All installations include professional wiring, programming, and testing to ensure perfect operation.
+              Don't pay main dealer prices. We offer the same quality service at a fraction of the cost.
             </p>
           </div>
 
@@ -105,103 +105,103 @@ export default function CustomisationPage() {
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Expert Installation</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Professional fitting with factory-quality finish</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Expert Technicians</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Trained specialists in key programming and immobiliser systems</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Clean Wiring</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Hidden, professional wiring that looks OEM</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Fast Service</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Most keys programmed same day</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Quality Products</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Premium brands and reliable aftermarket accessories</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Competitive Pricing</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - From £99 + VAT, much cheaper than main dealers</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Custom Solutions</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Tailored installations to suit your specific needs</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">All Makes & Models</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - We work on all vehicle brands and types</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Warranty Protected</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Installations that don't void your vehicle warranty</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Warranty Included</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - All work covered by our warranty</span>
                 </div>
               </div>
             </div>
             <p className="text-gray-300 mt-6 font-rajdhani text-sm leading-relaxed">
-              We take pride in delivering customisation work that looks professional and enhances your vehicle's value.
+              We understand the stress of lost keys or immobiliser problems. Our team works quickly to get you back on the road.
             </p>
           </div>
 
-          {/* Popular Upgrades Section */}
+          {/* Common Issues Section */}
           <div className="mb-20">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 font-orbitron uppercase">
-              Popular Customisation Options
+              Common Key & Immobiliser Issues
             </h3>
-            <p className="text-gray-300 mb-6 font-rajdhani text-sm">Transform your vehicle with these popular upgrades:</p>
+            <p className="text-gray-300 mb-6 font-rajdhani text-sm">We can help with:</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Starlight headliner for luxury ambiance</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Lost or stolen car keys</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Front and rear dash cams for security</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Broken or damaged key fobs</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Apple CarPlay and Android Auto integration</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Immobiliser light staying on</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">LED ambient interior lighting</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Key not recognized by vehicle</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Premium audio system upgrades</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Remote central locking not working</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">360-degree camera systems</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Need additional spare keys</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Wireless phone charging pads</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Battery replacement in key fob</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Rear seat entertainment systems</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Transponder chip programming</span>
                 </div>
               </div>
             </div>
             <p className="text-gray-300 mt-6 font-rajdhani text-sm">
-              Contact us to discuss your customisation ideas. We can source and install almost any aftermarket accessory.
+              Whatever your key or immobiliser issue, we have the expertise and equipment to solve it quickly.
             </p>
           </div>
 
           {/* Video Section */}
           <ServiceVideoPlayer 
-            videoId="YJ7a0m1jbMU" 
-            title="Watch: Car Customisation Services"
+            videoId="-Jz8jyMPt2U" 
+            title="Watch: Car Key Programming & Immobiliser Services"
           />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 text-center font-orbitron uppercase">
-              Get Your Customisation Quote
+              Get Your Key & Immobiliser Quote
             </h3>
             <ServiceEstimatorComponent />
           </div>
@@ -209,13 +209,13 @@ export default function CustomisationPage() {
           {/* CTA Section */}
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-orbitron uppercase">
-              Personalize Your Vehicle Today
+              Fast, Reliable Key & Immobiliser Solutions
             </h3>
             <p className="text-base text-gray-300 mb-6 font-rajdhani max-w-2xl mx-auto">
-              Book your customisation consultation and let us transform your vehicle with professional upgrades.
+              Book your car key or immobiliser service from £99 + VAT. Quick turnaround and competitive prices.
             </p>
             <p className="text-sm text-white mb-8 font-rajdhani font-semibold">
-              Same-day appointments available - call now!
+              Same-day service available – call us now!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 

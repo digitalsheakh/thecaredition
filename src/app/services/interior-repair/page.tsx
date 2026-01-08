@@ -1,4 +1,5 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
+import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -190,6 +191,12 @@ export default function InteriorRepairPage() {
               Don't let interior damage reduce your vehicle's value. Professional repair is often more cost-effective than replacement.
             </p>
           </div>
+
+          {/* Video Section */}
+          <ServiceVideoPlayer 
+            videoId="fsBUugNX1a8" 
+            title="Watch: Interior Repair Services"
+          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">

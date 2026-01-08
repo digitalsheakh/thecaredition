@@ -1,4 +1,5 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
+import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,11 +26,11 @@ export default function TimingChainsPage() {
         <div className="relative z-10 container mx-auto px-8 h-full flex items-center">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 font-orbitron uppercase tracking-wider leading-tight bg-black/50 p-4 rounded">
-              TIMING CHAINS
+              TIMING CHAINS & BELTS
             </h1>
             <div className="max-w-2xl">
               <p className="text-lg md:text-xl text-gray-200 mb-8 font-rajdhani leading-relaxed">
-                Professional timing chain replacement and repair services. Our skilled technicians use <span className="text-white font-bold">advanced diagnostic tools</span> to ensure your engine runs smoothly and reliably for years to come.
+                Professional timing chain and belt replacement services from <span className="text-white font-bold">£1500 + VAT</span>. Our skilled technicians use advanced diagnostic tools to ensure your engine runs smoothly and reliably for years to come.
               </p>
             </div>
           </div>
@@ -47,7 +48,7 @@ export default function TimingChainsPage() {
               </p>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-orbitron uppercase leading-tight">
-              Timing Chain Services in Huntingdon – Protect Your Engine Investment
+              Timing Chain & Belt Services in Huntingdon – Protect Your Engine Investment
             </h2>
             <div className="max-w-4xl">
               <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
@@ -190,6 +191,12 @@ export default function TimingChainsPage() {
               Don't wait until it's too late - timing chain failure can cause serious engine damage. Book an inspection at the first sign of trouble.
             </p>
           </div>
+
+          {/* Video Section */}
+          <ServiceVideoPlayer 
+            videoId="GmuX2if7Kng" 
+            title="Watch: Timing Chain & Belt Replacement"
+          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">

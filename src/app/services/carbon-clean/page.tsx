@@ -1,4 +1,5 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
+import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -78,8 +79,8 @@ export default function CarbonCleanPage() {
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Exhaust Gas Recirculation valve cleaning to improve engine performance</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Turbo Carbon Cleaning</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Turbocharger cleaning to restore boost pressure and eliminate lag</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Walnut Blasting Machine</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Advanced walnut shell blasting for deep carbon removal from intake valves</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Intake Valve Cleaning</h4>
@@ -91,7 +92,7 @@ export default function CarbonCleanPage() {
               </div>
             </div>
             <p className="text-gray-300 mt-8 font-rajdhani text-sm">
-              Our hydrogen carbon cleaning process is safe, effective, and environmentally friendly with no harmful chemicals.
+              Our walnut blasting machine and carbon cleaning processes are safe, effective, and environmentally friendly with no harmful chemicals.
             </p>
           </div>
 
@@ -105,7 +106,7 @@ export default function CarbonCleanPage() {
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Advanced Technology</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Latest hydrogen carbon cleaning equipment for best results</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Walnut blasting machine and latest carbon cleaning equipment for best results</span>
                 </div>
               </div>
               <div className="flex items-start">
@@ -190,6 +191,12 @@ export default function CarbonCleanPage() {
               Regular carbon cleaning every 15,000-20,000 miles helps maintain engine health and prevents costly repairs.
             </p>
           </div>
+
+          {/* Video Section */}
+          <ServiceVideoPlayer 
+            videoId="p_1jrIhxGPU" 
+            title="Watch: Carbon Cleaning Process"
+          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">

@@ -1,4 +1,5 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
+import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -190,6 +191,12 @@ export default function TurbosPage() {
               Turbo failure can cause severe engine damage. Early diagnosis and repair are crucial to prevent costly engine rebuilds.
             </p>
           </div>
+
+          {/* Video Section */}
+          <ServiceVideoPlayer 
+            videoId="-Jz8jyMPt2U" 
+            title="Watch: Turbo Replacement & Repair"
+          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">

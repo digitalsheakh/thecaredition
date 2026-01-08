@@ -13,13 +13,20 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isTrendingServicesOpen, setIsTrendingServicesOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+
+  // Prevent transition flash on initial mount
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Handle scroll event for header background change and visibility
   useEffect(() => {
@@ -98,10 +105,15 @@ export default function Header() {
   const closeMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(false);
     setIsServicesOpen(false);
+    setIsTrendingServicesOpen(false);
   }, []);
 
   const toggleServices = () => {
     setIsServicesOpen(!isServicesOpen);
+  };
+
+  const toggleTrendingServices = () => {
+    setIsTrendingServicesOpen(!isTrendingServicesOpen);
   };
 
   if(pathname.includes("/dashboard") || pathname.includes("/signin") || pathname.includes("/signup")) {
@@ -110,18 +122,26 @@ export default function Header() {
 
   // Services dropdown items - only our created service pages
   const servicesDropdownItems = [
-    { href: "/services/timing-chains", text: "Timing Chains" },
+    { href: "/services/timing-chains", text: "Timing Chains & Belts" },
     { href: "/services/mechanical-repair", text: "Mechanical Repairs" },
     { href: "/services/turbos", text: "Turbos" },
     { href: "/services/brakes-and-pads", text: "Brakes & Pads" },
     { href: "/services/diagnostics", text: "Diagnostics" },
-    { href: "/services/tyres-and-puncture", text: "Tyres & Puncture Repair" },
+  ];
+
+  // Trending Services dropdown items
+  const trendingServicesItems = [
+    { href: "/services/ford-wet-belt-replacement", text: "Ford Wet Belt Replacement" },
+    { href: "/services/performance-ecu-tuning", text: "Performance & ECU Tuning" },
+    { href: "/services/car-key-immobiliser", text: "Car Key & Immobiliser" },
+    { href: "/services/full-service", text: "Full Service" },
+    { href: "/services/gearbox-servicing", text: "Gearbox Servicing" },
   ];
 
   // Organized nav items with priority grouping
   const primaryNavItems = [
     { href: "/services", text: "Services", priority: "high", hasDropdown: true },
-    { href: "/shop", text: "Shop", priority: "high" },
+    { href: "https://thecaredition.shop/", text: "Shop", priority: "high", external: true },
   ];
   
   const secondaryNavItems = [
@@ -137,11 +157,13 @@ export default function Header() {
   return (
     <header 
       ref={headerRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black shadow-lg ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-black shadow-lg text-white ${
+        isMounted ? 'transition-all duration-300' : ''
+      } ${
         isHeaderVisible || isMobileMenuOpen
           ? 'translate-y-0' 
           : '-translate-y-full'
-      } text-white`}
+      }`}
     >
       <div className="w-full px-6">
         <div className="flex items-center justify-between h-20 max-w-screen-2xl mx-auto">
@@ -153,7 +175,7 @@ export default function Header() {
                 alt="Car Edition Pro Logo" 
                 width={160} 
                 height={50} 
-                className="transition-transform group-hover:scale-105 brightness-0 invert w-32 h-24"
+                className="brightness-0 invert w-32 h-24"
               />
             </div>
           </Link>
@@ -167,19 +189,53 @@ export default function Header() {
             <div className="flex items-center gap-1">
               {primaryNavItems.map((item) => (
                 <div key={item.href} className="relative group">
-                  <Link 
-                    href={item.href}
-                    className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase transition-all duration-300 hover:text-red-500 flex items-center gap-1"
-                    onMouseEnter={() => setHoveredNav(item.href)}
-                  >
-                    <span>{item.text}</span>
-                    {item.hasDropdown && <span className="text-xs">▼</span>}
-                  </Link>
+                  {item.external ? (
+                    <a 
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-red-500 flex items-center gap-1"
+                    >
+                      <span>{item.text}</span>
+                    </a>
+                  ) : (
+                    <Link 
+                      href={item.href}
+                      className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-red-500 flex items-center gap-1"
+                      onMouseEnter={() => setHoveredNav(item.href)}
+                    >
+                      <span>{item.text}</span>
+                      {item.hasDropdown && <span className="text-xs">▼</span>}
+                    </Link>
+                  )}
                   
                   {/* Services Dropdown */}
                   {item.hasDropdown && (
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-sm border border-red-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-sm border border-red-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
                       <div className="py-3">
+                        {/* Trending Service with Nested Dropdown - Moved to Top */}
+                        <div className="relative group/trending">
+                          <div className="px-4 py-2 text-white hover:text-red-400 hover:bg-red-900/20 transition-colors font-rajdhani text-sm cursor-pointer flex items-center justify-between">
+                            <span>Trending Service</span>
+                            <span className="text-xs">▶</span>
+                          </div>
+                          
+                          {/* Nested Dropdown - appears to the right at same vertical level */}
+                          <div className="absolute left-full top-[-12px] ml-0 w-64 bg-black/95 backdrop-blur-sm border border-red-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover/trending:opacity-100 group-hover/trending:visible transition-opacity duration-200 z-[60] pointer-events-none group-hover/trending:pointer-events-auto">
+                            <div className="py-3">
+                              {trendingServicesItems.map((trendingService) => (
+                                <Link
+                                  key={trendingService.href}
+                                  href={trendingService.href}
+                                  className="block px-4 py-2 text-white hover:text-red-400 hover:bg-red-900/20 transition-colors font-rajdhani text-sm"
+                                >
+                                  {trendingService.text}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                        
                         {servicesDropdownItems.map((service) => (
                           <Link
                             key={service.href}
@@ -202,7 +258,7 @@ export default function Header() {
                 <Link 
                   key={item.href}
                   href={item.href}
-                  className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase transition-all duration-300 hover:text-red-500 whitespace-nowrap"
+                  className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-red-500 whitespace-nowrap"
                 >
                   {item.text}
                 </Link>
@@ -215,7 +271,7 @@ export default function Header() {
                 <Link 
                   key={item.href}
                   href={item.href}
-                  className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase transition-all duration-300 hover:text-red-500 whitespace-nowrap"
+                  className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-red-500 whitespace-nowrap"
                 >
                   {item.text}
                 </Link>
@@ -227,7 +283,7 @@ export default function Header() {
               href="https://wa.me/1234567890" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#0d5d56] text-white px-4 py-3 rounded-lg font-bold transition-all duration-300 flex items-center gap-2 font-orbitron text-sm shadow-lg hover:shadow-green-500/25 transform hover:scale-105 border border-green-400/30 hover:border-green-300"
+              className="bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#0d5d56] text-white px-4 py-3 rounded-lg font-bold flex items-center gap-2 font-orbitron text-sm shadow-lg border border-green-400/30 hover:border-green-300"
             >
               <FaWhatsapp className="w-4 h-4" />
               <span className="hidden xl:inline uppercase tracking-wide">WhatsApp</span>
@@ -237,7 +293,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             ref={menuButtonRef}
-            className="lg:hidden p-2 focus:outline-none rounded-md z-[101] transition-colors relative"
+            className="lg:hidden p-2 focus:outline-none rounded-md z-[101] relative"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
             aria-expanded={isMobileMenuOpen}
@@ -245,21 +301,23 @@ export default function Header() {
             {isMobileMenuOpen ? (
               <IoMdClose className="w-7 h-7 text-white" />
             ) : (
-              <HiMenu className="w-7 h-7 text-white hover:text-red-600 transition-colors" />
+              <HiMenu className="w-7 h-7 text-white hover:text-red-600" />
             )}
           </button>
         </div>
       </div>
+      {/* Banner under header */}
       <div className='flex justify-center items-center h-12 bg-white shadow-lg'>
-        <p className='text-gray-800 text-xs md:text-sm font-semibold font-orbitron tracking-wide uppercase px-4 text-center'>SAVE £10 OFF YOUR FIRST SERVICE WHEN YOU BOOK ONLINE</p>
+        <p className='text-black text-xs md:text-sm font-semibold font-orbitron tracking-wide uppercase px-4 text-center'>SAVE £10 OFF YOUR FIRST SERVICE WHEN YOU BOOK ONLINE</p>
       </div>
       {/* Mobile Navigation - Full Screen */}
       <div 
         ref={mobileMenuRef}
         className={`fixed inset-0 z-[100] bg-black transform transition-transform duration-300 ${
-          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full hidden'
         }`}
         aria-hidden={!isMobileMenuOpen}
+        style={{ visibility: isMobileMenuOpen ? 'visible' : 'hidden' }}
       >
           {/* Mobile Logo - Left Aligned */}
           <div className="flex items-center justify-start p-6 border-b border-gray-800">
@@ -286,13 +344,38 @@ export default function Header() {
                 <span className={`text-sm transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}>▼</span>
               </button>
               <div className={`bg-gray-900 overflow-hidden transition-all duration-300 ${
-                isServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                isServicesOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
               }`}>
+                {/* Trending Service Nested Dropdown - Moved to Top */}
+                <div className="border-b border-gray-700">
+                  <button
+                    onClick={toggleTrendingServices}
+                    className="w-full px-8 py-3 text-gray-300 text-sm font-rajdhani hover:text-white hover:bg-gray-700 transition-colors flex items-center justify-between"
+                  >
+                    <span>Trending Service</span>
+                    <span className={`text-xs transition-transform duration-200 ${isTrendingServicesOpen ? 'rotate-180' : ''}`}>▼</span>
+                  </button>
+                  <div className={`bg-gray-800 overflow-hidden transition-all duration-300 ${
+                    isTrendingServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    {trendingServicesItems.map((trendingService) => (
+                      <Link
+                        key={trendingService.href}
+                        href={trendingService.href}
+                        className="block px-12 py-3 text-gray-400 text-sm font-rajdhani hover:text-white hover:bg-gray-700 transition-colors border-b border-gray-700 last:border-b-0"
+                        onClick={closeMobileMenu}
+                      >
+                        {trendingService.text}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
                 {servicesDropdownItems.map((service) => (
                   <Link
                     key={service.href}
                     href={service.href}
-                    className="block px-8 py-3 text-gray-300 text-sm font-rajdhani hover:text-white hover:bg-gray-700 transition-colors border-b border-gray-700 last:border-b-0"
+                    className="block px-8 py-3 text-gray-300 text-sm font-rajdhani hover:text-white hover:bg-gray-700 transition-colors border-b border-gray-700"
                     onClick={closeMobileMenu}
                   >
                     {service.text}
@@ -302,13 +385,15 @@ export default function Header() {
             </div>
             
             {/* Shop */}
-            <Link 
-              href="/shop" 
+            <a 
+              href="https://thecaredition.shop/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="block px-6 py-4 text-white text-base font-orbitron uppercase tracking-wider border-b border-gray-800 hover:bg-gray-800 transition-colors"
               onClick={closeMobileMenu}
             >
               SHOP
-            </Link>
+            </a>
             
             {/* YouTube & Media */}
             <Link 

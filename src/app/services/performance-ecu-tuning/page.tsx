@@ -3,14 +3,14 @@ import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function CustomisationPage() {
+export default function PerformanceECUTuningPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-32">
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden bg-gray-900">
         <Image
-          src="/images/services/serviceimage1.jpg"
-          alt="Car Customisation Service"
+          src="/images/services/serviceimage3.jpg"
+          alt="Performance & ECU Tuning Service"
           fill
           className="object-cover"
         />
@@ -19,18 +19,18 @@ export default function CustomisationPage() {
         {/* Service Badge */}
         <div className="absolute top-8 left-8 md:left-16 z-20">
           <span className="bg-red-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
-            CUSTOMISATION SERVICES
+            TRENDING SERVICE
           </span>
         </div>
         
         <div className="relative z-10 container mx-auto px-8 h-full flex items-center">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 font-orbitron uppercase tracking-wider leading-tight bg-black/50 p-4 rounded">
-              CUSTOMISATION
+              PERFORMANCE & ECU TUNING
             </h1>
             <div className="max-w-2xl">
               <p className="text-lg md:text-xl text-gray-200 mb-8 font-rajdhani leading-relaxed">
-                Transform your vehicle with our professional customisation services. From <span className="text-white font-bold">star lights and dash cams to in-car entertainment</span>, we'll personalize your car to match your style.
+                Professional ECU remapping and performance tuning from <span className="text-white font-bold">£49 + VAT</span>. Unlock your vehicle's true potential with our expert tuning services.
               </p>
             </div>
           </div>
@@ -44,18 +44,18 @@ export default function CustomisationPage() {
           <div className="mb-16">
             <div className="border-l-4 border-red-600 pl-6 mb-8">
               <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                PROFESSIONAL CAR CUSTOMISATION
+                ECU TUNING SPECIALISTS
               </p>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-orbitron uppercase leading-tight">
-              Car Customisation in Huntingdon – Make Your Vehicle Unique
+              Performance & ECU Tuning in Huntingdon – Unleash Your Car's Power
             </h2>
             <div className="max-w-4xl">
               <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
-                Your car should reflect your personality and lifestyle. Whether you want to add luxury features, improve safety, or enhance entertainment, our customisation services can <span className="text-white font-semibold">transform your driving experience</span>.
+                ECU remapping optimizes your engine's performance by modifying the factory settings. Gain <span className="text-white font-semibold">more power, better fuel economy</span>, and improved throttle response with our professional tuning services.
               </p>
               <p className="text-base text-gray-300 font-rajdhani leading-relaxed">
-                At <span className="text-white font-semibold">The Car Edition</span>, we specialize in professional installation of aftermarket accessories and custom features. Our expert technicians ensure every installation is done to the highest standards with clean wiring and factory-quality finish.
+                At <span className="text-white font-semibold">The Car Edition</span>, we use the latest tuning software and equipment to safely enhance your vehicle's performance while maintaining reliability and longevity.
               </p>
             </div>
           </div>
@@ -67,32 +67,32 @@ export default function CustomisationPage() {
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Star Lights & Lighting</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Ambient star light headliners, LED interior lighting, and custom lighting solutions</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Stage 1 Remapping</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Safe power gains with improved fuel economy and throttle response</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Dash Cam Fitting</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Professional dash cam installation with hidden wiring and parking mode setup</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Stage 2 & 3 Tuning</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Advanced tuning for modified vehicles with upgraded components</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">In-Car Entertainment</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Touchscreen head units, Apple CarPlay, Android Auto, and audio system upgrades</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Economy Remapping</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Optimize fuel efficiency without sacrificing performance</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Sound System Upgrades</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Premium speakers, amplifiers, and subwoofer installation for superior audio</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">DPF & EGR Solutions</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Professional DPF and EGR removal or optimization</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Parking Sensors & Cameras</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Front and rear parking sensors, reversing cameras, and 360-degree camera systems</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Dyno Testing</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Before and after power runs to verify gains</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
-                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Cruise Control Installation</h4>
-                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Professional cruise control retrofit and installation for enhanced driving comfort</p>
+                <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Custom Mapping</h4>
+                <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Bespoke tuning solutions for unique requirements</p>
               </div>
             </div>
             <p className="text-gray-300 mt-8 font-rajdhani text-sm">
-              All installations include professional wiring, programming, and testing to ensure perfect operation.
+              All our remaps are fully reversible and come with a satisfaction guarantee. Experience the difference professional tuning makes.
             </p>
           </div>
 
@@ -105,103 +105,103 @@ export default function CustomisationPage() {
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Expert Installation</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Professional fitting with factory-quality finish</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Expert Tuners</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Years of experience in ECU remapping and tuning</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Clean Wiring</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Hidden, professional wiring that looks OEM</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Latest Technology</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - State-of-the-art tuning equipment and software</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Quality Products</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Premium brands and reliable aftermarket accessories</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Affordable Pricing</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - From £49 + VAT, exceptional value for money</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Custom Solutions</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Tailored installations to suit your specific needs</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Safe & Reliable</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - All remaps tested for safety and reliability</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
-                  <span className="text-white font-semibold font-rajdhani text-sm">Warranty Protected</span>
-                  <span className="text-gray-300 font-rajdhani text-sm"> - Installations that don't void your vehicle warranty</span>
+                  <span className="text-white font-semibold font-rajdhani text-sm">Warranty Protection</span>
+                  <span className="text-gray-300 font-rajdhani text-sm"> - Comprehensive warranty on all tuning work</span>
                 </div>
               </div>
             </div>
             <p className="text-gray-300 mt-6 font-rajdhani text-sm leading-relaxed">
-              We take pride in delivering customisation work that looks professional and enhances your vehicle's value.
+              We're passionate about performance. Our tuning services deliver real-world results you can feel every time you drive.
             </p>
           </div>
 
-          {/* Popular Upgrades Section */}
+          {/* Benefits Section */}
           <div className="mb-20">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 font-orbitron uppercase">
-              Popular Customisation Options
+              Benefits of ECU Remapping
             </h3>
-            <p className="text-gray-300 mb-6 font-rajdhani text-sm">Transform your vehicle with these popular upgrades:</p>
+            <p className="text-gray-300 mb-6 font-rajdhani text-sm">Transform your driving experience:</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Starlight headliner for luxury ambiance</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Increased power and torque output</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Front and rear dash cams for security</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Improved throttle response and acceleration</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Apple CarPlay and Android Auto integration</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Better fuel economy (up to 20% improvement)</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">LED ambient interior lighting</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Smoother power delivery</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Premium audio system upgrades</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Enhanced overtaking capability</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">360-degree camera systems</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Reduced turbo lag on turbocharged engines</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Wireless phone charging pads</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">More enjoyable driving experience</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-rajdhani text-sm">Rear seat entertainment systems</span>
+                  <span className="text-gray-300 font-rajdhani text-sm">Fully reversible to factory settings</span>
                 </div>
               </div>
             </div>
             <p className="text-gray-300 mt-6 font-rajdhani text-sm">
-              Contact us to discuss your customisation ideas. We can source and install almost any aftermarket accessory.
+              Experience the transformation. Book your ECU remap today and discover what your car is truly capable of.
             </p>
           </div>
 
           {/* Video Section */}
           <ServiceVideoPlayer 
-            videoId="YJ7a0m1jbMU" 
-            title="Watch: Car Customisation Services"
+            videoId="-Jz8jyMPt2U" 
+            title="Watch: ECU Remapping & Performance Tuning"
           />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 text-center font-orbitron uppercase">
-              Get Your Customisation Quote
+              Get Your Performance Tuning Quote
             </h3>
             <ServiceEstimatorComponent />
           </div>
@@ -209,13 +209,13 @@ export default function CustomisationPage() {
           {/* CTA Section */}
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-orbitron uppercase">
-              Personalize Your Vehicle Today
+              Unlock Your Vehicle's True Potential
             </h3>
             <p className="text-base text-gray-300 mb-6 font-rajdhani max-w-2xl mx-auto">
-              Book your customisation consultation and let us transform your vehicle with professional upgrades.
+              Book your ECU remap from £49 + VAT. Professional tuning for more power, better economy, and enhanced performance.
             </p>
             <p className="text-sm text-white mb-8 font-rajdhani font-semibold">
-              Same-day appointments available - call now!
+              Expert tuning specialists – transform your drive today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
