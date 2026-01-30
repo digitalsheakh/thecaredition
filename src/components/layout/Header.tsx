@@ -171,11 +171,11 @@ export default function Header() {
           <Link href="/" className="flex items-center group mr-8">
             <div className="relative flex items-center">
               <Image 
-                src="/images/logos/logo.png" 
+                src="/images/logos/website_logo.png" 
                 alt="Car Edition Pro Logo" 
-                width={160} 
-                height={50} 
-                className="brightness-0 invert w-32 h-24"
+                width={140} 
+                height={45} 
+                className="brightness-0 invert w-28 h-20"
               />
             </div>
           </Link>
