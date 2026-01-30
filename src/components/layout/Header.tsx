@@ -166,16 +166,16 @@ export default function Header() {
       }`}
     >
       <div className="w-full px-6">
-        <div className="flex items-center justify-between h-20 max-w-screen-2xl mx-auto">
+        <div className="flex items-center justify-between h-16 max-w-screen-2xl mx-auto">
           {/* Logo - More Space */}
           <Link href="/" className="flex items-center group mr-8">
             <div className="relative flex items-center">
               <Image 
-                src="/images/logos/website_logo.png" 
+                src="/images/logos/logo.png" 
                 alt="Car Edition Pro Logo" 
-                width={160} 
-                height={50} 
-                className="brightness-0 invert w-32 h-24"
+                width={140} 
+                height={45} 
+                className="brightness-0 invert w-28 h-20"
               />
             </div>
           </Link>
@@ -308,7 +308,7 @@ export default function Header() {
       </div>
       {/* Banner under header */}
       <div className='flex justify-center items-center h-12 bg-white shadow-lg'>
-        <p className='text-black text-xs md:text-sm font-semibold font-orbitron tracking-wide uppercase px-4 text-center'>SAVE £10 OFF YOUR FIRST SERVICE WHEN YOU BOOK ONLINE</p>
+        <p className='text-black text-xs md:text-sm font-semibold font-orbitron tracking-wide uppercase px-4 text-center'>FLEET SERVICE DISCOUNT AVAILABLE</p>
       </div>
       {/* Mobile Navigation - Full Screen */}
       <div 
