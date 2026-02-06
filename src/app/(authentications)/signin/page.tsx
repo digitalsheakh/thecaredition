@@ -36,6 +36,12 @@ function LoginPage() {
     setLoading(true);
     setError("");
 
+    // Show "under construction" message
+    setError("Dashboard is currently under construction. Please check back soon!");
+    setLoading(false);
+    
+    // Commented out actual login logic for now
+    /*
     try {
       const res = await signIn("credentials", {
         email: data.email,
@@ -46,15 +52,13 @@ function LoginPage() {
         setError("Invalid email or password");
         setLoading(false);
       } else {
-
-        // Keep loading state until navigation completes
         router.push("/dashboard");
-        // Don't set loading to false here - let it stay until page changes
       }
     } catch  {
       setError("An unexpected error occurred");
       setLoading(false);
     }
+    */
   };
 
   return (
@@ -118,7 +122,7 @@ function LoginPage() {
                       message: "Invalid email address"
                     }
                   })}
-                  className={`w-full px-4 py-3 rounded-lg bg-gray-800 text-white font-rajdhani ${errors.email ? "border-red-500" : "border-gray-600"} border focus:ring-2 focus:ring-red-600 focus:border-red-600 placeholder-gray-400`}
+                  className={`w-full px-4 py-3 rounded-lg bg-gray-800 text-white font-rajdhani ${errors.email ? "border-orange-500" : "border-gray-600"} border focus:ring-2 focus:ring-gray-600 focus:border-gray-600 placeholder-gray-400`}
                   placeholder="admin@thecaredition.com"
                 />
                 {errors.email && (
@@ -143,7 +147,7 @@ function LoginPage() {
                       message: "Password must be at least 6 characters"
                     }
                   })}
-                  className={`w-full px-4 py-3 rounded-lg bg-gray-800 text-white font-rajdhani ${errors.password ? "border-red-500" : "border-gray-600"} border focus:ring-2 focus:ring-red-600 focus:border-red-600 placeholder-gray-400`}
+                  className={`w-full px-4 py-3 rounded-lg bg-gray-800 text-white font-rajdhani ${errors.password ? "border-orange-500" : "border-gray-600"} border focus:ring-2 focus:ring-gray-600 focus:border-gray-600 placeholder-gray-400`}
                   placeholder="••••••••"
                 />
                 {errors.password && (
@@ -159,7 +163,7 @@ function LoginPage() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-red-600 focus:ring-red-600 border-gray-600 rounded bg-gray-800"
+                  className="h-4 w-4 text-orange-600 focus:ring-orange-600 border-gray-600 rounded bg-gray-800"
                 />
                 <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-300 font-rajdhani">
                   Remember me
@@ -180,8 +184,8 @@ function LoginPage() {
               disabled={loading}
               className={`group relative w-full flex justify-center items-center py-4 px-4 border border-transparent rounded-lg shadow-lg text-sm font-bold font-orbitron uppercase tracking-wider text-white overflow-hidden transition-all duration-300 ${
                 loading 
-                  ? 'bg-red-600 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600'
+                  ? 'bg-orange-600 cursor-not-allowed' 
+                  : 'bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600'
               }`}
             >
               {!loading && (

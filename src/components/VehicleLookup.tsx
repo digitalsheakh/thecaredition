@@ -118,7 +118,7 @@ export default function VehicleLookup({ darkMode = false, compact = false }: Veh
             maxLength={10}
           />
           {error && (
-            <p className="text-red-500 text-sm mt-1">{error}</p>
+            <p className="text-orange-500 text-sm mt-1">{error}</p>
           )}
         </div>
         

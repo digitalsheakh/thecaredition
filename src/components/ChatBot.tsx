@@ -408,17 +408,17 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
 
       {/* Chat window - Redesigned to match website theme */}
       <AnimatePresence>
-        {(
+        {true && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-4 right-4 w-[calc(100vw-2rem)] sm:w-96 max-w-md h-[600px] sm:h-[550px] bg-black rounded-xl shadow-2xl overflow-hidden z-50 border-2 border-red-600"
+            className="fixed bottom-4 right-4 w-[calc(100vw-2rem)] sm:w-96 max-w-md h-[600px] sm:h-[550px] bg-black rounded-xl shadow-2xl overflow-hidden z-50 border-2 border-orange-600"
           >
             {/* Chat header - Matching website design */}
-            <div className="bg-gradient-to-r from-black to-gray-900 p-4 flex justify-between items-center border-b-2 border-red-600">
+            <div className="bg-gradient-to-r from-black to-gray-900 p-4 flex justify-between items-center border-b-2 border-orange-600">
               <div className="flex items-center gap-3">
-                <div className="bg-red-600 rounded-full h-10 w-10 flex items-center justify-center">
+                <div className="bg-orange-600 rounded-full h-10 w-10 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                   </svg>
@@ -430,7 +430,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
               </div>
               <button 
                 onClick={onClose} 
-                className="text-gray-400 hover:text-red-600 transition-colors p-1"
+                className="text-gray-400 hover:text-orange-600 transition-colors p-1"
                 aria-label="Close chat"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -453,7 +453,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
                       className={`inline-block rounded-lg px-4 py-3 max-w-[85%] font-rajdhani ${
                         message.sender === 'bot'
                           ? 'bg-gray-900 text-white border border-gray-800'
-                          : 'bg-red-600 text-white'
+                          : 'bg-orange-600 text-white'
                       }`}
                     >
                       <p className="text-sm leading-relaxed">{message.text}</p>
@@ -466,7 +466,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
                           <button
                             key={option}
                             onClick={() => handleOptionClick(option)}
-                            className="bg-gray-900 hover:bg-red-600 text-white text-xs font-rajdhani font-bold rounded-lg px-4 py-2 transition-all duration-300 border border-gray-800 hover:border-red-600 uppercase tracking-wider"
+                            className="bg-gray-900 hover:bg-orange-600 text-white text-xs font-rajdhani font-bold rounded-lg px-4 py-2 transition-all duration-300 border border-gray-800 hover:border-orange-600 uppercase tracking-wider"
                           >
                             {option}
                           </button>
@@ -480,9 +480,9 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
               {/* Typing indicator - Redesigned */}
               {isTyping && (
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="bg-red-600 rounded-full h-2 w-2 animate-pulse"></div>
-                  <div className="bg-red-600 rounded-full h-2 w-2 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                  <div className="bg-red-600 rounded-full h-2 w-2 animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                  <div className="bg-orange-600 rounded-full h-2 w-2 animate-pulse"></div>
+                  <div className="bg-orange-600 rounded-full h-2 w-2 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="bg-orange-600 rounded-full h-2 w-2 animate-pulse" style={{animationDelay: '0.4s'}}></div>
                   <span className="text-gray-400 text-xs font-rajdhani ml-2">Typing...</span>
                 </div>
               )}
@@ -491,19 +491,19 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
             </div>
 
             {/* Chat input - Redesigned to match website */}
-            <form onSubmit={handleSubmit} className="p-4 bg-gray-900 border-t-2 border-red-600">
+            <form onSubmit={handleSubmit} className="p-4 bg-gray-900 border-t-2 border-orange-600">
               <div className="flex gap-2">
                 <input
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Type your message..."
-                  className="flex-1 bg-black text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-600 border border-gray-800 font-rajdhani text-sm placeholder-gray-500"
+                  className="flex-1 bg-black text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-600 border border-gray-800 font-rajdhani text-sm placeholder-gray-500"
                   disabled={isTyping}
                 />
                 <button
                   type="submit"
-                  className="bg-red-600 hover:bg-red-700 text-white rounded-lg px-4 py-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-orange-600 hover:bg-orange-700 text-white rounded-lg px-4 py-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={isTyping || !inputValue.trim()}
                   aria-label="Send message"
                 >
@@ -525,11 +525,11 @@ const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
           background: #000;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #dc2626;
+          background: #ea580c;
           border-radius: 3px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #b91c1c;
+          background: #c2410c;
         }
       `}</style>
     </>

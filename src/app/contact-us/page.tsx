@@ -8,6 +8,7 @@ export default function ContactUs() {
     name: '',
     email: '',
     phone: '',
+    service: '',
     message: '',
     privacy: false
   });
@@ -46,6 +47,7 @@ export default function ContactUs() {
         name: '',
         email: '',
         phone: '',
+        service: '',
         message: '',
         privacy: false
       });
@@ -93,13 +95,13 @@ export default function ContactUs() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+              <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                   GET IN TOUCH
                 </p>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                CONTACT <span className="text-red-600">US</span>
+                CONTACT <span className="text-orange-600">US</span>
               </h1>
               <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
                 Get in touch with our expert team for all your automotive needs.
@@ -112,7 +114,7 @@ export default function ContactUs() {
       {/* Contact Form and Info */}
       <section className="w-full py-20 bg-black">
         <div className="w-full px-6">
-          <div className="max-w-6xl mx-auto bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 md:p-12">
+          <div className="max-w-6xl mx-auto bg-black border border-gray-700 rounded-2xl p-8 md:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
               {/* Contact Information */}
@@ -125,31 +127,40 @@ export default function ContactUs() {
               >
                 <div>
                   <h2 className="text-3xl font-bold mb-6 font-orbitron tracking-wider uppercase">
-                    GET IN <span className="text-red-600">TOUCH</span>
+                    GET IN <span className="text-orange-600">TOUCH</span>
                   </h2>
                   
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-lg font-bold text-red-600 mb-2 font-orbitron uppercase">Address</h3>
+                      <h3 className="text-lg font-bold text-orange-600 mb-2 font-orbitron uppercase">Address</h3>
                       <p className="text-gray-300 font-rajdhani leading-relaxed">
-                        Cinch Storage: Unit 4 St Margarets Way,<br />
-                        Stukeley Meadows Industrial Estate,<br />
-                        Huntingdon PE29 6EB
+                        Unit 4-5 Cinch Storage,<br />
+                        St Margarets Way,<br />
+                        Huntingdon, PE29 6EB
                       </p>
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-bold text-red-600 mb-2 font-orbitron uppercase">Phone</h3>
-                      <a href="tel:01480759004" className="text-gray-300 hover:text-red-400 transition-colors font-rajdhani text-lg">
+                      <h3 className="text-lg font-bold text-orange-600 mb-2 font-orbitron uppercase">Phone</h3>
+                      <a href="tel:01480759004" className="text-gray-300 hover:text-orange-400 transition-colors font-rajdhani text-lg">
                         01480 759004
                       </a>
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-bold text-red-600 mb-2 font-orbitron uppercase">Email</h3>
-                      <a href="mailto:info@thecaredition.co.uk" className="text-gray-300 hover:text-red-400 transition-colors font-rajdhani text-lg">
+                      <h3 className="text-lg font-bold text-orange-600 mb-2 font-orbitron uppercase">Email</h3>
+                      <a href="mailto:info@thecaredition.co.uk" className="text-gray-300 hover:text-orange-400 transition-colors font-rajdhani text-lg">
                         info@thecaredition.co.uk
                       </a>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg font-bold text-orange-600 mb-2 font-orbitron uppercase">Hours</h3>
+                      <p className="text-gray-300 font-rajdhani leading-relaxed">
+                        Monday - Friday: 9:00 AM - 6:00 PM<br />
+                        Saturday: 10:00 AM - 1:00 PM<br />
+                        Sunday: CLOSED
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -163,7 +174,7 @@ export default function ContactUs() {
                 viewport={{ once: true }}
                 className="bg-black/60 border border-gray-600 p-8 rounded-xl backdrop-blur-sm"
               >
-              <h2 className="text-3xl font-bold mb-8 font-orbitron uppercase tracking-wider">Send Us a <span className="text-red-600">Message</span></h2>
+              <h2 className="text-3xl font-bold mb-8 font-orbitron uppercase tracking-wider">Send Us a <span className="text-orange-600">Message</span></h2>
               
               {submitSuccess ? (
                 <div className="bg-green-500/20 border border-green-500 rounded-lg p-6 text-center">
@@ -174,7 +185,7 @@ export default function ContactUs() {
                   <p className="text-gray-300">Thank you for contacting us. We'll get back to you as soon as possible.</p>
                   <button 
                     onClick={() => setSubmitSuccess(false)}
-                    className="mt-4 bg-orange hover:bg-orange-dark text-white px-6 py-2 rounded-md font-medium transition-colors duration-200"
+                    className="mt-4 bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200"
                   >
                     Send Another Message
                   </button>
@@ -182,53 +193,70 @@ export default function ContactUs() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-1">Full Name <span className="text-orange-600">*</span></label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
+                      placeholder="John Smith"
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">Phone Number</label>
+                    <label htmlFor="phone" className="block text-sm font-medium text-white mb-1">Phone Number <span className="text-orange-600">*</span></label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
+                      placeholder="07123 456789"
+                      required
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Your Message</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-1">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="john@example.com"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="service" className="block text-sm font-medium text-white mb-1">Service Required <span className="text-orange-600">*</span></label>
+                    <input
+                      type="text"
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      placeholder="e.g., Diagnostics, Timing Chain, ECU Remap"
+                      required
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-white mb-1">Message</label>
                     <textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      required
+                      placeholder="Tell us about your vehicle and the issue..."
                       rows={5}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
                     ></textarea>
                   </div>
                   
@@ -241,7 +269,7 @@ export default function ContactUs() {
                         checked={formData.privacy}
                         onChange={handleCheckbox}
                         required
-                        className="w-4 h-4 bg-gray-800 border-gray-700 rounded focus:ring-orange text-orange"
+                        className="w-4 h-4 bg-gray-800 border-gray-700 rounded focus:ring-orange-600 text-orange-600"
                       />
                     </div>
                     <div className="ml-3">
@@ -260,7 +288,7 @@ export default function ContactUs() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full bg-orange hover:bg-orange-dark text-white px-6 py-3 rounded-md font-medium transition-colors duration-200 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    className={`w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-medium transition-colors duration-200 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
@@ -283,7 +311,7 @@ export default function ContactUs() {
       {/* FAQ Section */}
       <section className="w-full py-20 bg-black">
         <div className="w-full px-6">
-          <div className="max-w-6xl mx-auto bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 md:p-12">
+          <div className="max-w-6xl mx-auto bg-black border border-gray-700 rounded-2xl p-8 md:p-12">
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -292,7 +320,7 @@ export default function ContactUs() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                <span className="text-red-600">FAQ</span>
+                <span className="text-orange-600">FAQ</span>
               </h2>
             </motion.div>
             
@@ -313,7 +341,7 @@ export default function ContactUs() {
                     <h3 className="text-lg font-bold text-white font-orbitron">
                       {faq.question}
                     </h3>
-                    <span className={`text-red-600 text-xl transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`}>
+                    <span className={`text-orange-600 text-xl transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`}>
                       ▼
                     </span>
                   </button>
@@ -334,7 +362,7 @@ export default function ContactUs() {
       {/* Map Section */}
       <section className="w-full py-20 bg-black">
         <div className="w-full px-6">
-          <div className="max-w-6xl mx-auto bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 md:p-12">
+          <div className="max-w-6xl mx-auto bg-black border border-gray-700 rounded-2xl p-8 md:p-12">
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -343,7 +371,7 @@ export default function ContactUs() {
               className="text-center mb-8"
             >
               <h2 className="text-3xl font-bold mb-4 font-orbitron tracking-wider uppercase">
-                FIND <span className="text-red-600">US</span>
+                FIND <span className="text-orange-600">US</span>
               </h2>
             </motion.div>
             

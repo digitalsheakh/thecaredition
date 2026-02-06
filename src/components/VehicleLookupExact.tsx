@@ -133,7 +133,7 @@ export default function VehicleLookupExact() {
                             <div className="w-14 h-8 mb-1 overflow-hidden rounded shadow-sm">
                               <img src="/images/uk-flag.png" alt="UK Flag" className="w-full h-full object-cover" />
                             </div>
-                            <span className="text-blue-900 font-bold text-xl">UK</span>
+                            <span className="text-gray-900 font-bold text-xl">UK</span>
                           </div>
                           <div className="flex-1 bg-white bg-opacity-5 backdrop-blur-sm">
                             <input
@@ -151,7 +151,7 @@ export default function VehicleLookupExact() {
                         </div>
                       </div>
                     </div>
-                    {error && <p className="mt-3 text-sm text-red-400">{error}</p>}
+                    {error && <p className="mt-3 text-sm text-orange-400">{error}</p>}
                   </div>
                   
                   <button

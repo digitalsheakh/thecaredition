@@ -93,7 +93,7 @@ export default function CustomerDirectoryPage() {
       header: "Contact Details",
       accessor: (customer) => (
         <div className="flex flex-col py-3 space-y-1">
-          <a className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline font-rajdhani" href={`mailto:${customer.email}`}>
+          <a className="text-sm font-medium text-gray-600 hover:text-gray-800 hover:underline font-rajdhani" href={`mailto:${customer.email}`}>
             {customer.email}
           </a>
           <a className="text-sm font-semibold text-gray-700 hover:text-gray-900 hover:underline font-rajdhani" href={`tel:${customer.phone}`}>
@@ -110,7 +110,7 @@ export default function CustomerDirectoryPage() {
           {customer.vehicles.map((vehicle, i) => (
             <div key={i} className="bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
               <div className="flex items-center gap-3 mb-2">
-                <span className="inline-flex px-3 py-1 text-sm font-bold bg-blue-50 text-blue-700 rounded-lg font-orbitron uppercase tracking-wider">
+                <span className="inline-flex px-3 py-1 text-sm font-bold bg-gray-50 text-gray-700 rounded-lg font-orbitron uppercase tracking-wider">
                   {vehicle.registrationNumber}
                 </span>
                 <span className="text-sm font-semibold text-gray-900 font-rajdhani">

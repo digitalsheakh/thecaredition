@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { FaWhatsapp, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 import { HiMenu } from 'react-icons/hi';
 import { usePathname } from 'next/navigation';
@@ -166,17 +166,19 @@ export default function Header() {
       }`}
     >
       <div className="w-full px-6">
-        <div className="flex items-center justify-between h-20 max-w-screen-2xl mx-auto">
-          {/* Logo - More Space */}
-          <Link href="/" className="flex items-center group mr-8">
-            <div className="relative flex items-center">
+        <div className="flex items-center justify-between h-16 max-w-screen-2xl mx-auto">
+          {/* Logo */}
+          <Link href="/" className="flex items-center group mr-6 transition-transform duration-300 hover:scale-105">
+            <div className="relative flex items-center bg-gradient-to-r from-orange-600/10 to-transparent rounded-lg px-2.5 py-1.5 border border-orange-600/20 group-hover:border-orange-600/40 transition-all duration-300">
               <Image 
-                src="/images/logos/website_logo.png" 
-                alt="Car Edition Pro Logo" 
-                width={140} 
-                height={45} 
-                className="brightness-0 invert w-28 h-20"
+                src="/images/logos/the_car_edition_logo.png" 
+                alt="The Car Edition Logo" 
+                width={110} 
+                height={37} 
+                className="w-24 h-auto object-contain brightness-110 contrast-110"
+                priority
               />
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/0 via-orange-600/5 to-orange-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
             </div>
           </Link>
 
@@ -194,14 +196,14 @@ export default function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-red-500 flex items-center gap-1"
+                      className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-orange-500 flex items-center gap-1"
                     >
                       <span>{item.text}</span>
                     </a>
                   ) : (
                     <Link 
                       href={item.href}
-                      className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-red-500 flex items-center gap-1"
+                      className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-orange-500 flex items-center gap-1"
                       onMouseEnter={() => setHoveredNav(item.href)}
                     >
                       <span>{item.text}</span>
@@ -211,23 +213,23 @@ export default function Header() {
                   
                   {/* Services Dropdown */}
                   {item.hasDropdown && (
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-sm border border-red-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div className="absolute top-full left-0 mt-0 w-64 bg-black/95 backdrop-blur-sm border border-orange-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pointer-events-none group-hover:pointer-events-auto">
                       <div className="py-3">
                         {/* Trending Service with Nested Dropdown - Moved to Top */}
                         <div className="relative group/trending">
-                          <div className="px-4 py-2 text-white hover:text-red-400 hover:bg-red-900/20 transition-colors font-rajdhani text-sm cursor-pointer flex items-center justify-between">
+                          <div className="px-4 py-2 text-white hover:text-orange-400 hover:bg-orange-900/20 transition-colors font-rajdhani text-sm cursor-pointer flex items-center justify-between">
                             <span>Trending Service</span>
                             <span className="text-xs">▶</span>
                           </div>
                           
                           {/* Nested Dropdown - appears to the right at same vertical level */}
-                          <div className="absolute left-full top-[-12px] ml-0 w-64 bg-black/95 backdrop-blur-sm border border-red-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover/trending:opacity-100 group-hover/trending:visible transition-opacity duration-200 z-[60] pointer-events-none group-hover/trending:pointer-events-auto">
+                          <div className="absolute left-full top-[-12px] ml-0 w-64 bg-black/95 backdrop-blur-sm border border-orange-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover/trending:opacity-100 group-hover/trending:visible transition-all duration-300 z-[60] pointer-events-none group-hover/trending:pointer-events-auto">
                             <div className="py-3">
                               {trendingServicesItems.map((trendingService) => (
                                 <Link
                                   key={trendingService.href}
                                   href={trendingService.href}
-                                  className="block px-4 py-2 text-white hover:text-red-400 hover:bg-red-900/20 transition-colors font-rajdhani text-sm"
+                                  className="block px-4 py-2 text-white hover:text-orange-400 hover:bg-orange-900/20 transition-colors font-rajdhani text-sm"
                                 >
                                   {trendingService.text}
                                 </Link>
@@ -240,7 +242,7 @@ export default function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="block px-4 py-2 text-white hover:text-red-400 hover:bg-red-900/20 transition-colors font-rajdhani text-sm"
+                            className="block px-4 py-2 text-white hover:text-orange-400 hover:bg-orange-900/20 transition-colors font-rajdhani text-sm"
                           >
                             {service.text}
                           </Link>
@@ -258,7 +260,7 @@ export default function Header() {
                 <Link 
                   key={item.href}
                   href={item.href}
-                  className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-red-500 whitespace-nowrap"
+                  className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-orange-500 whitespace-nowrap"
                 >
                   {item.text}
                 </Link>
@@ -271,24 +273,27 @@ export default function Header() {
                 <Link 
                   key={item.href}
                   href={item.href}
-                  className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-red-500 whitespace-nowrap"
+                  className="relative font-bold text-white px-3 py-4 font-orbitron text-sm tracking-wide uppercase hover:text-orange-500 whitespace-nowrap"
                 >
                   {item.text}
                 </Link>
               ))}
             </div>
             
-            {/* WhatsApp Button */}
-            <a 
-              href="https://wa.me/1234567890" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#0d5d56] text-white px-4 py-3 rounded-lg font-bold flex items-center gap-2 font-orbitron text-sm shadow-lg border border-green-400/30 hover:border-green-300"
-            >
-              <FaWhatsapp className="w-4 h-4" />
-              <span className="hidden xl:inline uppercase tracking-wide">WhatsApp</span>
-            </a>
           </nav>
+
+          {/* Phone Number */}
+          <div className="hidden lg:flex items-center">
+            <a 
+              href="tel:01480759004" 
+              className="flex items-center bg-orange-600 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-orbitron text-sm font-bold transition-colors duration-300"
+            >
+              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              01480 759004
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -301,7 +306,7 @@ export default function Header() {
             {isMobileMenuOpen ? (
               <IoMdClose className="w-7 h-7 text-white" />
             ) : (
-              <HiMenu className="w-7 h-7 text-white hover:text-red-600" />
+              <HiMenu className="w-7 h-7 text-white hover:text-orange-500" />
             )}
           </button>
         </div>
@@ -323,11 +328,11 @@ export default function Header() {
           <div className="flex items-center justify-start p-6 border-b border-gray-800">
             <Link href="/" className="group" onClick={closeMobileMenu}>
               <Image 
-                src="/images/logos/website_logo.png" 
-                alt="Car Edition Pro Logo" 
+                src="/images/logos/the_car_edition_logo.png" 
+                alt="The Car Edition Logo" 
                 width={120} 
                 height={40} 
-                className="brightness-0 invert transition-transform group-hover:scale-105"
+                className="transition-transform group-hover:scale-105"
                 priority
               />
             </Link>
@@ -426,7 +431,7 @@ export default function Header() {
             <div className="mt-auto p-4 bg-gray-800">
               <Link 
                 href="/contact-us" 
-                className="block bg-red-600 hover:bg-red-700 text-white text-center py-4 px-4 font-orbitron uppercase tracking-wider text-base transition-colors mb-3"
+                className="block bg-orange-600 hover:bg-orange-600 text-white text-center py-4 px-4 font-orbitron uppercase tracking-wider text-base transition-colors mb-3"
                 onClick={closeMobileMenu}
               >
                 CONTACT US

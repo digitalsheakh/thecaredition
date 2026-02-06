@@ -49,7 +49,7 @@ export default function VideoPlayer({ videoId, thumbnailSrc }: VideoPlayerProps)
             onClick={() => setIsPlaying(true)}
           >
             <div className="absolute inset-0 flex items-center justify-center z-10">
-              <div className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 group-hover:bg-red-700">
+              <div className="w-20 h-20 rounded-full bg-orange-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 group-hover:bg-orange-700">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-10 h-10 ml-1">
                   <path d="M8 5.14v14l11-7-11-7z" />
                 </svg>

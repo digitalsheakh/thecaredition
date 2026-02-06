@@ -53,7 +53,7 @@ export default function BlogPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0A0A0A] text-white pt-24 pb-16 flex justify-center items-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
       </div>
     );
   }
@@ -64,7 +64,7 @@ export default function BlogPage() {
         <p className="text-xl text-gray-400 mb-6">{error}</p>
         <button 
           onClick={() => window.location.reload()}
-          className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center gap-2"
+          className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center gap-2"
         >
           Try Again
           <FaArrowRight className="text-sm" />
@@ -87,13 +87,13 @@ export default function BlogPage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+              <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                   AUTOMOTIVE INSIGHTS
                 </p>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                EXPLORING THE ROAD TO <span className="text-red-600">AUTOMOTIVE EXCELLENCE</span>
+                EXPLORING THE ROAD TO <span className="text-orange-600">AUTOMOTIVE EXCELLENCE</span>
               </h1>
               <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
                 Uncover the Latest Tips, Trends, and Tales in the World of Cars
@@ -116,7 +116,7 @@ export default function BlogPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                FEATURED <span className="text-red-600">ARTICLES</span>
+                FEATURED <span className="text-orange-600">ARTICLES</span>
               </h2>
             </motion.div>
         
@@ -128,7 +128,7 @@ export default function BlogPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-black/40 border border-gray-600 rounded-xl overflow-hidden backdrop-blur-sm hover:border-red-600 transition-all duration-300 group cursor-pointer"
+                  className="bg-black/40 border border-gray-600 rounded-xl overflow-hidden backdrop-blur-sm hover:border-orange-600 transition-all duration-300 group cursor-pointer"
                   onClick={() => openBlogDialog(blog)}
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -142,7 +142,7 @@ export default function BlogPage() {
                   </div>
                   
                   <div className="p-4">
-                    <div className="flex items-center text-xs text-red-400 mb-3 font-rajdhani">
+                    <div className="flex items-center text-xs text-orange-400 mb-3 font-rajdhani">
                       <FaCalendarAlt className="mr-2" />
                       <span>{formatDate(blog.createdAt)}</span>
                       <span className="mx-2">•</span>
@@ -150,7 +150,7 @@ export default function BlogPage() {
                       <span>5 min read</span>
                     </div>
                     
-                    <h3 className="text-lg font-bold mb-2 text-white group-hover:text-red-400 transition-colors duration-300 font-orbitron uppercase tracking-wide line-clamp-2">
+                    <h3 className="text-lg font-bold mb-2 text-white group-hover:text-orange-400 transition-colors duration-300 font-orbitron uppercase tracking-wide line-clamp-2">
                       {blog.title}
                     </h3>
                     
@@ -159,7 +159,7 @@ export default function BlogPage() {
                       dangerouslySetInnerHTML={{ __html: blog.content.substring(0, 100) + '...' }} 
                     />
                     
-                    <div className="inline-flex items-center gap-2 text-red-600 hover:text-red-400 text-sm font-orbitron font-semibold uppercase tracking-wide transition-colors duration-300">
+                    <div className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-400 text-sm font-orbitron font-semibold uppercase tracking-wide transition-colors duration-300">
                       READ MORE
                       <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
                     </div>

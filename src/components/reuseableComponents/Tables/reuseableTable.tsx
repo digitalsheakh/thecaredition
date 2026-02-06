@@ -43,7 +43,7 @@ export function DataTable<T extends { _id?: string }>({
   return (
   <div className="space-y-4">
   {error && (
-    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 font-medium">
+    <div className="bg-orange-100 border border-orange-400 text-orange-700 px-4 py-3 rounded mb-4 font-medium">
       {error}
     </div>
   )}
@@ -94,11 +94,11 @@ export function DataTable<T extends { _id?: string }>({
           </TableRow>
         ) : (
           data.map((row, rowIdx) => (
-            <TableRow key={row._id || rowIdx} className="hover:bg-blue-50 transition-all duration-300 ease-in-out group border-b border-gray-100 last:border-b-0">
+            <TableRow key={row._id || rowIdx} className="hover:bg-gray-50 transition-all duration-300 ease-in-out group border-b border-gray-100 last:border-b-0">
               {columns.map((col) => (
                 <TableCell 
                   key={`${row._id || rowIdx}-${String(col.accessor)}`}
-                  className={`${col.className || ""} px-6 py-4 align-top border-r border-gray-100 last:border-r-0 group-hover:border-blue-200 transition-colors duration-300`}
+                  className={`${col.className || ""} px-6 py-4 align-top border-r border-gray-100 last:border-r-0 group-hover:border-gray-200 transition-colors duration-300`}
                 >
                   {col.render 
                     ? col.render(row)
@@ -153,7 +153,7 @@ export function ActionsDropdown<T>({
               </Link>
             ) : (
               <DropdownMenuItem
-                className={item.destructive ? "text-red-600 focus:text-red-600" : item.className}
+                className={item.destructive ? "text-orange-600 focus:text-orange-600" : item.className}
                 onClick={item.onClick}
               >
                 {item.icon && <span className="mr-2">{item.icon}</span>}

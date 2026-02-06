@@ -109,7 +109,7 @@ export default function ServiceEstimatorComponent() {
           {step === 1 && (
             <div className="text-center">
               <h2 className="text-xl md:text-2xl font-bold mb-6 uppercase font-orbitron tracking-wider text-white">
-                ENTER YOUR <span className="text-red-600">REGISTRATION</span>
+                ENTER YOUR <span className="text-orange-600">REGISTRATION</span>
               </h2>
               
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -120,7 +120,7 @@ export default function ServiceEstimatorComponent() {
                       <div className="w-12 h-6 mb-1 overflow-hidden rounded shadow-sm">
                         <img src="/images/uk-flag.png" alt="UK Flag" className="w-full h-full object-cover" />
                       </div>
-                      <span className="text-blue-900 font-bold text-sm">UK</span>
+                      <span className="text-gray-900 font-bold text-sm">UK</span>
                     </div>
                     <div className="flex-1 bg-white">
                       <input
@@ -137,15 +137,15 @@ export default function ServiceEstimatorComponent() {
                     </div>
                   </div>
                 </div>
-                {error && <p className="mt-2 text-sm text-red-400 font-rajdhani">{error}</p>}
+                {error && <p className="mt-2 text-sm text-orange-400 font-rajdhani">{error}</p>}
                 
                 <button
                   type="submit"
                   disabled={isLoading || !registrationNumber.trim()}
-                  className={`group relative inline-flex items-center justify-center px-6 py-3 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg overflow-hidden ${
+                  className={`group relative inline-flex items-center justify-center px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg overflow-hidden ${
                     isLoading || !registrationNumber.trim() 
-                      ? 'bg-gray-700 text-gray-400 cursor-not-allowed' 
-                      : 'bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl'
+                      ? 'bg-gray-600 text-gray-400 cursor-not-allowed' 
+                      : 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl'
                   }`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -168,18 +168,18 @@ export default function ServiceEstimatorComponent() {
           {step === 2 && vehicle && (
             <div className="text-center">
               <h2 className="text-xl md:text-2xl font-bold mb-6 uppercase font-orbitron tracking-wider text-white">
-                CONFIRM YOUR <span className="text-red-600">VEHICLE</span>
+                CONFIRM YOUR <span className="text-orange-600">VEHICLE</span>
               </h2>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 max-w-2xl mx-auto">
                 <div className="text-center">
-                  <FaCar className="text-red-600 text-2xl mx-auto mb-2" />
+                  <FaCar className="text-orange-600 text-2xl mx-auto mb-2" />
                   <p className="text-gray-400 text-xs font-rajdhani uppercase mb-1">Registration</p>
                   <p className="text-lg font-bold text-white font-orbitron">{formatRegistration(vehicle.registrationNumber)}</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center mx-auto mb-2">
+                  <div className="w-8 h-8 bg-orange-600 rounded flex items-center justify-center mx-auto mb-2">
                     <span className="text-white font-bold font-orbitron text-sm">M</span>
                   </div>
                   <p className="text-gray-400 text-xs font-rajdhani uppercase mb-1">Make</p>
@@ -187,7 +187,7 @@ export default function ServiceEstimatorComponent() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center mx-auto mb-2">
+                  <div className="w-8 h-8 bg-orange-600 rounded flex items-center justify-center mx-auto mb-2">
                     <span className="text-white font-bold font-orbitron text-sm">Y</span>
                   </div>
                   <p className="text-gray-400 text-xs font-rajdhani uppercase mb-1">Year</p>
@@ -195,7 +195,7 @@ export default function ServiceEstimatorComponent() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center mx-auto mb-2">
+                  <div className="w-8 h-8 bg-orange-600 rounded flex items-center justify-center mx-auto mb-2">
                     <span className="text-white font-bold font-orbitron text-sm">E</span>
                   </div>
                   <p className="text-gray-400 text-xs font-rajdhani uppercase mb-1">Engine</p>
@@ -206,14 +206,14 @@ export default function ServiceEstimatorComponent() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <button
                   onClick={handleEditRegistration}
-                  className="group relative inline-flex items-center justify-center px-6 py-3 border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg overflow-hidden"
+                  className="group relative inline-flex items-center justify-center px-6 py-3 border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-red-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 bg-orange-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                   <span className="relative">CHECK ANOTHER CAR</span>
                 </button>
                 <button
                   onClick={handleConfirmVehicle}
-                  className="group relative inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl"
+                  className="group relative inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   <span className="relative flex items-center">

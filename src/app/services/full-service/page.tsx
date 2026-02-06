@@ -1,5 +1,4 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
-import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,7 +17,7 @@ export default function FullServicePage() {
         
         {/* Service Badge */}
         <div className="absolute top-8 left-8 md:left-16 z-20">
-          <span className="bg-red-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
+          <span className="bg-orange-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
             TRENDING SERVICE
           </span>
         </div>
@@ -42,8 +41,8 @@ export default function FullServicePage() {
         <div className="container mx-auto px-8">
           {/* Section Header */}
           <div className="mb-16">
-            <div className="border-l-4 border-red-600 pl-6 mb-8">
-              <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+            <div className="border-l-4 border-orange-600 pl-6 mb-8">
+              <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                 COMPREHENSIVE VEHICLE SERVICE
               </p>
             </div>
@@ -54,9 +53,20 @@ export default function FullServicePage() {
               <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
                 A full service is essential for maintaining your vehicle's performance, safety, and reliability. Our comprehensive service includes <span className="text-white font-semibold">all major checks and replacements</span> to keep your car in optimal condition.
               </p>
-              <p className="text-base text-gray-300 font-rajdhani leading-relaxed">
+              <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
                 At <span className="text-white font-semibold">The Car Edition</span>, our full service covers everything from engine oil changes to brake inspections, ensuring your vehicle is road-ready and safe.
               </p>
+              <a 
+                href="https://www.youtube.com/watch?v=-Jz8jyMPt2U" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-colors duration-300"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -66,39 +76,39 @@ export default function FullServicePage() {
               What's Included in Our Full Service
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Engine Oil & Filter Change</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Fresh engine oil and new oil filter for optimal lubrication</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Air Filter Replacement</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">New air filter for improved engine performance</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Brake System Check</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete brake inspection including pads, discs, and fluid</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Suspension Inspection</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Check suspension components for wear and damage</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Fluid Level Checks</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">All fluids checked and topped up as needed</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Lights & Electrical Check</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">All lights and electrical systems tested</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Tyre Condition & Pressure</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Tyre tread depth, condition, and pressure check</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Battery Health Check</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Battery voltage and charging system test</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Exhaust System Inspection</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Check for leaks and damage to exhaust system</p>
               </div>
@@ -115,35 +125,35 @@ export default function FullServicePage() {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Experienced Technicians</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Qualified mechanics with years of experience</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Quality Parts</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Only premium quality oils, filters, and parts used</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Affordable Pricing</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Just £150 + VAT for a comprehensive full service</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Thorough Inspection</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Detailed checks of all major vehicle systems</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Service History Stamp</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Full service book stamping to maintain vehicle value</span>
@@ -164,37 +174,37 @@ export default function FullServicePage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Every 12 months or 12,000 miles</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Before long journeys or holidays</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">If warning lights appear on dashboard</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">When performance seems reduced</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">After purchasing a used vehicle</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">To maintain manufacturer warranty</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Before MOT test for peace of mind</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">To preserve vehicle resale value</span>
                 </div>
               </div>
@@ -203,12 +213,6 @@ export default function FullServicePage() {
               Regular servicing prevents costly repairs and keeps your vehicle running smoothly. Book your full service today.
             </p>
           </div>
-
-          {/* Video Section */}
-          <ServiceVideoPlayer 
-            videoId="-Jz8jyMPt2U" 
-            title="Watch: Full Service Process"
-          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
@@ -232,7 +236,7 @@ export default function FullServicePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact-us" 
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-bold transition-colors duration-300 font-rajdhani uppercase tracking-wide"
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 font-bold transition-colors duration-300 font-rajdhani uppercase tracking-wide"
               >
                 Book Service
               </Link>

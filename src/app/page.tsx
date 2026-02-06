@@ -11,6 +11,16 @@ export default function Home() {
   const session = useSession();
   const sliderRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [expandedService, setExpandedService] = useState<number | null>(null);
+  const [activeServiceTab, setActiveServiceTab] = useState(0);
+
+  const toggleService = (index: number, event?: React.MouseEvent) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setExpandedService(prev => prev === index ? null : index);
+  };
   
   useEffect(() => {
     if (sliderRef.current && scrollPosition === 0) {
@@ -84,7 +94,7 @@ export default function Home() {
                   REDEFINED
                 </h2>
                 <div className="mt-8">
-                  <Link href="/service-estimator" className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-base font-bold uppercase font-orbitron tracking-wider transition-colors duration-300">
+                  <Link href="/service-estimator" className="inline-block bg-orange-600 hover:bg-orange-600 text-white px-8 py-4 text-base font-bold uppercase font-orbitron tracking-wider transition-colors duration-300">
                     CALL US FOR AN ESTIMATE
                   </Link>
                 </div>
@@ -252,7 +262,7 @@ export default function Home() {
       </section>
 
       {/* 10% Off Banner with Mobile Marquee */}
-      <section className="bg-red-600 py-3 md:py-4">
+      <section className="bg-orange-600 py-3 md:py-4">
         <div className="w-full">
           {/* Desktop - Static Text */}
           <div className="hidden md:block px-4">
@@ -290,245 +300,421 @@ export default function Home() {
         <div className="w-full px-6 relative z-10">
           <div className="max-w-screen-2xl mx-auto">
             <div className="text-center mb-16">
-              <div className="border-l-4 border-orange-500 pl-6 mb-8 inline-block">
-                <p className="text-orange-500 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                  PROFESSIONAL CAR SERVICES
-                </p>
+              <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-rajdhani font-bold uppercase tracking-wider mb-6">
+                Most Requested
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">TRENDING SERVICES</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
+                Trending <span className="text-orange-500">Services</span>
+              </h2>
               <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
                 Discover our most popular automotive services designed to keep your vehicle running at peak performance. Professional quality, competitive prices.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 items-start">
               {/* Service Card 1 - Ford Wet Belt Replacement */}
-              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
-                <div className="p-8 flex-1 flex flex-col">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">Ford Wet Belt<br />Replacement</h3>
+              <div 
+                className={`rounded-lg overflow-hidden shadow-2xl border transition-all duration-300 cursor-pointer h-full flex flex-col ${
+                  expandedService === 0 ? 'border-orange-500 bg-black' : 'border-gray-800 hover:border-orange-500 bg-[#0a0a0a]'
+                }`}
+                onClick={(e) => toggleService(0, e)}
+              >
+                <div className="p-4 flex flex-col h-full">
+                  <div className="mb-3">
+                    <h3 className="text-sm font-bold text-white font-orbitron uppercase tracking-wide mb-1">Ford Wet Belt Replacement</h3>
                     <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">SPECIALIST SERVICE</p>
                   </div>
                   
-                  <div className="mb-6">
-                    <div className="text-white text-4xl font-bold font-orbitron mb-2">From £1250</div>
-                    <p className="text-sm text-gray-400 font-rajdhani">+ VAT</p>
+                  <div className="mb-3">
+                    <span className="text-gray-300 text-xs font-rajdhani">Prevent engine failure with complete belt replacement service.</span>
                   </div>
                   
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Expert wet belt replacement</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Ford specialist service</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Quality OEM parts</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Professional installation</span>
+                  {/* Expandable Details */}
+                  <div className={`transition-all duration-150 ${
+                    expandedService === 0 ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 overflow-hidden'
+                  }`}>
+                    <div className="space-y-2">
+                      <div className="border-b border-gray-700 pb-2 mb-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-300 font-rajdhani text-xs">Ford Focus & Transit 2.0L</span>
+                          <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,450 + VAT</span>
+                        </div>
+                      </div>
+                      <div className="border-b border-gray-700 pb-2 mb-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-300 font-rajdhani text-xs">Transit (RWD) 2.0L</span>
+                          <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,550 + VAT</span>
+                        </div>
+                      </div>
+                      <div className="border-b border-gray-700 pb-2 mb-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-300 font-rajdhani text-xs">Ford Ranger 2.0L</span>
+                          <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,750 + VAT</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Ford Fiesta 1.0L EcoBoost</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,500 + VAT</span>
+                      </div>
                     </div>
                   </div>
-                  
-                  <Link href="/service-estimator" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto text-center block">
-                    BOOK NOW
-                  </Link>
+
+                  {/* Footer with expand/collapse indicator */}
+                  <div className="flex items-center justify-end pt-3 border-t border-gray-800 mt-auto">
+                    <div className="text-orange-500">
+                      {expandedService === 0 ? (
+                        <svg className="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             
               {/* Service Card 2 - Timing Chain Replacement */}
-              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
-                <div className="p-8 flex-1 flex flex-col">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">Timing Chain Replacement</h3>
+              <div 
+                className={`rounded-lg overflow-hidden shadow-2xl border transition-all duration-300 cursor-pointer h-full flex flex-col ${
+                  expandedService === 1 ? 'border-orange-500 bg-black' : 'border-gray-800 hover:border-orange-500 bg-[#0a0a0a]'
+                }`}
+                onClick={(e) => toggleService(1, e)}
+              >
+                <div className="p-4 flex flex-col h-full">
+                  <div className="mb-3">
+                    <h3 className="text-sm font-bold text-white font-orbitron uppercase tracking-wide mb-1">Timing Chain Replacement</h3>
                     <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">CRITICAL SERVICE</p>
                   </div>
                   
-                  <div className="mb-6">
-                    <div className="text-white text-4xl font-bold font-orbitron mb-2">From £1500</div>
-                    <p className="text-sm text-gray-400 font-rajdhani">+ VAT</p>
+                  <div className="mb-3">
+                    <span className="text-gray-300 text-xs font-rajdhani">Full timing chain replacement with OEM components.</span>
                   </div>
                   
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Complete chain replacement</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Tensioner inspection</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Engine timing adjustment</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Prevent engine damage</span>
+                  {/* Expandable Details */}
+                  <div className={`transition-all duration-150 ${
+                    expandedService === 1 ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 overflow-hidden'
+                  }`}>
+                    <div className="space-y-2">
+                      <div className="border-b border-gray-700 pb-2 mb-3">
+                        <div className="text-orange-500 font-orbitron text-xs font-bold mb-2">Ford</div>
+                        <div className="space-y-1">
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-300 font-rajdhani text-xs">Ranger 3.2L TDCi</span>
+                            <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,800 + VAT</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-300 font-rajdhani text-xs">Transit 2.2L TDCi</span>
+                            <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,500 + VAT</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="border-b border-gray-700 pb-2 mb-3">
+                        <div className="text-orange-500 font-orbitron text-xs font-bold mb-2">BMW</div>
+                        <div className="space-y-1">
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-300 font-rajdhani text-xs">N47 (118d / 320d / 520d / X1 / X3)(+£400 if xDrive)</span>
+                            <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,750 + VAT</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-300 font-rajdhani text-xs">N57 (330d / 530d / 730d / X5 / X6)(+£500 if xDrive)</span>
+                            <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,850 + VAT</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-300 font-rajdhani text-xs">N52 (125i / 325i / 525i / Z4 / X3)</span>
+                            <span className="text-orange-500 font-orbitron text-xs font-bold">from £2,050 + VAT</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-300 font-rajdhani text-xs">B47 (320d / 520d / X3 / X4 / Mini)</span>
+                            <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,950 + VAT</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-300 font-rajdhani text-xs">B37 (116d / 118d / Mini)</span>
+                            <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,950 + VAT</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-orange-500 font-orbitron text-xs font-bold mb-2">Mercedes-Benz OM651 2.1L</div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-300 font-rajdhani text-xs">C-Class / E-Class / Vito / Sprinter</span>
+                          <span className="text-orange-500 font-orbitron text-xs font-bold">from £1,850 + VAT</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  
-                  <Link href="/service-estimator" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto text-center block">
-                    BOOK NOW
-                  </Link>
+
+                  {/* Footer with expand/collapse indicator */}
+                  <div className="flex items-center justify-end pt-3 border-t border-gray-800 mt-auto">
+                    <div className="text-orange-500">
+                      {expandedService === 1 ? (
+                        <svg className="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             
               {/* Service Card 3 - Performance and ECU Tuning */}
-              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
-                <div className="p-8 flex-1 flex flex-col">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">Performance & ECU Tuning</h3>
+              <div 
+                className={`rounded-lg overflow-hidden shadow-2xl border transition-all duration-300 cursor-pointer h-full flex flex-col ${
+                  expandedService === 2 ? 'border-orange-500 bg-black' : 'border-gray-800 hover:border-orange-500 bg-[#0a0a0a]'
+                }`}
+                onClick={(e) => toggleService(2, e)}
+              >
+                <div className="p-4 flex flex-col h-full">
+                  <div className="mb-3">
+                    <h3 className="text-sm font-bold text-white font-orbitron uppercase tracking-wide mb-1">Performance & ECU Tuning</h3>
                     <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">PERFORMANCE UPGRADE</p>
                   </div>
                   
-                  <div className="mb-6">
-                    <div className="text-white text-4xl font-bold font-orbitron mb-2">From £49</div>
-                    <p className="text-sm text-gray-400 font-rajdhani">+ VAT</p>
+                  <div className="mb-3">
+                    <span className="text-gray-300 text-xs font-rajdhani">Precision ECU tuning for enhanced power and efficiency.</span>
                   </div>
                   
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">ECU remapping</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Performance optimization</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Fuel efficiency improvement</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Power enhancement</span>
+                  {/* Expandable Details */}
+                  <div className={`transition-all duration-150 ${
+                    expandedService === 2 ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 overflow-hidden'
+                  }`}>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Stage 1 Remap</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £199 + VAT</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">AdBlue Delete</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £249 + VAT</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">ECU Cloning (OBD)</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £49 + VAT</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">ECU Cloning (Bench)</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £119 + VAT</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">ECU Recovery</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £99 + VAT</span>
+                      </div>
                     </div>
                   </div>
-                  
-                  <Link href="/service-estimator" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto text-center block">
-                    BOOK NOW
-                  </Link>
+
+                  {/* Footer with expand/collapse indicator */}
+                  <div className="flex items-center justify-end pt-3 border-t border-gray-800 mt-auto">
+                    <div className="text-orange-500">
+                      {expandedService === 2 ? (
+                        <svg className="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             
               {/* Service Card 4 - Car Key & Immobiliser */}
-              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
-                <div className="p-8 flex-1 flex flex-col">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">Car Key & Immobiliser</h3>
+              <div 
+                className={`rounded-lg overflow-hidden shadow-2xl border transition-all duration-300 cursor-pointer h-full flex flex-col ${
+                  expandedService === 3 ? 'border-orange-500 bg-black' : 'border-gray-800 hover:border-orange-500 bg-[#0a0a0a]'
+                }`}
+                onClick={(e) => toggleService(3, e)}
+              >
+                <div className="p-4 flex flex-col h-full">
+                  <div className="mb-3">
+                    <h3 className="text-sm font-bold text-white font-orbitron uppercase tracking-wide mb-1">Car Key & Immobiliser</h3>
                     <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">SECURITY SERVICE</p>
                   </div>
                   
-                  <div className="mb-6">
-                    <div className="text-white text-4xl font-bold font-orbitron mb-2">From £99</div>
-                    <p className="text-sm text-gray-400 font-rajdhani">+ VAT</p>
+                  <div className="mb-3">
+                    <span className="text-gray-300 text-xs font-rajdhani">Mobile key programming and emergency services.</span>
                   </div>
                   
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Key programming</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Immobiliser repair</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Key replacement</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Security system diagnostics</span>
+                  {/* Expandable Details */}
+                  <div className={`transition-all duration-150 ${
+                    expandedService === 3 ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 overflow-hidden'
+                  }`}>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Emergency Vehicle Opening</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £99 + VAT</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Additional Key</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £199 + VAT</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">All Keys Lost (inc. 2 keys)</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £399 + VAT</span>
+                      </div>
                     </div>
                   </div>
-                  
-                  <Link href="/service-estimator" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto text-center block">
-                    BOOK NOW
-                  </Link>
+
+                  {/* Footer with expand/collapse indicator */}
+                  <div className="flex items-center justify-end pt-3 border-t border-gray-800 mt-auto">
+                    <div className="text-orange-500">
+                      {expandedService === 3 ? (
+                        <svg className="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             
               {/* Service Card 5 - Full Service */}
-              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
-                <div className="p-8 flex-1 flex flex-col">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">Full Service</h3>
+              <div 
+                className={`rounded-lg overflow-hidden shadow-2xl border transition-all duration-300 cursor-pointer h-full flex flex-col ${
+                  expandedService === 4 ? 'border-orange-500 bg-black' : 'border-gray-800 hover:border-orange-500 bg-[#0a0a0a]'
+                }`}
+                onClick={(e) => toggleService(4, e)}
+              >
+                <div className="p-4 flex flex-col h-full">
+                  <div className="mb-3">
+                    <h3 className="text-sm font-bold text-white font-orbitron uppercase tracking-wide mb-1">Full Service</h3>
                     <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">PREMIUM PACKAGE</p>
                   </div>
                   
-                  <div className="mb-6">
-                    <div className="text-white text-4xl font-bold font-orbitron mb-2">£150</div>
-                    <p className="text-sm text-gray-400 font-rajdhani">+ VAT</p>
+                  <div className="mb-3">
+                    <span className="text-gray-300 text-xs font-rajdhani">Comprehensive vehicle inspection and maintenance package.</span>
                   </div>
                   
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Oil & filter change</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Brake system check</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Engine diagnostics</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Safety inspection</span>
+                  {/* Expandable Details */}
+                  <div className={`transition-all duration-150 ${
+                    expandedService === 4 ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 overflow-hidden'
+                  }`}>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Oil & Filter Change</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £150 + VAT</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Brake System Check</span>
+                        <span className="text-gray-400 font-rajdhani text-xs">Included</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Engine Diagnostics</span>
+                        <span className="text-gray-400 font-rajdhani text-xs">Included</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Safety Inspection</span>
+                        <span className="text-gray-400 font-rajdhani text-xs">Included</span>
+                      </div>
                     </div>
                   </div>
-                  
-                  <Link href="/service-estimator" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto text-center block">
-                    BOOK NOW
-                  </Link>
+
+                  {/* Footer with expand/collapse indicator */}
+                  <div className="flex items-center justify-end pt-3 border-t border-gray-800 mt-auto">
+                    <div className="text-orange-500">
+                      {expandedService === 4 ? (
+                        <svg className="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
-            
+
               {/* Service Card 6 - Gearbox Servicing */}
-              <div className="bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 group h-full flex flex-col">
-                <div className="p-8 flex-1 flex flex-col">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2 min-h-[3rem] flex items-center">Gearbox Servicing</h3>
+              <div 
+                className={`rounded-lg overflow-hidden shadow-2xl border transition-all duration-300 cursor-pointer h-full flex flex-col ${
+                  expandedService === 5 ? 'border-orange-500 bg-black' : 'border-gray-800 hover:border-orange-500 bg-[#0a0a0a]'
+                }`}
+                onClick={(e) => toggleService(5, e)}
+              >
+                <div className="p-4 flex flex-col h-full">
+                  <div className="mb-3">
+                    <h3 className="text-sm font-bold text-white font-orbitron uppercase tracking-wide mb-1">Gearbox Servicing</h3>
                     <p className="text-xs text-orange-400 font-rajdhani uppercase tracking-wider">SPECIALIST SERVICE</p>
                   </div>
                   
-                  <div className="mb-6">
-                    <div className="text-white text-4xl font-bold font-orbitron mb-2">From £250</div>
-                    <p className="text-sm text-gray-400 font-rajdhani">+ VAT</p>
+                  <div className="mb-3">
+                    <span className="text-gray-300 text-xs font-rajdhani">Professional gearbox maintenance and repair services.</span>
                   </div>
                   
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Gearbox oil change</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Filter replacement</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">System diagnostics</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-300 font-rajdhani text-sm">Performance test</span>
+                  {/* Expandable Details */}
+                  <div className={`transition-all duration-150 ${
+                    expandedService === 5 ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 overflow-hidden'
+                  }`}>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Gearbox Oil Change</span>
+                        <span className="text-orange-500 font-orbitron text-xs font-bold">from £250 + VAT</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Filter Replacement</span>
+                        <span className="text-gray-400 font-rajdhani text-xs">Included</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">System Diagnostics</span>
+                        <span className="text-gray-400 font-rajdhani text-xs">Included</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300 font-rajdhani text-xs">Performance Test</span>
+                        <span className="text-gray-400 font-rajdhani text-xs">Included</span>
+                      </div>
                     </div>
                   </div>
-                  
-                  <Link href="/service-estimator" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg mt-auto text-center block">
-                    BOOK NOW
-                  </Link>
+
+                  {/* Footer with expand/collapse indicator */}
+                  <div className="flex items-center justify-end pt-3 border-t border-gray-800 mt-auto">
+                    <div className="text-orange-500">
+                      {expandedService === 5 ? (
+                        <svg className="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
+
+            </div>
+
+            {/* Pricing Disclaimer */}
+            <div className="text-center mt-12 mb-8">
+              <p className="text-orange-500 text-sm font-rajdhani">
+                <span className="font-bold">Note:</span> Prices shown are starting estimates and may vary depending on vehicle model and access requirements.
+              </p>
+            </div>
+
+            {/* Book Your Service Today Button */}
+            <div className="text-center">
+              <Link
+                href="/service-estimator"
+                className="inline-flex items-center bg-orange-600 hover:bg-orange-600 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg"
+              >
+                Book Your Service Today
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
@@ -539,8 +725,8 @@ export default function Home() {
         <div className="w-full px-6">
           <div className="max-w-screen-2xl mx-auto">
             <div className="text-center mb-16">
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+              <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                <p className="text-orange-500 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                   AUTOMOTIVE EXCELLENCE
                 </p>
               </div>
@@ -557,8 +743,8 @@ export default function Home() {
                 {/* Repeat logos multiple times for continuous coverage */}
                 <div className="w-40 h-24 relative flex-shrink-0 group">
                   <Image 
-                    src="/images/cars/carlogo1.png" 
-                    alt="BMW" 
+                    src="/images/marquee/mercedes-benz-car-logo-brand-png-3.png" 
+                    alt="Mercedes-Benz" 
                     fill
                     style={{ objectFit: 'contain' }}
                     className="brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" 
@@ -566,7 +752,7 @@ export default function Home() {
                 </div>
                 <div className="w-40 h-24 relative flex-shrink-0 group">
                   <Image 
-                    src="/images/cars/carlogo2.png" 
+                    src="/images/marquee/mercedes-benz-car-logo-brand-png-3.png" 
                     alt="Mercedes-Benz" 
                     fill
                     style={{ objectFit: 'contain' }}
@@ -577,8 +763,8 @@ export default function Home() {
                 {/* Duplicate sets for seamless loop */}
                 <div className="w-40 h-24 relative flex-shrink-0 group">
                   <Image 
-                    src="/images/cars/carlogo1.png" 
-                    alt="BMW" 
+                    src="/images/marquee/mercedes-benz-car-logo-brand-png-3.png" 
+                    alt="Mercedes-Benz" 
                     fill
                     style={{ objectFit: 'contain' }}
                     className="brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" 
@@ -586,7 +772,7 @@ export default function Home() {
                 </div>
                 <div className="w-40 h-24 relative flex-shrink-0 group">
                   <Image 
-                    src="/images/cars/carlogo2.png" 
+                    src="/images/marquee/mercedes-benz-car-logo-brand-png-3.png" 
                     alt="Mercedes-Benz" 
                     fill
                     style={{ objectFit: 'contain' }}
@@ -597,8 +783,8 @@ export default function Home() {
                 {/* Third set */}
                 <div className="w-40 h-24 relative flex-shrink-0 group">
                   <Image 
-                    src="/images/cars/carlogo1.png" 
-                    alt="BMW" 
+                    src="/images/marquee/mercedes-benz-car-logo-brand-png-3.png" 
+                    alt="Mercedes-Benz" 
                     fill
                     style={{ objectFit: 'contain' }}
                     className="brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" 
@@ -606,7 +792,7 @@ export default function Home() {
                 </div>
                 <div className="w-40 h-24 relative flex-shrink-0 group">
                   <Image 
-                    src="/images/cars/carlogo2.png" 
+                    src="/images/marquee/mercedes-benz-car-logo-brand-png-3.png" 
                     alt="Mercedes-Benz" 
                     fill
                     style={{ objectFit: 'contain' }}
@@ -623,16 +809,16 @@ export default function Home() {
             {/* Trust Indicators */}
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="group">
-                <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2">YEARS EXPERIENCE</h3>
-                <p className="text-gray-400 font-rajdhani text-sm">Serving automotive excellence since 2008</p>
+                <h3 className="text-5xl font-bold text-orange-600 font-orbitron mb-2">10+</h3>
+                <p className="text-white font-rajdhani text-lg font-semibold">Years Experience</p>
               </div>
               <div className="group">
-                <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2">ALL CAR BRANDS</h3>
-                <p className="text-gray-400 font-rajdhani text-sm">All major manufacturers supported</p>
+                <h3 className="text-5xl font-bold text-orange-600 font-orbitron mb-2">1000+</h3>
+                <p className="text-white font-rajdhani text-lg font-semibold">Vehicles Repaired</p>
               </div>
               <div className="group">
-                <h3 className="text-lg font-bold text-white font-orbitron uppercase tracking-wide mb-2">HAPPY CUSTOMERS</h3>
-                <p className="text-gray-400 font-rajdhani text-sm">Trusted by thousands of drivers</p>
+                <h3 className="text-5xl font-bold text-orange-600 font-orbitron mb-2">100%</h3>
+                <p className="text-white font-rajdhani text-lg font-semibold">Honest Service</p>
               </div>
             </div>
           </div>
@@ -661,15 +847,15 @@ export default function Home() {
                 </div>
               </div>
               <div className="lg:w-1/2">
-                <div className="border-l-4 border-red-600 pl-6 mb-8">
-                  <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+                <div className="border-l-4 border-orange-600 pl-6 mb-8">
+                  <p className="text-orange-500 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     15 YEARS OF AUTOMOTIVE EXCELLENCE
                   </p>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-4">
                   WELCOME TO
                 </h2>
-                <h3 className="text-4xl md:text-6xl font-bold text-red-600 uppercase font-orbitron tracking-wider leading-tight mb-8">
+                <h3 className="text-4xl md:text-6xl font-bold text-orange-500 uppercase font-orbitron tracking-wider leading-tight mb-8">
                   THE CAR EDITION
                 </h3>
                 <p className="text-lg text-gray-300 font-rajdhani leading-relaxed mb-8">
@@ -677,9 +863,9 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/services" className="inline-flex items-center bg-white text-black hover:bg-gray-200 px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
-                    <span className="mr-3 text-red-600 text-lg">+</span> EXPLORE SERVICES
+                    <span className="mr-3 text-orange-500 text-lg">+</span> EXPLORE SERVICES
                   </Link>
-                  <Link href="/about-us" className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
+                  <Link href="/about-us" className="inline-flex items-center bg-orange-600 hover:bg-orange-600 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
                     <span className="mr-3 text-lg">→</span> LEARN MORE
                   </Link>
                 </div>
@@ -689,80 +875,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gold Members Club Section */}
-      <section className="py-20 bg-black" style={{backgroundImage: 'url(/images/logos/background-1.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative'}}>
-        <div className="absolute inset-0 bg-black/80"></div>
-        <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.1)]"></div>
-        <div className="w-full px-6 relative z-10">
-          <div className="max-w-screen-2xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center gap-16">
-              <div className="lg:w-1/2 order-2 lg:order-1">
-                <div className="border-l-4 border-red-600 pl-6 mb-8">
-                  <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                    EXCLUSIVE MEMBERSHIP PROGRAM
-                  </p>
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
-                  JOIN OUR GOLD
-                  <br />
-                  <span className="text-red-600">MEMBERS CLUB</span>
-                </h2>
-                <p className="text-lg text-gray-300 font-rajdhani leading-relaxed mb-8">
-                  Earn points for every service visit and unlock exclusive rewards. Get MOT and service reminders, priority booking, and special member discounts. Start with 5,000 bonus points when you join today!
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <Link href="/join-members-club" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg text-center">
-                    JOIN NOW
-                  </Link>
-                  <Link href="/join-members-club" className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg text-center">
-                    LEARN MORE
-                  </Link>
-                </div>
-                
-                {/* Member Benefits */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-600 rounded-full mr-3"></div>
-                    <span className="text-gray-300 font-rajdhani">5,000 Welcome Points</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-600 rounded-full mr-3"></div>
-                    <span className="text-gray-300 font-rajdhani">Priority Booking</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-600 rounded-full mr-3"></div>
-                    <span className="text-gray-300 font-rajdhani">Service Reminders</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-600 rounded-full mr-3"></div>
-                    <span className="text-gray-300 font-rajdhani">Exclusive Discounts</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="lg:w-1/2 order-1 lg:order-2">
-                <div className="relative">
-                  <Image
-                    src="/images/logos/rentacarimage.jpg"
-                    alt="Gold Members Club Benefits"
-                    width={600}
-                    height={400}
-                    className="rounded-2xl shadow-2xl border border-gray-800"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-                  
-                  {/* Membership Card Overlay */}
-                  <div className="absolute top-6 right-6 bg-gradient-to-br from-yellow-400 to-yellow-600 p-4 rounded-xl shadow-lg">
-                    <p className="text-black text-xs font-bold font-orbitron uppercase">GOLD MEMBER</p>
-                    <p className="text-black text-lg font-bold font-orbitron">5,000</p>
-                    <p className="text-black text-xs font-rajdhani">BONUS POINTS</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Why Service Your Car Section */}
       <section className="py-20 bg-black" style={{backgroundImage: 'url(/images/logos/background-1.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative'}}>
@@ -786,60 +898,79 @@ export default function Home() {
               
               {/* Right side - Compact Content */}
               <div className="lg:w-1/2">
-                <div className="border-l-4 border-red-600 pl-4 mb-6">
-                  <p className="text-red-600 text-xs font-bold uppercase tracking-wider font-rajdhani">
+                <div className="border-l-4 border-orange-600 pl-4 mb-6">
+                  <p className="text-orange-500 text-xs font-bold uppercase tracking-wider font-rajdhani">
                     PROFESSIONAL SERVICES
                   </p>
                 </div>
+                {/* Orange Badge */}
+                <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-rajdhani font-bold uppercase tracking-wider mb-6">
+                  Trusted by enthusiasts
+                </div>
+                
                 <h2 className="text-3xl md:text-4xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
-                  WHY SERVICE YOUR CAR WITH
-                  <br />
-                  <span className="text-red-600">THE CAR EDITION?</span>
+                  Why Choose <span className="text-orange-500">The Car Edition</span>
                 </h2>
                 
                 <p className="text-lg text-gray-300 font-rajdhani leading-relaxed mb-8">
-                  Professional automotive services with certified mechanics and quality parts.
+                  We treat every car as if it were our own. Whether it is a daily runabout, a work van, or a performance build you will always get dealership-level care without the dealership prices.
                 </p>
                 
-                {/* Service Features - 6 Points in 2 columns */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-300 font-rajdhani text-base">Main dealer level experience</span>
+                {/* Service Features with Orange Badges */}
+                <div className="space-y-6 mb-8">
+                  <div className="flex items-start">
+                    <div className="flex items-center justify-center w-8 h-8 bg-orange-600 rounded-lg mr-4 flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-orbitron font-bold text-lg mb-2">Honest Diagnostics</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">Straight answers, no guesswork. We tell you exactly what is wrong and what it takes to fix it.</p>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-300 font-rajdhani text-base">Quality Parts</span>
+                  
+                  <div className="flex items-start">
+                    <div className="flex items-center justify-center w-8 h-8 bg-orange-600 rounded-lg mr-4 flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                        <path fillRule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-orbitron font-bold text-lg mb-2">Transparent Pricing</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">Clear communication and upfront pricing. No hidden fees, no surprises.</p>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-300 font-rajdhani text-base">Competitive pricing</span>
+                  
+                  <div className="flex items-start">
+                    <div className="flex items-center justify-center w-8 h-8 bg-orange-600 rounded-lg mr-4 flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-orbitron font-bold text-lg mb-2">Factory-Level Expertise</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">Dealership-level care without dealership prices. Professional tools and passionate technicians.</p>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-300 font-rajdhani text-base">Fast Service</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-300 font-rajdhani text-base">Industry specialists</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-300 font-rajdhani text-base">Globally recognised</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-300 font-rajdhani text-base">We use quality OEM parts</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-300 font-rajdhani text-base">Transparency</span>
+                  
+                  <div className="flex items-start">
+                    <div className="flex items-center justify-center w-8 h-8 bg-orange-600 rounded-lg mr-4 flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-orbitron font-bold text-lg mb-2">Trusted by Enthusiasts</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">Whether it is a daily driver or a performance build, we treat every car as if it were our own.</p>
+                    </div>
                   </div>
                 </div>
                 
                 {/* Call to Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/services" className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
+                  <Link href="/services" className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-600 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
                     VIEW SERVICES
                   </Link>
                   <Link href="/contact-us" className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg">
@@ -852,199 +983,339 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Specialist Mechanical Work and Diagnostics */}
-      <section className="py-20 bg-white">
-        <div className="w-full px-6">
+      {/* Our Services Section */}
+      <section className="py-24 bg-gradient-to-b from-black via-gray-900/20 to-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, orange 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
+        </div>
+        
+        <div className="w-full px-6 relative z-10">
           <div className="max-w-screen-2xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center gap-3 bg-orange-600/10 border border-orange-600/30 rounded-full px-6 py-2 mb-6">
+                <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
+                <p className="text-orange-500 text-sm font-bold uppercase tracking-wider font-rajdhani">
                   PROFESSIONAL EXPERTISE
                 </p>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-black uppercase font-orbitron tracking-wider leading-tight mb-6">
-                SPECIALIST MECHANICAL WORK
-                <br />
-                <span className="text-red-600">& DIAGNOSTICS</span>
+              <h2 className="text-5xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Services</span>
               </h2>
-              <p className="text-lg text-gray-600 font-rajdhani max-w-3xl mx-auto leading-relaxed">
-                Expert technicians delivering professional solutions for all your vehicle needs with state-of-the-art diagnostic equipment.
+              <p className="text-xl text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
+                Every job we take on is done properly, no guesswork, no upselling, no compromises.
               </p>
             </div>
           
-          {/* Sliding services carousel */}
-          <div className="relative overflow-hidden" 
-            onMouseEnter={() => setAutoScrollEnabled(false)}
-            onMouseLeave={() => setAutoScrollEnabled(true)}
-          >
-            {/* Slider container */}
-            <div className="flex space-x-6 overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory" ref={servicesSliderRef}>
-              
-              {/* Service 1: Timing Chains */}
-              <div className="flex-shrink-0 w-full md:w-1/4 lg:w-1/5 min-w-[280px] snap-start">
-                <div className="relative aspect-square overflow-hidden" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'}}>
-                  <Image
-                    src="/images/services/serviceimage1.jpg"
-                    alt="Timing Chains"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 className="text-base font-semibold mb-2">TIMING CHAINS</h3>
-                    <p className="text-xs mb-4">Professional timing chain replacement and repair services for optimal engine performance.</p>
-                    <Link href="/services/timing-chains" className="text-xs font-semibold tracking-wider uppercase flex items-center text-white hover:text-[#f56e13] transition-colors">
-                      Learn More
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
+            {/* Service Tabs */}
+            <div className="flex flex-wrap justify-center gap-3 mb-16">
+              {[
+                { 
+                  name: 'Diagnostics & Electrical', 
+                  icon: (
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                    </svg>
+                  )
+                },
+                { 
+                  name: 'Keys & Security', 
+                  icon: (
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clipRule="evenodd" />
+                    </svg>
+                  )
+                },
+                { 
+                  name: 'Performance & Remapping', 
+                  icon: (
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                    </svg>
+                  )
+                },
+                { 
+                  name: 'Servicing & Maintenance', 
+                  icon: (
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                      <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
+                    </svg>
+                  )
+                },
+                { 
+                  name: 'Tyres & Wheel Alignment', 
+                  icon: (
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                    </svg>
+                  )
+                },
+                { 
+                  name: 'Mechanical Repairs', 
+                  icon: (
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  )
+                }
+              ].map((service, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveServiceTab(index)}
+                  className={`group relative flex flex-col items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 border-2 ${
+                    activeServiceTab === index
+                      ? 'bg-gradient-to-br from-orange-600 to-orange-700 border-orange-500 text-white shadow-lg shadow-orange-600/30 scale-105'
+                      : 'bg-gray-900/50 border-gray-800 text-white hover:bg-gray-800/80 hover:border-orange-600/50 hover:scale-105'
+                  }`}
+                >
+                  <div className="mb-2">
+                    {service.icon}
                   </div>
-                </div>
-              </div>
-              
-              {/* Service 2: Engine Rebuilds */}
-              <div className="flex-shrink-0 w-full md:w-1/4 lg:w-1/5 min-w-[280px] snap-start">
-                <div className="relative aspect-square overflow-hidden" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'}}>
-                  <Image
-                    src="/images/services/serviceimage2.jpg"
-                    alt="Engine Rebuilds"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 className="text-base font-semibold mb-2">ENGINE REBUILDS</h3>
-                    <p className="text-xs mb-4">Complete engine rebuild services to restore your vehicle's performance and reliability.</p>
-                    <Link href="/services/engine-rebuilds" className="text-xs font-semibold tracking-wider uppercase flex items-center text-white hover:text-[#f56e13] transition-colors">
-                      Learn More
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Service 3: Turbos */}
-              <div className="flex-shrink-0 w-full md:w-1/4 lg:w-1/5 min-w-[280px] snap-start">
-                <div className="relative aspect-square overflow-hidden" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'}}>
-                  <Image
-                    src="/images/services/serviceimage3.jpg"
-                    alt="Turbos"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 className="text-base font-semibold mb-2">TURBOS</h3>
-                    <p className="text-xs mb-4">Professional turbo repair and replacement services for optimal turbocharged engine performance.</p>
-                    <Link href="/services/turbos" className="text-xs font-semibold tracking-wider uppercase flex items-center text-white hover:text-[#f56e13] transition-colors">
-                      Learn More
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Service 4: Brakes and Pads */}
-              <div className="flex-shrink-0 w-full md:w-1/4 lg:w-1/5 min-w-[280px] snap-start">
-                <div className="relative aspect-square overflow-hidden" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'}}>
-                  <Image
-                    src="/images/services/serviceimage4.jpg"
-                    alt="Brakes and Pads"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 className="text-base font-semibold mb-2">BRAKES & PADS</h3>
-                    <p className="text-xs mb-4">Expert brake and pad replacement services to ensure your safety and optimal stopping power.</p>
-                    <Link href="/services/brakes-and-pads" className="text-xs font-semibold tracking-wider uppercase flex items-center text-white hover:text-[#f56e13] transition-colors">
-                      Learn More
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Service 5: Diagnostics */}
-              <div className="flex-shrink-0 w-full md:w-1/4 lg:w-1/5 min-w-[280px] snap-start">
-                <div className="relative aspect-square overflow-hidden" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'}}>
-                  <Image
-                    src="/images/services/serviceimage5.jpg"
-                    alt="Diagnostics"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 className="text-base font-semibold mb-2">DIAGNOSTICS</h3>
-                    <p className="text-xs mb-4">Advanced diagnostic services to identify and resolve issues with precision and accuracy.</p>
-                    <Link href="/services/diagnostics" className="text-xs font-semibold tracking-wider uppercase flex items-center text-white hover:text-[#f56e13] transition-colors">
-                      Learn More
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="flex-shrink-0 w-full md:w-1/4 lg:w-1/5 min-w-[280px] snap-start">
-                <div className="relative aspect-square overflow-hidden" style={{clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'}}>
-                  <Image
-                    src="/images/tyres-and-puncture.jpeg"
-                    alt="Tyres & Puncture Repair"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 className="text-base font-semibold mb-2">TYRES & PUNCTURE REPAIR</h3>
-                    <p className="text-xs mb-4">Professional tyre fitting and puncture repair services to keep you safe on the road.</p>
-                    <Link href="/services/tyres-and-puncture" className="text-xs font-semibold tracking-wider uppercase flex items-center text-white hover:text-[#f56e13] transition-colors">
-                      Learn More
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+                  <span className="text-xs font-rajdhani font-bold uppercase tracking-wide">{service.name}</span>
+                  {activeServiceTab === index && (
+                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-orange-500 rounded-full"></div>
+                  )}
+                </button>
+              ))}
             </div>
-            
-            {/* Navigation arrows */}
-            <button 
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full z-10 ml-2"
-              onClick={() => {
-                setAutoScrollEnabled(false);
-                if (servicesSliderRef.current) {
-                  servicesSliderRef.current.scrollLeft -= 300;
-                }
-              }}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button 
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full z-10 mr-2"
-              onClick={() => {
-                setAutoScrollEnabled(false);
-                if (servicesSliderRef.current) {
-                  servicesSliderRef.current.scrollLeft += 300;
-                }
-              }}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
+
+            {/* Service Content */}
+            <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm rounded-2xl p-12 border-2 border-gray-800/50 shadow-2xl">
+              {/* Diagnostics & Electrical */}
+              {activeServiceTab === 0 && (
+                <div className="animate-fadeIn">
+                  <div className="flex items-start mb-8">
+                    <div className="w-14 h-14 bg-orange-600 rounded-lg flex items-center justify-center mr-5 flex-shrink-0">
+                      <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white font-orbitron mb-3">Diagnostics & Electrical</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">Advanced diagnostic equipment to identify and resolve electrical faults, sensor issues, and system malfunctions.</p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Advanced OBD diagnostics</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Electrical fault finding</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Sensor diagnostics and replacement</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">ECU fault code reading and clearing</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Wiring repairs and modifications</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* Keys & Security */}
+              {activeServiceTab === 1 && (
+                <div className="animate-fadeIn">
+                  <div className="flex items-start mb-8">
+                    <div className="w-14 h-14 bg-orange-600 rounded-lg flex items-center justify-center mr-5 flex-shrink-0">
+                      <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white font-orbitron mb-3">Keys & Security</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">Car key programming, replacement, emergency opening, and immobiliser services for all vehicle makes.</p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Key programming and coding</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Lost key replacement</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Emergency vehicle opening</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Immobiliser repair and bypass</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Remote key fob programming</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Performance & Remapping */}
+              {activeServiceTab === 2 && (
+                <div className="animate-fadeIn">
+                  <div className="flex items-start mb-8">
+                    <div className="w-14 h-14 bg-orange-600 rounded-lg flex items-center justify-center mr-5 flex-shrink-0">
+                      <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white font-orbitron mb-3">Performance & Remapping</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">ECU remapping, stage 1-3 tuning, AdBlue delete, and performance upgrades for enhanced power and efficiency.</p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Stage 1, 2, and 3 ECU remapping</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">DPF and AdBlue delete</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Performance upgrades</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Rolling road tuning</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Custom map development</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Servicing & Maintenance */}
+              {activeServiceTab === 3 && (
+                <div className="animate-fadeIn">
+                  <div className="flex items-start mb-8">
+                    <div className="w-14 h-14 bg-orange-600 rounded-lg flex items-center justify-center mr-5 flex-shrink-0">
+                      <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                        <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white font-orbitron mb-3">Servicing & Maintenance</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">Regular servicing, oil changes, brake repairs, and preventative maintenance to keep your vehicle running smoothly.</p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Full and interim servicing</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Oil and filter changes</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Brake inspection and repair</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Suspension checks</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">MOT preparation</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Tyres & Wheel Alignment */}
+              {activeServiceTab === 4 && (
+                <div className="animate-fadeIn">
+                  <div className="flex items-start mb-8">
+                    <div className="w-14 h-14 bg-orange-600 rounded-lg flex items-center justify-center mr-5 flex-shrink-0">
+                      <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white font-orbitron mb-3">Tyres & Wheel Alignment</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">For any vehicle up to 3.5 tonne, ensuring that tyres are set to the optimal position as per the manufacturer spec.</p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Tyre fitting and balancing</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">4-wheel alignment and geometry</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Puncture repairs</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">TPMS sensor replacement</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Wheel refurbishment</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Mechanical Repairs */}
+              {activeServiceTab === 5 && (
+                <div className="animate-fadeIn">
+                  <div className="flex items-start mb-8">
+                    <div className="w-14 h-14 bg-orange-600 rounded-lg flex items-center justify-center mr-5 flex-shrink-0">
+                      <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white font-orbitron mb-3">Mechanical Repairs</h3>
+                      <p className="text-gray-300 font-rajdhani text-base leading-relaxed">Comprehensive mechanical repairs from timing chains to clutch replacements, all carried out to the highest standards.</p>
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Timing belt and chain replacement</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Clutch replacement</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Engine repairs and rebuilds</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Gearbox repairs</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300 font-rajdhani text-sm">Cooling system repairs</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -1059,15 +1330,15 @@ export default function Home() {
               
               {/* Left Content */}
               <div className="lg:w-1/2 order-2 lg:order-1">
-                <div className="border-l-4 border-red-600 pl-6 mb-8">
-                  <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+                <div className="border-l-4 border-orange-600 pl-6 mb-8">
+                  <p className="text-orange-500 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     BOOK YOUR SERVICE TODAY
                   </p>
                 </div>
                 <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
                   SCHEDULE AN
                   <br />
-                  <span className="text-red-600">APPOINTMENT</span>
+                  <span className="text-orange-500">APPOINTMENT</span>
                 </h2>
                 <p className="text-lg text-gray-300 font-rajdhani leading-relaxed mb-8">
                   Experience professional automotive service at The Car Edition. Our expert technicians are ready to keep your vehicle running at peak performance. Book your appointment today for quality service you can trust.
@@ -1076,25 +1347,25 @@ export default function Home() {
                 {/* Service Benefits */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-600 rounded-full mr-3"></div>
+                    <div className="w-3 h-3 bg-orange-600 rounded-full mr-3"></div>
                     <span className="text-gray-300 font-rajdhani">Same Day Service</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-600 rounded-full mr-3"></div>
+                    <div className="w-3 h-3 bg-orange-600 rounded-full mr-3"></div>
                     <span className="text-gray-300 font-rajdhani">Expert Technicians</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-600 rounded-full mr-3"></div>
+                    <div className="w-3 h-3 bg-orange-600 rounded-full mr-3"></div>
                     <span className="text-gray-300 font-rajdhani">Quality Guarantee</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-red-600 rounded-full mr-3"></div>
+                    <div className="w-3 h-3 bg-orange-600 rounded-full mr-3"></div>
                     <span className="text-gray-300 font-rajdhani">Competitive Prices</span>
                   </div>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/service-estimator" className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
+                  <Link href="/service-estimator" className="inline-flex items-center bg-orange-600 hover:bg-orange-600 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
                     BOOK APPOINTMENT
                   </Link>
                   <Link href="/contact" className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg">
@@ -1116,7 +1387,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                   
                   {/* Service Hours Overlay */}
-                  <div className="absolute top-6 left-6 bg-red-600 p-4 rounded-xl shadow-lg">
+                  <div className="absolute top-6 left-6 bg-orange-600 p-4 rounded-xl shadow-lg">
                     <p className="text-white text-xs font-bold font-orbitron uppercase mb-1">OPEN TODAY</p>
                     <p className="text-white text-sm font-rajdhani">Mon-Fri: 8AM-6PM</p>
                     <p className="text-white text-sm font-rajdhani">Sat: 8AM-4PM</p>
@@ -1128,67 +1399,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Podcast Section */}
-      <section className="py-20 bg-black">
-        <div className="w-full px-6">
-          <div className="max-w-screen-2xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                  AUTOMOTIVE INSIGHTS
-                </p>
-              </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
-                THE CAR EDITION
-                <br />
-                <span className="text-red-600">PODCAST</span>
-              </h2>
-              <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
-                Tune in to our podcast series featuring expert automotive advice, industry insights, and behind-the-scenes stories from The Car Edition.
-              </p>
-            </div>
-
-            {/* Podcast Embed */}
-            <div className="max-w-5xl mx-auto">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-black">
-                <div className="aspect-video">
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube-nocookie.com/embed/videoseries?si=jSyEJHyz8tmXjkAa&amp;list=PLUwzUs0wNzaSMHjYSAU4IEQuVhV4GOVZz" 
-                    title="The Car Edition Podcast" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    allowFullScreen
-                    className="w-full h-full"
-                  ></iframe>
-                </div>
-              </div>
-              
-              {/* Call to Action */}
-              <div className="mt-8 text-center">
-                <a 
-                  href="https://youtube.com/playlist?list=PLUwzUs0wNzaSMHjYSAU4IEQuVhV4GOVZz&si=jSyEJHyz8tmXjkAa" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg"
-                >
-                  <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                  WATCH ON YOUTUBE
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials Section */}
       <TestimonialsCarousel limit={6} autoplaySpeed={6000} />
-
 
 
     </main>

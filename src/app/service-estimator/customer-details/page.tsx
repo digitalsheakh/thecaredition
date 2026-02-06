@@ -165,7 +165,7 @@ export default function CustomerDetails() {
   //   return (
   //     <div className="min-h-screen bg-gray-950 text-white p-4 flex items-center justify-center">
   //       <div className="text-center">
-  //         <p className="text-red-500 mb-4">{servicesError}</p>
+  //         <p className="text-orange-500 mb-4">{servicesError}</p>
   //         <button 
   //           onClick={() => window.location.reload()}
   //           className="bg-orange-500 text-white px-4 py-2 rounded"
@@ -219,7 +219,7 @@ export default function CustomerDetails() {
                     <p><span className="font-semibold">Year:</span> {vehicle.yearOfManufacture}</p>
                   </div>
                 ) : (
-                  <p className="text-red-500">No vehicle selected</p>
+                  <p className="text-orange-500">No vehicle selected</p>
                 )}
               </div>
               
@@ -241,7 +241,7 @@ export default function CustomerDetails() {
                   {services.length > 0  &&  <li className="font-bold mt-2">Total: £{totalPrice.toFixed(2)}</li> }
                   </ul>
                 ) : (
-                  <p className="text-red-500">No services selected</p>
+                  <p className="text-orange-500">No services selected</p>
                 )}
               </div>
               
@@ -275,7 +275,7 @@ export default function CustomerDetails() {
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">Phone Number <span className="text-red-500">*</span></label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">Phone Number <span className="text-orange-500">*</span></label>
                   <input
                     type="tel"
                     id="phone"
@@ -289,7 +289,7 @@ export default function CustomerDetails() {
               </div>
               
               {submitError && (
-                <div className="bg-red-900 text-white p-3 rounded mb-4">
+                <div className="bg-orange-900 text-white p-3 rounded mb-4">
                   {submitError}
                 </div>
               )}

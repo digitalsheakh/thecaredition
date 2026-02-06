@@ -19,7 +19,7 @@ const ChatbotWrapper: React.FC = () => {
       {/* Chat toggle button - Redesigned to match website theme */}
       <button
         onClick={toggleChat}
-        className="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white rounded-full p-4 shadow-2xl z-50 transition-all duration-300 hover:scale-110 border-2 border-red-500 group"
+        className="fixed bottom-6 right-6 bg-orange-600 hover:bg-orange-700 text-white rounded-full p-4 shadow-2xl z-50 transition-all duration-300 hover:scale-110 border-2 border-orange-500 group"
         aria-label="Chat with us"
       >
         {isChatOpen ? (

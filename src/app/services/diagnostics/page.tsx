@@ -1,5 +1,4 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
-import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,7 +17,7 @@ export default function DiagnosticsPage() {
         
         {/* Service Badge */}
         <div className="absolute top-8 left-8 md:left-16 z-20">
-          <span className="bg-red-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
+          <span className="bg-orange-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
             DIAGNOSTIC SERVICES
           </span>
         </div>
@@ -42,8 +41,8 @@ export default function DiagnosticsPage() {
         <div className="container mx-auto px-8">
           {/* Section Header */}
           <div className="mb-16">
-            <div className="border-l-4 border-red-600 pl-6 mb-8">
-              <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+            <div className="border-l-4 border-orange-600 pl-6 mb-8">
+              <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                 ADVANCED VEHICLE DIAGNOSTIC SERVICES
               </p>
             </div>
@@ -54,9 +53,20 @@ export default function DiagnosticsPage() {
               <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
                 Modern vehicles are equipped with sophisticated computer systems that monitor every aspect of your car's performance. When something goes wrong, these systems generate diagnostic codes that help us identify the exact <span className="text-white font-semibold">problem quickly and accurately</span>.
               </p>
-              <p className="text-base text-gray-300 font-rajdhani leading-relaxed">
+              <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
                 At <span className="text-white font-semibold">The Car Edition</span>, we use the latest diagnostic equipment to read these codes, analyze system data, and provide you with a comprehensive report of your vehicle's health. Early diagnosis saves you time and money.
               </p>
+              <a 
+                href="https://www.youtube.com/watch?v=q8yZL8IEK5o" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-colors duration-300"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -66,27 +76,27 @@ export default function DiagnosticsPage() {
               What We Offer
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Engine Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Comprehensive engine system analysis to identify performance issues and faults</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Transmission Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Advanced testing of automatic and manual transmission systems</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Electrical System Testing</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete electrical system diagnosis including wiring and component testing</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">ABS & Brake System</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Specialized diagnostics for ABS, ESP, and brake system components</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Air Conditioning Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Climate control system testing and fault identification</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Pre-Purchase Inspections</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Comprehensive vehicle health checks before buying a used car</p>
               </div>
@@ -103,35 +113,35 @@ export default function DiagnosticsPage() {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Latest Equipment</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - State-of-the-art diagnostic tools for all vehicle makes and models</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Expert Analysis</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Skilled technicians who understand complex vehicle systems</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Clear Reports</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Detailed explanations of findings in plain English</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Honest Advice</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Transparent recommendations with no unnecessary work</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Quick Results</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Fast diagnosis to get you back on the road sooner</span>
@@ -152,37 +162,37 @@ export default function DiagnosticsPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Warning lights on dashboard</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Engine running rough or misfiring</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Poor fuel economy</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Difficulty starting the engine</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Unusual noises or vibrations</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Transmission shifting problems</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Air conditioning not working properly</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Failed MOT test</span>
                 </div>
               </div>
@@ -191,12 +201,6 @@ export default function DiagnosticsPage() {
               Early diagnosis can identify problems before they cause breakdowns or expensive damage. Don't wait until it's too late.
             </p>
           </div>
-
-          {/* Video Section */}
-          <ServiceVideoPlayer 
-            videoId="q8yZL8IEK5o" 
-            title="Watch: Advanced Diagnostics Process"
-          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
@@ -220,7 +224,7 @@ export default function DiagnosticsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact-us" 
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-bold transition-colors duration-300 font-rajdhani uppercase tracking-wide"
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 font-bold transition-colors duration-300 font-rajdhani uppercase tracking-wide"
               >
                 Book Service
               </Link>

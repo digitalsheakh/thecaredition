@@ -1,5 +1,4 @@
 import ServiceEstimatorComponent from '@/components/reuseableComponents/ServicesEstimator/ServiceEstimator';
-import ServiceVideoPlayer from '@/components/ServiceVideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,7 +17,7 @@ export default function FordWetBeltReplacementPage() {
         
         {/* Service Badge */}
         <div className="absolute top-8 left-8 md:left-16 z-20">
-          <span className="bg-red-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
+          <span className="bg-orange-600 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider font-rajdhani">
             TRENDING SERVICE
           </span>
         </div>
@@ -42,8 +41,8 @@ export default function FordWetBeltReplacementPage() {
         <div className="container mx-auto px-8">
           {/* Section Header */}
           <div className="mb-16">
-            <div className="border-l-4 border-red-600 pl-6 mb-8">
-              <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+            <div className="border-l-4 border-orange-600 pl-6 mb-8">
+              <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                 FORD WET BELT SPECIALIST
               </p>
             </div>
@@ -54,9 +53,20 @@ export default function FordWetBeltReplacementPage() {
               <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
                 Ford's wet belt system, found in EcoBoost engines, operates inside the engine oil. Unlike traditional timing belts, these belts deteriorate rapidly and can cause <span className="text-white font-semibold">catastrophic engine damage</span> if not replaced in time.
               </p>
-              <p className="text-base text-gray-300 font-rajdhani leading-relaxed">
+              <p className="text-base text-gray-300 mb-6 font-rajdhani leading-relaxed">
                 At <span className="text-white font-semibold">The Car Edition</span>, we specialize in Ford wet belt replacement. Our expert technicians use genuine parts and follow manufacturer specifications to ensure your engine is protected.
               </p>
+              <a 
+                href="https://www.youtube.com/watch?v=-Jz8jyMPt2U" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-colors duration-300"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -66,27 +76,27 @@ export default function FordWetBeltReplacementPage() {
               What We Offer
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Complete Wet Belt Replacement</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Full wet belt system replacement using genuine Ford parts</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Oil Pump Inspection</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Thorough inspection of oil pump and related components</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Engine Oil Change</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete oil and filter change as part of the service</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Coolant System Check</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Inspection and top-up of coolant system</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">System Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Pre and post-replacement diagnostic checks</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-red-600 transition-colors duration-300">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Warranty Coverage</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Comprehensive warranty on parts and labour</p>
               </div>
@@ -103,35 +113,35 @@ export default function FordWetBeltReplacementPage() {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Ford Specialists</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Extensive experience with Ford EcoBoost engines</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Genuine Parts</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Only genuine Ford parts used for reliability</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Competitive Pricing</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - From £1250 + VAT, significantly less than main dealers</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Expert Technicians</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Trained specialists in wet belt replacement</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                 <div>
                   <span className="text-white font-semibold font-rajdhani text-sm">Full Warranty</span>
                   <span className="text-gray-300 font-rajdhani text-sm"> - Comprehensive warranty on all work completed</span>
@@ -152,37 +162,37 @@ export default function FordWetBeltReplacementPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Metallic debris in engine oil</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Unusual engine noises or rattling</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Oil pressure warning light</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Vehicle approaching 100,000 miles</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Engine performance issues</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Belt material visible in oil filter</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Overheating issues</span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-300 font-rajdhani text-sm">Ford recommends replacement at 150,000 miles</span>
                 </div>
               </div>
@@ -191,12 +201,6 @@ export default function FordWetBeltReplacementPage() {
               Don't risk engine failure. Book your wet belt replacement today and protect your investment.
             </p>
           </div>
-
-          {/* Video Section */}
-          <ServiceVideoPlayer 
-            videoId="-Jz8jyMPt2U" 
-            title="Watch: Ford Wet Belt Replacement Process"
-          />
 
           {/* Service Estimator */}
           <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
@@ -220,7 +224,7 @@ export default function FordWetBeltReplacementPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact-us" 
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-bold transition-colors duration-300 font-rajdhani uppercase tracking-wide"
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 font-bold transition-colors duration-300 font-rajdhani uppercase tracking-wide"
               >
                 Book Service
               </Link>

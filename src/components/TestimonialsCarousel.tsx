@@ -171,15 +171,15 @@ export default function TestimonialsCarousel({
       <div className="w-full px-6">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-8">
-            <div className="border-l-4 border-red-600 pl-6 mb-6 inline-block">
-              <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+            <div className="border-l-4 border-orange-600 pl-6 mb-6 inline-block">
+              <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                 CLIENT TESTIMONIALS
               </p>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-black uppercase font-orbitron tracking-wider leading-tight mb-4">
               WHAT OUR CLIENTS
               <br />
-              <span className="text-red-600">SAY ABOUT US</span>
+              <span className="text-orange-600">SAY ABOUT US</span>
             </h2>
             <p className="text-base text-gray-600 font-rajdhani max-w-2xl mx-auto leading-relaxed">
               Read genuine reviews from our satisfied customers who trust us with their vehicles.
@@ -207,7 +207,7 @@ export default function TestimonialsCarousel({
                     >
                       {/* Google Logo and Stars */}
                       <div className="flex items-center justify-between mb-4">
-                        <FaGoogle className="text-blue-500 text-2xl" />
+                        <FaGoogle className="text-gray-500 text-2xl" />
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
                             <BsStarFill 
@@ -224,7 +224,7 @@ export default function TestimonialsCarousel({
                       </p>
                       
                       <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-red-600 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-orange-600 flex items-center justify-center">
                           <span className="text-white font-bold font-orbitron text-lg">{review.author.charAt(0)}</span>
                         </div>
                         <div>
@@ -245,7 +245,7 @@ export default function TestimonialsCarousel({
                       >
                         {/* Google Logo and Stars */}
                         <div className="flex items-center justify-between mb-4">
-                          <FaGoogle className="text-blue-500 text-2xl" />
+                          <FaGoogle className="text-gray-500 text-2xl" />
                           <div className="flex items-center">
                             {[...Array(5)].map((_, i) => (
                               <BsStarFill 
@@ -262,7 +262,7 @@ export default function TestimonialsCarousel({
                         </p>
                         
                         <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
-                          <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-red-600 flex items-center justify-center">
+                          <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-orange-600 flex items-center justify-center">
                             <span className="text-white font-bold font-orbitron text-lg">{review.author.charAt(0)}</span>
                           </div>
                           <div>
@@ -281,7 +281,7 @@ export default function TestimonialsCarousel({
             <div className="flex justify-center mt-8 items-center">
               <button
                 onClick={handlePrev}
-                className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-full transition-colors duration-300 mx-3 shadow-lg"
+                className="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full transition-colors duration-300 mx-3 shadow-lg"
                 aria-label="Previous testimonials"
               >
                 <HiOutlineChevronLeft className="w-5 h-5" />
@@ -289,7 +289,7 @@ export default function TestimonialsCarousel({
               
               <button
                 onClick={handleNext}
-                className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-full transition-colors duration-300 mx-3 shadow-lg"
+                className="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full transition-colors duration-300 mx-3 shadow-lg"
                 aria-label="Next testimonials"
               >
                 <HiOutlineChevronRight className="w-5 h-5" />
@@ -304,7 +304,7 @@ export default function TestimonialsCarousel({
             href="https://g.co/kgs/pGmWczy" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg shadow-lg"
+            className="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg shadow-lg"
           >
             <FaGoogle className="mr-3 w-5 h-5" />
             <span>VIEW ALL GOOGLE REVIEWS</span>

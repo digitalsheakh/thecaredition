@@ -130,7 +130,7 @@ export default function ServiceEstimator() {
                               <div className="w-12 h-6 mb-1 overflow-hidden rounded shadow-sm">
                                 <img src="/images/uk-flag.png" alt="UK Flag" className="w-full h-full object-cover" />
                               </div>
-                              <span className="text-blue-900 font-bold text-sm">UK</span>
+                              <span className="text-gray-900 font-bold text-sm">UK</span>
                             </div>
                             <div className="flex-1 bg-white">
                               <input

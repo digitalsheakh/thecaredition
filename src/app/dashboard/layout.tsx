@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import { SidebarProvider } from '@/context/sidebar-context'
 import '@/app/globals.css'
 import { DashboardLayout } from './(DashboardComponents)/DashboardLayout/DashboardLayout'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
  
-      <div className={`${inter.className} bg-gray-50 text-gray-900`}>
+      <div className={`${poppins.className} bg-gray-50 text-gray-900`}>
         <SidebarProvider>
           <DashboardLayout>{children}</DashboardLayout>
         </SidebarProvider>

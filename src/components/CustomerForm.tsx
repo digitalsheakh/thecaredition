@@ -81,7 +81,7 @@ export default function CustomerForm({ selectedServices, vehicleDetails, totalPr
       <h3 className="text-2xl font-bold mb-6 text-white">Complete Your Service Request</h3>
       
       {submitError && (
-        <div className="bg-red-900 bg-opacity-20 border border-red-500 rounded-lg p-4 mb-6 text-red-200">
+        <div className="bg-orange-900 bg-opacity-20 border border-orange-500 rounded-lg p-4 mb-6 text-orange-200">
           {submitError}
         </div>
       )}

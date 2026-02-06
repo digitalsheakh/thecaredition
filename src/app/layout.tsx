@@ -27,7 +27,7 @@ export default function RootLayout({
       <NextAuthSessionProvider>
         <StoreProvider>
           <body
-            className="font-rajdhani antialiased min-h-screen flex flex-col"
+            className="font-poppins antialiased min-h-screen flex flex-col"
             suppressHydrationWarning={true}
           >
             <Header />

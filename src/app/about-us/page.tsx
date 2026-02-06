@@ -31,13 +31,13 @@ export default function AboutUsPage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+              <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                   LEARN MORE ABOUT US
                 </p>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                ABOUT <span className="text-red-600">US</span>
+                ABOUT <span className="text-orange-600">US</span>
               </h1>
               <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
                 Your trusted automotive partner in Huntingdon, committed to quality, integrity, and exceptional service.
@@ -58,13 +58,13 @@ export default function AboutUsPage() {
               viewport={{ once: true }}
             >
               <div className="text-center mb-16">
-                <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                  <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+                <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                  <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     ABOUT US
                   </p>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                  WELCOME TO <span className="text-red-600">THE CAR EDITION LTD</span>
+                  WELCOME TO <span className="text-orange-600">THE CAR EDITION LTD</span>
                 </h2>
               </div>
               
@@ -85,10 +85,10 @@ export default function AboutUsPage() {
                   
                   {/* Call to Action */}
                   <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                    <Link href="/services" className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg shadow-lg">
+                    <Link href="/services" className="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg shadow-lg">
                       SEE WHAT WE OFFER
                     </Link>
-                    <Link href="/contact-us" className="inline-flex items-center border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg">
+                    <Link href="/contact-us" className="inline-flex items-center border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg">
                       CONTACT US
                     </Link>
                   </div>
@@ -124,13 +124,13 @@ export default function AboutUsPage() {
               viewport={{ once: true }}
             >
               <div className="text-center mb-16">
-                <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                  <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+                <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                  <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     OUR MISSION
                   </p>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                  OUR <span className="text-red-600">MISSION</span>
+                  OUR <span className="text-orange-600">MISSION</span>
                 </h2>
               </div>
               
@@ -180,13 +180,13 @@ export default function AboutUsPage() {
               viewport={{ once: true }}
             >
               <div className="text-center mb-16">
-                <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                  <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+                <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                  <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     MEET OUR TEAM
                   </p>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                  OUR EXPERT <span className="text-red-600">PROFESSIONALS</span>
+                  OUR EXPERT <span className="text-orange-600">PROFESSIONALS</span>
                 </h2>
                 <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
                   Meet the skilled professionals who make The Car Edition your trusted automotive partner.
@@ -208,7 +208,7 @@ export default function AboutUsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-red-600 transition-all duration-300 group"
+                    className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-600 transition-all duration-300 group"
                   >
                     {/* Portrait Image */}
                     <div className="relative h-64">
@@ -223,7 +223,7 @@ export default function AboutUsPage() {
                     {/* Name and Role Section */}
                     <div className="bg-black p-4 text-center">
                       <h3 className="text-lg font-bold text-white mb-1 font-orbitron tracking-wider">{member.name}</h3>
-                      <p className="text-red-400 font-orbitron font-semibold uppercase tracking-wide text-xs">{member.role}</p>
+                      <p className="text-orange-400 font-orbitron font-semibold uppercase tracking-wide text-xs">{member.role}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -244,25 +244,24 @@ export default function AboutUsPage() {
               viewport={{ once: true }}
             >
               <div className="text-center mb-16">
-                <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                  <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+                <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                  <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     OUR ACHIEVEMENTS
                   </p>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase font-orbitron tracking-wider leading-tight">
-                  PROVEN <span className="text-red-600">EXCELLENCE</span>
+                  PROVEN <span className="text-orange-600">EXCELLENCE</span>
                 </h2>
                 <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
                   Numbers that speak for our commitment to quality and customer satisfaction.
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                  { number: "10", label: "Years in Business" },
-                  { number: "15", label: "Specialists" },
-                  { number: "3k", label: "Cars Sold" },
-                  { number: "5", label: "Localizations" }
+                  { number: "10+", label: "Years Experience" },
+                  { number: "1000+", label: "Vehicles Repaired" },
+                  { number: "100%", label: "Honest Service" }
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
@@ -270,10 +269,10 @@ export default function AboutUsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.2 }}
                     viewport={{ once: true }}
-                    className="text-center p-8 bg-gray-900/50 border border-gray-700 rounded-xl hover:border-red-600 transition-all duration-300 group"
+                    className="text-center p-8 bg-gray-900/50 border border-gray-700 rounded-xl hover:border-orange-600 transition-all duration-300 group"
                   >
-                    <div className="text-5xl font-bold text-red-600 mb-4 font-orbitron group-hover:scale-110 transition-transform duration-300">{stat.number}</div>
-                    <div className="text-lg text-gray-300 font-orbitron uppercase tracking-wide">{stat.label}</div>
+                    <div className="text-5xl font-bold text-orange-600 mb-4 font-orbitron group-hover:scale-110 transition-transform duration-300">{stat.number}</div>
+                    <div className="text-lg text-white font-rajdhani font-semibold">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -293,13 +292,13 @@ export default function AboutUsPage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+              <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                   VISIT US TODAY
                 </p>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 uppercase font-orbitron tracking-wider leading-tight">
-                EXPERIENCE THE <span className="text-red-600">DIFFERENCE</span>
+                EXPERIENCE THE <span className="text-orange-600">DIFFERENCE</span>
               </h2>
               <p className="text-xl text-gray-300 font-rajdhani leading-relaxed max-w-4xl mx-auto">
                 Visit The Car Edition today and let our knowledgeable and friendly team guide you through our extensive inventory. Experience the joy of finding your dream car with us – where outstanding customer service meets a commitment to quality, reliability, and a comprehensive suite of automotive solutions, including car maintenance, service and repair.
@@ -320,13 +319,13 @@ export default function AboutUsPage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="border-l-4 border-red-600 pl-6 mb-8 inline-block">
-                <p className="text-red-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+              <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                   STAY CONNECTED
                 </p>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-12 uppercase font-orbitron tracking-wider leading-tight">
-                FOLLOW <span className="text-red-600">US</span>
+                FOLLOW <span className="text-orange-600">US</span>
               </h2>
               
               <div className="flex justify-center gap-8">
@@ -342,7 +341,7 @@ export default function AboutUsPage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className={`group relative w-20 h-20 rounded-xl bg-gray-900/50 border border-gray-700 flex flex-col items-center justify-center text-gray-400 hover:text-white hover:border-red-600 ${social.color} transition-all duration-300 hover:scale-110`}
+                    className={`group relative w-20 h-20 rounded-xl bg-gray-900/50 border border-gray-700 flex flex-col items-center justify-center text-gray-400 hover:text-white hover:border-orange-600 ${social.color} transition-all duration-300 hover:scale-110`}
                   >
                     <social.Icon size={28} />
                     <span className="text-xs font-rajdhani font-semibold mt-1">{social.name}</span>
@@ -352,7 +351,7 @@ export default function AboutUsPage() {
               
               {/* Call to Action */}
               <div className="mt-16">
-                <Link href="/contact-us" className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-12 py-6 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg shadow-lg text-lg">
+                <Link href="/contact-us" className="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white px-12 py-6 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg shadow-lg text-lg">
                   START YOUR CAR JOURNEY TODAY
                 </Link>
               </div>

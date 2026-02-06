@@ -34,7 +34,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   };
 
   return (
-   <div className="mb-8 bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-xl shadow-sm border border-gray-200">
+   <div className="mb-8 bg-gradient-to-r from-gray-50 via-white to-gray-50 rounded-xl shadow-sm border border-gray-200">
   {heading && (
     <div className="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100">
       <h3 className="text-xl font-bold text-gray-900 font-orbitron uppercase tracking-wider">{heading}</h3>
@@ -51,7 +51,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         </div>
         <input
           type="text"
-          className="w-full pl-12 pr-4 py-3 text-base rounded-lg border-2 border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 focus:outline-none text-gray-900 placeholder-gray-500 transition-all duration-200 font-rajdhani shadow-sm"
+          className="w-full pl-12 pr-4 py-3 text-base rounded-lg border-2 border-gray-300 focus:border-gray-500 focus:ring-2 focus:ring-gray-200 focus:outline-none text-gray-900 placeholder-gray-500 transition-all duration-200 font-rajdhani shadow-sm"
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -62,7 +62,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         <button 
           type="submit" 
           disabled={isSearching}
-          className="inline-flex items-center px-6 py-3 text-base font-bold rounded-lg text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 shadow-lg transition-all duration-200 ease-in-out hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed font-rajdhani uppercase tracking-wide"
+          className="inline-flex items-center px-6 py-3 text-base font-bold rounded-lg text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-lg transition-all duration-200 ease-in-out hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed font-rajdhani uppercase tracking-wide"
         >
           {isSearching ? (
             <>
@@ -91,7 +91,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
             <select 
               value={limit.toString()} 
               onChange={(e) => handleLimitChange(e.target.value)}
-              className="w-20 border-2 border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-gray-900 font-rajdhani font-medium bg-white shadow-sm"
+              className="w-20 border-2 border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 text-gray-900 font-rajdhani font-medium bg-white shadow-sm"
             >
               <option value="5">5</option>
               <option value="10">10</option>
