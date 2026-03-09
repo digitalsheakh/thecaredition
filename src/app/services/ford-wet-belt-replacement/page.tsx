@@ -6,7 +6,7 @@ export default function FordWetBeltReplacementPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-32">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden bg-gray-900">
+      <section className="relative h-[70vh] overflow-hidden bg-black">
         <Image
           src="/images/services/serviceimage1.jpg"
           alt="Ford Wet Belt Replacement Service"
@@ -62,7 +62,7 @@ export default function FordWetBeltReplacementPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-colors duration-300"
               >
-                Learn More
+                Watch Video
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
                 </svg>
@@ -76,27 +76,27 @@ export default function FordWetBeltReplacementPage() {
               What We Offer
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Complete Wet Belt Replacement</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Full wet belt system replacement using genuine Ford parts</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Oil Pump Inspection</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Thorough inspection of oil pump and related components</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Engine Oil Change</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete oil and filter change as part of the service</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Coolant System Check</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Inspection and top-up of coolant system</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">System Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Pre and post-replacement diagnostic checks</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Warranty Coverage</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Comprehensive warranty on parts and labour</p>
               </div>
@@ -203,7 +203,7 @@ export default function FordWetBeltReplacementPage() {
           </div>
 
           {/* Service Estimator */}
-          <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
+          <div className="mb-20 bg-black p-8 rounded-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 text-center font-orbitron uppercase">
               Get Your Ford Wet Belt Replacement Quote
             </h3>

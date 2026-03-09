@@ -6,7 +6,7 @@ export default function PerformanceECUTuningPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-32">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden bg-gray-900">
+      <section className="relative h-[70vh] overflow-hidden bg-black">
         <Image
           src="/images/services/serviceimage3.jpg"
           alt="Performance & ECU Tuning Service"
@@ -62,7 +62,7 @@ export default function PerformanceECUTuningPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-colors duration-300"
               >
-                Learn More
+                Watch Video
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
                 </svg>
@@ -76,27 +76,27 @@ export default function PerformanceECUTuningPage() {
               What We Offer
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Stage 1 Remapping</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Safe power gains with improved fuel economy and throttle response</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Stage 2 & 3 Tuning</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Advanced tuning for modified vehicles with upgraded components</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Economy Remapping</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Optimize fuel efficiency without sacrificing performance</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">DPF & EGR Solutions</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Professional DPF and EGR removal or optimization</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Dyno Testing</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Before and after power runs to verify gains</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Custom Mapping</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Bespoke tuning solutions for unique requirements</p>
               </div>
@@ -203,7 +203,7 @@ export default function PerformanceECUTuningPage() {
           </div>
 
           {/* Service Estimator */}
-          <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
+          <div className="mb-20 bg-black p-8 rounded-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 text-center font-orbitron uppercase">
               Get Your Performance Tuning Quote
             </h3>

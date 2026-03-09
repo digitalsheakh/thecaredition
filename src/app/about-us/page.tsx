@@ -193,40 +193,97 @@ export default function AboutUsPage() {
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {[
-                  { name: "JAMES", role: "SERVICE TECHNICIAN" },
-                  { name: "SARAH", role: "SERVICE MANAGER" },
-                  { name: "DAVID", role: "SENIOR TECHNICIAN" },
-                  { name: "MICHAEL", role: "PARTS SPECIALIST" },
-                  { name: "EMMA", role: "SALES CONSULTANT" },
-                  { name: "ROBERT", role: "WORKSHOP SUPERVISOR" }
-                ].map((member, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-600 transition-all duration-300 group"
-                  >
-                    {/* Portrait Image */}
-                    <div className="relative h-64">
-                      <Image
-                        src="/images/logos/about us image.jpg"
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                      />
+              {/* Group Photo */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="mb-16"
+              >
+                <div className="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden hover:border-orange-600 transition-all duration-300 group">
+                  <div className="relative h-[400px] md:h-[500px]">
+                    <Image
+                      src="/images/logos/about us image.jpg"
+                      alt="The Car Edition Team"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-6 left-6">
+                      <h3 className="text-2xl font-bold text-white font-orbitron tracking-wider">THE CAR EDITION TEAM</h3>
+                      <p className="text-orange-400 font-rajdhani font-semibold uppercase tracking-wide text-sm mt-1">Our Family</p>
                     </div>
-                    
-                    {/* Name and Role Section */}
-                    <div className="bg-black p-4 text-center">
-                      <h3 className="text-lg font-bold text-white mb-1 font-orbitron tracking-wider">{member.name}</h3>
-                      <p className="text-orange-400 font-orbitron font-semibold uppercase tracking-wide text-xs">{member.role}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Directors - 2 Cards */}
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-white mb-8 font-orbitron tracking-wider text-center">OUR <span className="text-orange-600">DIRECTORS</span></h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                  {[
+                    { name: "DIRECTOR 1", role: "CO-FOUNDER & DIRECTOR" },
+                    { name: "DIRECTOR 2", role: "CO-FOUNDER & DIRECTOR" }
+                  ].map((member, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: index * 0.15 }}
+                      viewport={{ once: true }}
+                      className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-600 transition-all duration-300 group"
+                    >
+                      <div className="relative h-80">
+                        <Image
+                          src="/images/logos/about us image.jpg"
+                          alt={member.name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="bg-black p-5 text-center">
+                        <h3 className="text-lg font-bold text-white mb-1 font-orbitron tracking-wider">{member.name}</h3>
+                        <p className="text-orange-400 font-orbitron font-semibold uppercase tracking-wide text-xs">{member.role}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Experts - 4 Cards */}
+              <div className="mt-16">
+                <h3 className="text-2xl font-bold text-white mb-8 font-orbitron tracking-wider text-center">OUR <span className="text-orange-600">EXPERTS</span></h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {[
+                    { name: "EXPERT 1", role: "SENIOR TECHNICIAN" },
+                    { name: "EXPERT 2", role: "DIAGNOSTIC SPECIALIST" },
+                    { name: "EXPERT 3", role: "ENGINE SPECIALIST" },
+                    { name: "EXPERT 4", role: "SERVICE TECHNICIAN" }
+                  ].map((member, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-600 transition-all duration-300 group"
+                    >
+                      <div className="relative h-64">
+                        <Image
+                          src="/images/logos/about us image.jpg"
+                          alt={member.name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="bg-black p-4 text-center">
+                        <h3 className="text-lg font-bold text-white mb-1 font-orbitron tracking-wider">{member.name}</h3>
+                        <p className="text-orange-400 font-orbitron font-semibold uppercase tracking-wide text-xs">{member.role}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>

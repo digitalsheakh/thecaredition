@@ -169,16 +169,15 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 max-w-screen-2xl mx-auto">
           {/* Logo */}
           <Link href="/" className="flex items-center group mr-6 transition-transform duration-300 hover:scale-105">
-            <div className="relative flex items-center bg-gradient-to-r from-orange-600/10 to-transparent rounded-lg px-2.5 py-1.5 border border-orange-600/20 group-hover:border-orange-600/40 transition-all duration-300">
+            <div className="relative flex items-center">
               <Image 
                 src="/images/logos/the_car_edition_logo.png" 
                 alt="The Car Edition Logo" 
                 width={110} 
                 height={37} 
-                className="w-24 h-auto object-contain brightness-110 contrast-110"
+                className="w-24 h-auto object-contain"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/0 via-orange-600/5 to-orange-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
             </div>
           </Link>
 
@@ -213,7 +212,7 @@ export default function Header() {
                   
                   {/* Services Dropdown */}
                   {item.hasDropdown && (
-                    <div className="absolute top-full left-0 mt-0 w-64 bg-black/95 backdrop-blur-sm border border-orange-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div className="absolute top-full left-0 mt-0 w-64 bg-black border border-orange-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pointer-events-none group-hover:pointer-events-auto">
                       <div className="py-3">
                         {/* Trending Service with Nested Dropdown - Moved to Top */}
                         <div className="relative group/trending">
@@ -223,7 +222,7 @@ export default function Header() {
                           </div>
                           
                           {/* Nested Dropdown - appears to the right at same vertical level */}
-                          <div className="absolute left-full top-[-12px] ml-0 w-64 bg-black/95 backdrop-blur-sm border border-orange-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover/trending:opacity-100 group-hover/trending:visible transition-all duration-300 z-[60] pointer-events-none group-hover/trending:pointer-events-auto">
+                          <div className="absolute left-full top-[-12px] ml-0 w-64 bg-black border border-orange-500/30 rounded-lg shadow-2xl opacity-0 invisible group-hover/trending:opacity-100 group-hover/trending:visible transition-all duration-300 z-[60] pointer-events-none group-hover/trending:pointer-events-auto">
                             <div className="py-3">
                               {trendingServicesItems.map((trendingService) => (
                                 <Link
@@ -282,11 +281,20 @@ export default function Header() {
             
           </nav>
 
-          {/* Phone Number */}
-          <div className="hidden lg:flex items-center">
+          {/* Get Quote Button and Phone Number */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Link 
+              href="/service-estimator" 
+              className="flex items-center bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg font-orbitron text-sm font-bold transition-colors duration-300"
+            >
+              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+              </svg>
+              GET QUOTE
+            </Link>
             <a 
               href="tel:01480759004" 
-              className="flex items-center bg-orange-600 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-orbitron text-sm font-bold transition-colors duration-300"
+              className="flex items-center bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-orbitron text-sm font-bold transition-colors duration-300"
             >
               <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -427,11 +435,18 @@ export default function Header() {
               ABOUT US
             </Link>
             
-            {/* Contact Us Button */}
+            {/* Get Quote and Contact Us Buttons */}
             <div className="mt-auto p-4 bg-gray-800">
               <Link 
+                href="/service-estimator" 
+                className="block bg-orange-600 hover:bg-orange-700 text-white text-center py-4 px-4 font-orbitron uppercase tracking-wider text-base transition-colors mb-3"
+                onClick={closeMobileMenu}
+              >
+                GET QUOTE
+              </Link>
+              <Link 
                 href="/contact-us" 
-                className="block bg-orange-600 hover:bg-orange-600 text-white text-center py-4 px-4 font-orbitron uppercase tracking-wider text-base transition-colors mb-3"
+                className="block bg-gray-700 hover:bg-gray-600 text-white text-center py-4 px-4 font-orbitron uppercase tracking-wider text-base transition-colors mb-3"
                 onClick={closeMobileMenu}
               >
                 CONTACT US

@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function GearboxServicingPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-32">
-      <section className="relative h-[70vh] overflow-hidden bg-gray-900">
+      <section className="relative h-[70vh] overflow-hidden bg-black">
         <Image
           src="/images/services/serviceimage1.jpg"
           alt="Gearbox Servicing"
@@ -58,7 +58,7 @@ export default function GearboxServicingPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-colors duration-300"
               >
-                Learn More
+                Watch Video
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
                 </svg>
@@ -71,34 +71,34 @@ export default function GearboxServicingPage() {
               What We Offer
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Transmission Fluid Change</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete gearbox oil replacement with premium fluids</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Filter Replacement</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">New transmission filter for optimal fluid flow</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">DSG Service</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Specialist DSG gearbox servicing for VW, Audi, Seat, Skoda</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Automatic Gearbox Service</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Full automatic transmission service and inspection</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Gearbox Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Computer diagnostics to identify gearbox faults</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Clutch Inspection</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Thorough clutch system check for manual gearboxes</p>
               </div>
             </div>
           </div>
 
-          <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
+          <div className="mb-20 bg-black p-8 rounded-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 text-center font-orbitron uppercase">
               Get Your Gearbox Service Quote
             </h3>

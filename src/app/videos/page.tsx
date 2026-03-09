@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaYoutube, FaPlay, FaCalendarAlt, FaEye, FaArrowRight, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import ScrollAnimation from '@/components/ScrollAnimation';
 import axios from 'axios';
 import { HeroVideoDialog } from '@/components/magicui/hero-video-dialog';
 
@@ -81,21 +82,23 @@ export default function VideosPage() {
         <div className="w-full px-6">
           <div className="max-w-screen-2xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-12">
-              <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
-                <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                  BEHIND THE SPANNERS
+            <ScrollAnimation animation="fade-up">
+              <div className="text-center mb-12">
+                <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                  <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+                    BEHIND THE SPANNERS
+                  </p>
+                </div>
+                <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
+                  THE CAR EDITION
+                  <br />
+                  <span className="text-orange-600">PODCAST</span>
+                </h2>
+                <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
+                  Real mechanics, real problems, real solutions. Tune in to our unfiltered automotive podcast.
                 </p>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
-                THE CAR EDITION
-                <br />
-                <span className="text-orange-600">PODCAST</span>
-              </h2>
-              <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
-                Real mechanics, real problems, real solutions. Tune in to our unfiltered automotive podcast.
-              </p>
-            </div>
+            </ScrollAnimation>
 
             {/* Podcast Info Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -120,7 +123,7 @@ export default function VideosPage() {
                     href="https://www.youtube.com/@thecareditionltd" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-all duration-300"
+                    className="flex items-center gap-2 bg-[#FF0000] hover:bg-[#cc0000] text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-all duration-300"
                   >
                     <FaYoutube className="text-xl" />
                     YouTube
@@ -158,7 +161,7 @@ export default function VideosPage() {
               </div>
 
               {/* Right Side - Spotify Embed */}
-              <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-800 flex items-center justify-center">
+              <div className="bg-black/50 rounded-2xl p-6 border border-gray-800 flex items-center justify-center">
                 <div className="w-full">
                   <iframe 
                     style={{borderRadius: '12px'}} 
@@ -181,7 +184,7 @@ export default function VideosPage() {
                 href="https://youtu.be/usdmECNdYMM" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
+                className="group bg-black rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <Image
@@ -199,7 +202,7 @@ export default function VideosPage() {
                 <div className="p-4">
                   <h4 className="text-white font-rajdhani font-bold text-base mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">EP 1: Workshop Stories & Automotive Insights</h4>
                   <div className="flex items-center justify-between mt-3">
-                    <span className="text-orange-600 font-rajdhani text-xs font-bold uppercase flex items-center">
+                    <span className="text-[#FF0000] font-rajdhani text-xs font-bold uppercase flex items-center">
                       <FaYoutube className="mr-1" />
                       Listen Now
                     </span>
@@ -213,7 +216,7 @@ export default function VideosPage() {
                 href="https://youtu.be/mFQdz0B5j0w" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
+                className="group bg-black rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <Image
@@ -231,7 +234,7 @@ export default function VideosPage() {
                 <div className="p-4">
                   <h4 className="text-white font-rajdhani font-bold text-base mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">EP 2: Behind The Scenes at The Car Edition</h4>
                   <div className="flex items-center justify-between mt-3">
-                    <span className="text-orange-600 font-rajdhani text-xs font-bold uppercase flex items-center">
+                    <span className="text-[#FF0000] font-rajdhani text-xs font-bold uppercase flex items-center">
                       <FaYoutube className="mr-1" />
                       Listen Now
                     </span>
@@ -245,7 +248,7 @@ export default function VideosPage() {
                 href="https://youtu.be/ADSbukAjsGA" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
+                className="group bg-black rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <Image
@@ -263,7 +266,7 @@ export default function VideosPage() {
                 <div className="p-4">
                   <h4 className="text-white font-rajdhani font-bold text-base mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">EP 3: Diagnostic Deep Dive & Tech Talk</h4>
                   <div className="flex items-center justify-between mt-3">
-                    <span className="text-orange-600 font-rajdhani text-xs font-bold uppercase flex items-center">
+                    <span className="text-[#FF0000] font-rajdhani text-xs font-bold uppercase flex items-center">
                       <FaYoutube className="mr-1" />
                       Listen Now
                     </span>
@@ -277,7 +280,7 @@ export default function VideosPage() {
                 href="https://youtu.be/0NFvgXU9R0k" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
+                className="group bg-black rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <Image
@@ -295,7 +298,7 @@ export default function VideosPage() {
                 <div className="p-4">
                   <h4 className="text-white font-rajdhani font-bold text-base mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">EP 4: Expert Tips & Common Car Issues</h4>
                   <div className="flex items-center justify-between mt-3">
-                    <span className="text-orange-600 font-rajdhani text-xs font-bold uppercase flex items-center">
+                    <span className="text-[#FF0000] font-rajdhani text-xs font-bold uppercase flex items-center">
                       <FaYoutube className="mr-1" />
                       Listen Now
                     </span>
@@ -326,19 +329,21 @@ export default function VideosPage() {
         <div className="w-full px-6">
           <div className="max-w-screen-2xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
-                <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
-                  YOUTUBE & MEDIA
+            <ScrollAnimation animation="fade-up">
+              <div className="text-center mb-16">
+                <div className="border-l-4 border-orange-600 pl-6 mb-8 inline-block">
+                  <p className="text-orange-600 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
+                    YOUTUBE & MEDIA
+                  </p>
+                </div>
+                <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
+                  OUR <span className="text-orange-600">VIDEOS</span>
+                </h2>
+                <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
+                  Watch our latest automotive transformations, expert tips, and behind-the-scenes content from The Car Edition.
                 </p>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
-                EXPLORING THE ROAD TO <span className="text-orange-600">AUTOMOTIVE EXCELLENCE</span>
-              </h2>
-              <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
-                Watch our latest automotive transformations, expert tips, and behind-the-scenes content from The Car Edition.
-              </p>
-            </div>
+            </ScrollAnimation>
         
             {loading ? (
               <div className="flex justify-center items-center h-64">
@@ -356,14 +361,14 @@ export default function VideosPage() {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {videos.map((video, index) => (
                   <a 
                     key={video._id}
                     href={video.videoYoutubeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
+                    className="group bg-black rounded-lg overflow-hidden border border-gray-800 hover:border-orange-600 transition-all duration-300"
                   >
                     <div className="relative aspect-video overflow-hidden">
                       <Image
@@ -381,7 +386,7 @@ export default function VideosPage() {
                     <div className="p-4">
                       <h4 className="text-white font-rajdhani font-bold text-base mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">{video.title}</h4>
                       <div className="flex items-center justify-between mt-3">
-                        <span className="text-orange-600 font-rajdhani text-xs font-bold uppercase flex items-center">
+                        <span className="text-[#FF0000] font-rajdhani text-xs font-bold uppercase flex items-center">
                           <FaYoutube className="mr-1" />
                           Watch Now
                         </span>
@@ -419,7 +424,7 @@ export default function VideosPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
               {/* Services Promotion */}
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+              <div className="bg-black/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
                 <div className="text-center">
                   <p className="text-gray-300 font-rajdhani mb-6 leading-relaxed">
                     From engine rebuilds to routine maintenance, discover our comprehensive range of automotive services designed to keep your vehicle running at its best.
@@ -438,7 +443,7 @@ export default function VideosPage() {
               </div>
 
               {/* Contact Promotion */}
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+              <div className="bg-black/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
                 <div className="text-center">
                   <p className="text-gray-300 font-rajdhani mb-6 leading-relaxed">
                     Ready to experience the Car Edition difference? Contact our expert team today for a consultation and personalized quote for your vehicle.

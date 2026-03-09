@@ -6,7 +6,7 @@ export default function AirConditioningPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-32">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden bg-gray-900">
+      <section className="relative h-[70vh] overflow-hidden bg-black">
         <Image
           src="/images/services/serviceimage2.jpg"
           alt="Air Conditioning Service"
@@ -65,27 +65,27 @@ export default function AirConditioningPage() {
               What We Offer
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">AC Regas Service</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete refrigerant recharge to restore cooling performance</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Leak Detection</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">UV dye testing and pressure testing to locate refrigerant leaks</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Compressor Replacement</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">AC compressor repair and replacement for reliable cooling</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Condenser Repair</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Condenser cleaning, repair, and replacement services</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">AC System Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Comprehensive system testing to identify AC faults</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Cabin Filter Replacement</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Pollen filter replacement for clean, fresh air</p>
               </div>
@@ -192,7 +192,7 @@ export default function AirConditioningPage() {
           </div>
 
           {/* Service Estimator */}
-          <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
+          <div className="mb-20 bg-black p-8 rounded-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 text-center font-orbitron uppercase">
               Get Your AC Service Quote
             </h3>

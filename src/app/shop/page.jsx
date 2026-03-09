@@ -128,7 +128,7 @@ export default function ShopPage() {
       {/* Filter Section */}
       <section className="w-full py-8 bg-gray-900">
         <div className="w-full px-6">
-          <div className="max-w-6xl mx-auto bg-black/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div className="max-w-6xl mx-auto bg-gray-900 border border-gray-700 rounded-2xl p-8">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
               <select className="bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 font-rajdhani text-white focus:outline-none focus:ring-2 focus:ring-red-600">
                 <option>Make</option>
@@ -168,7 +168,7 @@ export default function ShopPage() {
       {/* Results Section */}
       <section id="cars" className="w-full py-8 bg-black">
         <div className="w-full px-6">
-          <div className="max-w-6xl mx-auto bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div className="max-w-6xl mx-auto bg-gray-900 border border-gray-700 rounded-2xl p-8">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-2xl font-bold text-white font-orbitron uppercase tracking-wider">
                 {shopItems.length} <span className="text-red-600">RESULTS</span>
@@ -192,7 +192,7 @@ export default function ShopPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-black/60 border border-gray-600 rounded-xl overflow-hidden backdrop-blur-sm hover:border-red-600 transition-all duration-300 group"
+                  className="bg-black border border-gray-600 rounded-xl overflow-hidden hover:border-red-600 transition-all duration-300 group"
                 >
                   <Link href={`/shop/${item._id}`} className="block">
                     <div className="relative h-48 w-full overflow-hidden">
@@ -210,7 +210,7 @@ export default function ShopPage() {
                       
                       {/* Rating badge */}
                       {item.rating && (
-                        <div className="absolute top-3 left-3 flex items-center bg-black/80 backdrop-blur-sm text-yellow-400 px-2 py-1 rounded text-xs font-orbitron">
+                        <div className="absolute top-3 left-3 flex items-center bg-black text-yellow-400 px-2 py-1 rounded text-xs font-orbitron">
                           <FaStar className="mr-1" />
                           <span>{item.rating.toFixed(1)}</span>
                         </div>
@@ -248,7 +248,7 @@ export default function ShopPage() {
       {/* Customer Reviews Section */}
       <section className="w-full py-16 bg-gray-900">
         <div className="w-full px-6">
-          <div className="max-w-6xl mx-auto bg-black/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div className="max-w-6xl mx-auto bg-gray-900 border border-gray-700 rounded-2xl p-8">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
@@ -275,7 +275,7 @@ export default function ShopPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-black/40 border border-gray-600 p-6 rounded-xl backdrop-blur-sm">
+              <div className="bg-black border border-gray-600 p-6 rounded-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm font-orbitron">NH</span>
@@ -297,7 +297,7 @@ export default function ShopPage() {
                 </p>
               </div>
               
-              <div className="bg-black/40 border border-gray-600 p-6 rounded-xl backdrop-blur-sm">
+              <div className="bg-black border border-gray-600 p-6 rounded-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm font-orbitron">SB</span>
@@ -319,7 +319,7 @@ export default function ShopPage() {
                 </p>
               </div>
               
-              <div className="bg-black/40 border border-gray-600 p-6 rounded-xl backdrop-blur-sm">
+              <div className="bg-black border border-gray-600 p-6 rounded-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm font-orbitron">RC</span>

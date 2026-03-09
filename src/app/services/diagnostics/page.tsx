@@ -6,7 +6,7 @@ export default function DiagnosticsPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-32">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden bg-gray-900">
+      <section className="relative h-[70vh] overflow-hidden bg-black">
         <Image
           src="/images/services/serviceimage5.jpg"
           alt="Diagnostics Service"
@@ -62,7 +62,7 @@ export default function DiagnosticsPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-rajdhani font-bold transition-colors duration-300"
               >
-                Learn More
+                Watch Video
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
                 </svg>
@@ -76,27 +76,27 @@ export default function DiagnosticsPage() {
               What We Offer
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Engine Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Comprehensive engine system analysis to identify performance issues and faults</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Transmission Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Advanced testing of automatic and manual transmission systems</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Electrical System Testing</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Complete electrical system diagnosis including wiring and component testing</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">ABS & Brake System</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Specialized diagnostics for ABS, ESP, and brake system components</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Air Conditioning Diagnostics</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Climate control system testing and fault identification</p>
               </div>
-              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
+              <div className="bg-black p-6 rounded-lg border border-gray-800 hover:border-orange-600 transition-colors duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 font-rajdhani">Pre-Purchase Inspections</h4>
                 <p className="text-gray-300 font-rajdhani text-sm leading-relaxed">Comprehensive vehicle health checks before buying a used car</p>
               </div>
@@ -203,7 +203,7 @@ export default function DiagnosticsPage() {
           </div>
 
           {/* Service Estimator */}
-          <div className="mb-20 bg-gray-900 p-8 rounded-lg border border-gray-800">
+          <div className="mb-20 bg-black p-8 rounded-lg border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-6 text-center font-orbitron uppercase">
               Get Your Diagnostic Service Quote
             </h3>

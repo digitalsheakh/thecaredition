@@ -3,8 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import VideoPlayer from '@/components/VideoPlayer';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
+import ScrollAnimation from '@/components/ScrollAnimation';
 import { useSession } from 'next-auth/react';
 
 export default function Home() {
@@ -87,17 +89,27 @@ export default function Home() {
           <div className="w-full max-w-screen-2xl mx-auto">
             <div className="text-center md:text-left">
               <div className="mb-12">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 uppercase font-orbitron tracking-wider text-white">
-                  CAR CARE
-                </h1>
-                <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 uppercase font-orbitron tracking-wider" style={{ color: '#fb9929' }}>
-                  REDEFINED
-                </h2>
-                <div className="mt-8">
-                  <Link href="/service-estimator" className="inline-block bg-orange-600 hover:bg-orange-600 text-white px-8 py-4 text-base font-bold uppercase font-orbitron tracking-wider transition-colors duration-300">
+                <motion.h1 
+                  initial={{ opacity: 1, y: 0 }}
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase font-orbitron tracking-wider text-white"
+                >
+                  Welcome to
+                </motion.h1>
+                <motion.h2 
+                  initial={{ opacity: 1, y: 0 }}
+                  className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 uppercase font-orbitron tracking-wider" 
+                  style={{ color: '#fb9929' }}
+                >
+                  The Car Edition
+                </motion.h2>
+                <motion.div 
+                  initial={{ opacity: 1, scale: 1 }}
+                  className="mt-8"
+                >
+                  <Link href="/service-estimator" className="inline-block bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-base font-bold uppercase font-orbitron tracking-wider transition-all duration-200 hover:scale-105 hover:shadow-lg">
                     CALL US FOR AN ESTIMATE
                   </Link>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -299,17 +311,41 @@ export default function Home() {
         <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.1)]"></div>
         <div className="w-full px-6 relative z-10">
           <div className="max-w-screen-2xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-rajdhani font-bold uppercase tracking-wider mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="text-center mb-16"
+            >
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+                className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-rajdhani font-bold uppercase tracking-wider mb-6"
+              >
                 Most Requested
-              </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
+              </motion.div>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6"
+              >
                 Trending <span className="text-orange-500">Services</span>
-              </h2>
-              <p className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+                className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed"
+              >
                 Discover our most popular automotive services designed to keep your vehicle running at peak performance. Professional quality, competitive prices.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 items-start">
               {/* Service Card 1 - Ford Wet Belt Replacement */}
@@ -801,26 +837,11 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Gradient overlays for smooth fade effect */}
-              <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-gray-900/50 to-transparent z-10 pointer-events-none"></div>
-              <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-gray-900/50 to-transparent z-10 pointer-events-none"></div>
+              {/* Fade overlays for smooth effect */}
+              <div className="absolute top-0 left-0 h-full w-32 bg-black/20 z-10 pointer-events-none"></div>
+              <div className="absolute top-0 right-0 h-full w-32 bg-black/20 z-10 pointer-events-none"></div>
             </div>
             
-            {/* Trust Indicators */}
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="group">
-                <h3 className="text-5xl font-bold text-orange-600 font-orbitron mb-2">10+</h3>
-                <p className="text-white font-rajdhani text-lg font-semibold">Years Experience</p>
-              </div>
-              <div className="group">
-                <h3 className="text-5xl font-bold text-orange-600 font-orbitron mb-2">1000+</h3>
-                <p className="text-white font-rajdhani text-lg font-semibold">Vehicles Repaired</p>
-              </div>
-              <div className="group">
-                <h3 className="text-5xl font-bold text-orange-600 font-orbitron mb-2">100%</h3>
-                <p className="text-white font-rajdhani text-lg font-semibold">Honest Service</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -984,7 +1005,7 @@ export default function Home() {
       </section>
 
       {/* Our Services Section */}
-      <section className="py-24 bg-gradient-to-b from-black via-gray-900/20 to-black relative overflow-hidden">
+      <section className="py-24 bg-black relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, orange 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
@@ -992,23 +1013,47 @@ export default function Home() {
         
         <div className="w-full px-6 relative z-10">
           <div className="max-w-screen-2xl mx-auto">
-            <div className="text-center mb-20">
-              <div className="inline-flex items-center gap-3 bg-orange-600/10 border border-orange-600/30 rounded-full px-6 py-2 mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="text-center mb-20"
+            >
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 bg-orange-600/10 border border-orange-600/30 rounded-full px-6 py-2 mb-6"
+              >
                 <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
                 <p className="text-orange-500 text-sm font-bold uppercase tracking-wider font-rajdhani">
                   PROFESSIONAL EXPERTISE
                 </p>
-              </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
-                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Services</span>
-              </h2>
-              <p className="text-xl text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed">
+              </motion.div>
+              <motion.h2 
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6"
+              >
+                Our <span className="text-orange-600">Services</span>
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+                className="text-lg text-gray-300 font-rajdhani max-w-3xl mx-auto leading-relaxed"
+              >
                 Every job we take on is done properly, no guesswork, no upselling, no compromises.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           
             {/* Service Tabs */}
-            <div className="flex flex-wrap justify-center gap-3 mb-16">
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
               {[
                 { 
                   name: 'Diagnostics & Electrical', 
@@ -1027,7 +1072,7 @@ export default function Home() {
                   )
                 },
                 { 
-                  name: 'Performance & Remapping', 
+                  name: 'Performance & Tuning', 
                   icon: (
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
@@ -1044,7 +1089,7 @@ export default function Home() {
                   )
                 },
                 { 
-                  name: 'Tyres & Wheel Alignment', 
+                  name: 'Tyres & Alignment', 
                   icon: (
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
@@ -1065,7 +1110,7 @@ export default function Home() {
                   onClick={() => setActiveServiceTab(index)}
                   className={`group relative flex flex-col items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 border-2 ${
                     activeServiceTab === index
-                      ? 'bg-gradient-to-br from-orange-600 to-orange-700 border-orange-500 text-white shadow-lg shadow-orange-600/30 scale-105'
+                      ? 'bg-orange-600 border-orange-500 text-white shadow-lg scale-105'
                       : 'bg-gray-900/50 border-gray-800 text-white hover:bg-gray-800/80 hover:border-orange-600/50 hover:scale-105'
                   }`}
                 >
@@ -1081,7 +1126,7 @@ export default function Home() {
             </div>
 
             {/* Service Content */}
-            <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm rounded-2xl p-12 border-2 border-gray-800/50 shadow-2xl">
+            <div className="bg-gray-900/30 backdrop-blur-sm rounded-2xl p-8 border-2 border-gray-800/50 shadow-2xl">
               {/* Diagnostics & Electrical */}
               {activeServiceTab === 0 && (
                 <div className="animate-fadeIn">
@@ -1329,17 +1374,35 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row items-center gap-16">
               
               {/* Left Content */}
-              <div className="lg:w-1/2 order-2 lg:order-1">
-                <div className="border-l-4 border-orange-600 pl-6 mb-8">
+              <motion.div 
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="lg:w-1/2 order-2 lg:order-1"
+              >
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                  viewport={{ once: true }}
+                  className="border-l-4 border-orange-600 pl-6 mb-8"
+                >
                   <p className="text-orange-500 text-sm font-bold uppercase tracking-wider font-rajdhani mb-2">
                     BOOK YOUR SERVICE TODAY
                   </p>
-                </div>
-                <h2 className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6">
-                  SCHEDULE AN
+                </motion.div>
+                <motion.h2 
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
+                  viewport={{ once: true }}
+                  className="text-4xl md:text-6xl font-bold text-white uppercase font-orbitron tracking-wider leading-tight mb-6"
+                >
+                  Book an
                   <br />
-                  <span className="text-orange-500">APPOINTMENT</span>
-                </h2>
+                  <span className="text-orange-500">Appointment</span>
+                </motion.h2>
                 <p className="text-lg text-gray-300 font-rajdhani leading-relaxed mb-8">
                   Experience professional automotive service at The Car Edition. Our expert technicians are ready to keep your vehicle running at peak performance. Book your appointment today for quality service you can trust.
                 </p>
@@ -1364,36 +1427,45 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/service-estimator" className="inline-flex items-center bg-orange-600 hover:bg-orange-600 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-colors duration-300 rounded-lg">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                  viewport={{ once: true }}
+                  className="flex flex-col sm:flex-row gap-4"
+                >
+                  <Link href="/service-estimator" className="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg hover:scale-105 hover:shadow-lg">
                     BOOK APPOINTMENT
                   </Link>
-                  <Link href="/contact" className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg">
+                  <Link href="/contact" className="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 font-bold font-orbitron uppercase tracking-wider transition-all duration-300 rounded-lg hover:scale-105">
                     CALL US NOW
                   </Link>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
               
-              {/* Right Image */}
-              <div className="lg:w-1/2 order-1 lg:order-2">
+              {/* Right - Google Map */}
+              <motion.div 
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="lg:w-1/2 order-1 lg:order-2"
+              >
                 <div className="relative w-full max-w-2xl mx-auto">
-                  <Image
-                    src="/images/logos/youtube_logo.jpg"
-                    alt="Professional automotive service booking"
-                    width={600}
-                    height={400}
-                    className="rounded-2xl shadow-2xl border border-gray-800 object-cover w-full h-full max-h-[400px]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-                  
-                  {/* Service Hours Overlay */}
-                  <div className="absolute top-6 left-6 bg-orange-600 p-4 rounded-xl shadow-lg">
-                    <p className="text-white text-xs font-bold font-orbitron uppercase mb-1">OPEN TODAY</p>
-                    <p className="text-white text-sm font-rajdhani">Mon-Fri: 8AM-6PM</p>
-                    <p className="text-white text-sm font-rajdhani">Sat: 8AM-4PM</p>
+                  <div className="rounded-2xl shadow-2xl border border-gray-700 overflow-hidden bg-gray-900">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.8!2d-0.1857!3d52.3284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877e9a1a1a1a1a1%3A0x1234567890abcdef!2sUnit%204-5%20Cinch%20Storage%2C%20St%20Margarets%20Way%2C%20Huntingdon%20PE29%206EB!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk"
+                      width="100%"
+                      height="400"
+                      style={{ border: 0, minHeight: '400px', filter: 'invert(90%) hue-rotate(180deg)' }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full"
+                    ></iframe>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
